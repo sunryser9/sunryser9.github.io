@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 16 Aug 2025 16:20:00 +0530</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication</title>
+      <link>/tags/authentication/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Authorization</title>
+      <link>/tags/authorization/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/authorization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybersecurity</title>
+      <link>/tags/cybersecurity/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Developer Guide</title>
+      <link>/tags/developer-guide/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/developer-guide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>/tags/java/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>/tags/security/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring</title>
+      <link>/tags/spring/</link>
+      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
+      <guid>/tags/spring/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
