@@ -1,0 +1,16 @@
+baseURL = "https://javayou.com"
+languageCode = "en-us"
+title = "JavaYou"
+theme = "ananke"
+publishDir = "public"
+disableKinds = []
+
+[params]
+  description = "Learn Java, Spring Boot, and web development step by step"
+  showMenu = true
+  showBurger = true
+  showPostSummary = true
+  showReadingTime = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
