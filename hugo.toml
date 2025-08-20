@@ -13,4 +13,4 @@ disableKinds = []
   showReadingTime = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON"]# Update trigger
