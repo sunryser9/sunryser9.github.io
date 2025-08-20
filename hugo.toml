@@ -16,3 +16,5 @@ disableKinds = []
   home = ["HTML", "RSS", "JSON"]# Update trigger
 
 # Update trigger - force rebuild
+
+# Force rebuild - 2025-08-18
