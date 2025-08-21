@@ -17,4 +17,6 @@ disableKinds = []
 
 
 
-# Force rebuild - 2025-08-18
+# Force rebuild - 2025-08-19
+
+publishDir = "public"
