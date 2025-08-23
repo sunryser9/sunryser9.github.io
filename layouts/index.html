@@ -3,22 +3,35 @@
     {{ .Content }}
   </article>
 
-  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
-  {{  := site.Params.mainSections | compare.Default (collections.Slice "post") }}
-  {{  := site.Params.ananke.show_recent_posts }}
-  {{  := collections.Where $.Site.RegularPages "Section" "in"  }}
-  {{  := len  }}
+  <!-- DEBUG: Show what values we're working with -->
+  <div style="background: yellow; padding: 20px; margin: 20px;">
+    <strong>DEBUG VALUES:</strong><br>
+    show_recent_posts: {{ site.Params.ananke.show_recent_posts }}<br>
+    section_count: {{ len (collections.Where $.Site.RegularPages "Section" "in" (collections.Slice "post")) }}<br>
+    mainSections: {{ site.Params.mainSections }}<br>
+  </div>
 
-  {{ if and () (compare.Ge  1) }}
+  {{ $mainSections := site.Params.mainSections | compare.Default (collections.Slice "post") }}
+  {{ $show_recent_posts := site.Params.ananke.show_recent_posts }}
+  {{ $section := collections.Where $.Site.RegularPages "Section" "in" $mainSections }}
+  {{ $section_count := len $section }}
+
+  {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
     <div class="pa3 pa4-ns w-100 w-70-ns center">
       <section class="w-100 mw8">
-        {{/* Show ALL posts without limits */}}
-        {{ range  }}
+        {{ range $section }}
           <div class="w-100 mb4 relative">
             {{ .Render "summary-with-image" }}
           </div>
         {{ end }}
       </section>
+    </div>
+  {{ else }}
+    <div style="background: red; color: white; padding: 20px; margin: 20px;">
+      <strong>DEBUG: CONDITION FAILED!</strong><br>
+      show_recent_posts: {{ $show_recent_posts }}<br>
+      section_count: {{ $section_count }}<br>
+      Condition result: {{ and $show_recent_posts (compare.Ge $section_count 1) }}<br>
     </div>
   {{ end }}
 {{ end }}
