@@ -17,8 +17,3 @@ disableKinds = []
 
 
 
-# Force rebuild - 2025-08-19
-
-publishDir = "public"
-
-# Force rebuild after removing hugo.exe
