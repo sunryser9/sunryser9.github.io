@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Master Cloud-Native Java! This comprehensive guide covers deploying and scaling Spring Boot applications on Kubernetes, from Dockerization and YAML configurations to health checks, resource management, and effective observability.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="By JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes">
+  <meta property="og:description" content="Master Cloud-Native Java! This comprehensive guide covers deploying and scaling Spring Boot applications on Kubernetes, from Dockerization and YAML configurations to health checks, resource management, and effective observability.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-02T10:00:00+05:30">
+    <meta property="article:modified_time" content="2025-08-02T10:00:00+05:30">
+    <meta property="article:tag" content="Cloud-Native">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Spring Boot">
+    <meta property="article:tag" content="Deployment">
+    <meta property="article:tag" content="Scaling">
+    <meta property="article:tag" content="Docker">
+
+  <meta itemprop="name" content="Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes">
+  <meta itemprop="description" content="Master Cloud-Native Java! This comprehensive guide covers deploying and scaling Spring Boot applications on Kubernetes, from Dockerization and YAML configurations to health checks, resource management, and effective observability.">
+  <meta itemprop="datePublished" content="2025-08-02T10:00:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-02T10:00:00+05:30">
+  <meta itemprop="wordCount" content="1920">
+  <meta itemprop="keywords" content="spring,boot,kubernetes,deployment,,cloud,native,java,,scaling,spring,boot,on,kubernetes,,docker,spring,boot,,kubernetes,best,practices,java,,k8s,health,checks,spring,boot,,spring,boot,configmap,,spring,boot,secrets,kubernetes,,horizontal,pod,autoscaler,spring,boot,,kubernetes,logging,monitoring,java,,spring,boot,microservices,kubernetes">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes">
+  <meta name="twitter:description" content="Master Cloud-Native Java! This comprehensive guide covers deploying and scaling Spring Boot applications on Kubernetes, from Dockerization and YAML configurations to health checks, resource management, and effective observability.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</h1>
+      
+      <p class="tracked"><strong>By JavaYou.com Team</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-02T10:00:00+05:30">August 2, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</h1>
+<p>Welcome, cloud adventurers and Java maestros! If you&rsquo;re building modern applications, the terms &ldquo;Cloud-Native&rdquo; and &ldquo;Kubernetes&rdquo; are probably as common in your daily vocabulary as &ldquo;Spring Boot&rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap – one that promises unparalleled scalability, resilience, and operational efficiency.</p>
+<p>But let&rsquo;s be real: the journey can feel like navigating a maze. Kubernetes has its own language, its own philosophy, and a learning curve that can sometimes feel like a cliff. At JavaYou.com, we&rsquo;ve walked this path countless times. This comprehensive guide is designed to be your trusted map, demystifying the process of taking your Spring Boot applications <strong>cloud-native</strong> and mastering their deployment and scaling on <strong>Kubernetes (K8s)</strong>. We&rsquo;ll cover everything from simple Dockerization to advanced K8s concepts, ensuring your Java apps not only run but thrive in the cloud.</p>
+<h2 id="1-why-cloud-native-and-kubernetes-for-spring-boot">1. Why Cloud-Native and Kubernetes for Spring Boot?</h2>
+<p>Gone are the days of deploying WARs to application servers on bare metal. Modern demands for agility, resilience, and elasticity have driven the move to cloud-native architectures.</p>
+<ul>
+<li><strong>Scalability:</strong> Effortlessly scale your application up or down based on demand.</li>
+<li><strong>Resilience:</strong> Kubernetes can automatically restart failed containers, reschedule pods, and manage self-healing.</li>
+<li><strong>Portability:</strong> Run your applications consistently across different cloud providers or on-premises.</li>
+<li><strong>Efficiency:</strong> Optimal resource utilization through containerization and orchestration.</li>
+<li><strong>Faster Releases:</strong> Streamlined CI/CD pipelines.</li>
+</ul>
+<p>Spring Boot, with its embedded server and &ldquo;fat jar&rdquo; concept, is inherently well-suited for containerization, making it a perfect match for Kubernetes.</p>
+<h2 id="2-containerizing-your-spring-boot-application-docker">2. Containerizing Your Spring Boot Application (Docker)</h2>
+<p>The first step to Kubernetes is Docker. Your Spring Boot application needs to be packaged into a Docker image.</p>
+<h3 id="best-practices-for-dockerfile">Best Practices for Dockerfile:</h3>
+<ul>
+<li><strong>Use a Multi-Stage Build:</strong> This dramatically reduces image size by using different builder images for compilation and a leaner runtime image for the final artifact. Smaller images mean faster deployments and less resource consumption.</li>
+<li><strong>Use a Specific Base Image:</strong> Avoid <code>latest</code>. Pin to a specific version like <code>openjdk:17-jdk-slim</code> or <code>eclipse-temurin:17-jre-focal</code>.</li>
+<li><strong>Non-Root User:</strong> Run your application as a non-root user for enhanced security.</li>
+<li><strong>Copy Only What&rsquo;s Needed:</strong> Don&rsquo;t copy your entire project directory. Copy only the build artifact (<code>.jar</code>).</li>
+<li><strong>Add Health Checks in Dockerfile (Optional, K8s prefers its own):</strong> While Kubernetes handles health checks, a basic <code>HEALTHCHECK</code> in Dockerfile is good for local testing.</li>
+</ul>
+<p><strong>Example Multi-Stage Dockerfile:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Stage 1: Build the application</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> eclipse-temurin:17-jdk-focal as builder</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> .mvn/ .mvn<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> mvnw pom.xml ./<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> ./mvnw dependency:go-offline<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> src ./src<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> ./mvnw clean install -DskipTests<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Stage 2: Create the final lean image</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> eclipse-temurin:17-jre-focal</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /app/target/*.jar app.jar<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8080 # Expose the port your Spring Boot app listens on</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Run as non-root user</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> 1000:1000</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [<span style="color:#e6db74">&#34;java&#34;</span>, <span style="color:#e6db74">&#34;-jar&#34;</span>, <span style="color:#e6db74">&#34;app.jar&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Build and Push Your Docker Image:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>docker build -t your-dockerhub-username/your-app-name:1.0.0 .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>docker push your-dockerhub-username/your-app-name:1.0.0<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>3. Basic Kubernetes Concepts <span style="color:#66d9ef">for</span> Spring Boot<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Before we deploy, a quick primer on essential K8s objects:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Pod: The smallest deployable unit in Kubernetes. A pod encapsulates one or more containers <span style="color:#f92672">(</span>your Spring Boot app<span style="color:#960050;background-color:#1e0010">&#39;</span>s Docker image<span style="color:#f92672">)</span> and shared resources.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Deployment: Manages a set of identical pods. It ensures a specified number of pods are running and handles rolling updates and rollbacks. This is what you<span style="color:#960050;background-color:#1e0010">&#39;</span>ll primarily use <span style="color:#66d9ef">for</span> your Spring Boot applications.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Service: An abstract way to expose an application running on a set of pods as a network service. It provides a stable IP address and DNS name <span style="color:#66d9ef">for</span> your pods, even <span style="color:#66d9ef">if</span> the pods themselves change.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>ConfigMap: Stores non-confidential configuration data in key-value pairs. Ideal <span style="color:#66d9ef">for</span> application configuration.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Secret: Stores sensitive information <span style="color:#f92672">(</span>passwords, API keys<span style="color:#f92672">)</span> securely.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Ingress: Manages external access to services in a cluster, typically HTTP/S. It provides URL-based routing, SSL termination, etc.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>4. Deploying Your Spring Boot App to Kubernetes<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Let<span style="color:#960050;background-color:#1e0010">&#39;</span>s get your Dockerized Spring Boot application running on a K8s cluster.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>4.1. Deployment Manifest <span style="color:#f92672">(</span>deployment.yaml<span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>This defines how your application<span style="color:#960050;background-color:#1e0010">&#39;</span>s pods should run.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># deployment.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>apiVersion: apps/v1<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kind: Deployment<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  name: javayou-app-deployment<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  labels:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    app: javayou-app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>spec:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  replicas: <span style="color:#ae81ff">3</span> <span style="color:#75715e"># Number of instances (pods) you want to run</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  selector:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    matchLabels:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      app: javayou-app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  template:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      labels:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        app: javayou-app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    spec:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      containers:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - name: javayou-app-container<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        image: your-dockerhub-username/your-app-name:1.0.0 <span style="color:#75715e"># Your Docker image</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        ports:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        - containerPort: <span style="color:#ae81ff">8080</span> <span style="color:#75715e"># The port your Spring Boot app listens on</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        env: <span style="color:#75715e"># Environment variables (e.g., for Spring profiles)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        - name: SPRING_PROFILES_ACTIVE<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          value: <span style="color:#e6db74">&#34;prod&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#75715e"># ... Health checks, resource limits will go here later ...</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>4.2. Service Manifest <span style="color:#f92672">(</span>service.yaml<span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>This exposes your deployment so other services or external traffic can reach it.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># service.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>apiVersion: v1<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kind: Service<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  name: javayou-app-service<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>spec:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  selector:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    app: javayou-app <span style="color:#75715e"># Selects pods with this label</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  ports:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    - protocol: TCP<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      port: <span style="color:#ae81ff">80</span> <span style="color:#75715e"># The port the service will listen on</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      targetPort: <span style="color:#ae81ff">8080</span> <span style="color:#75715e"># The port the container (Spring Boot app) listens on</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  type: ClusterIP <span style="color:#75715e"># Default: only accessible within the cluster</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># Use LoadBalancer for external access (cloud providers)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># type: LoadBalancer</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Apply these manifests:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kubectl apply -f deployment.yaml<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kubectl apply -f service.yaml<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>5. Health Checks: Keeping Your Application Alive<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Kubernetes uses Liveness and Readiness probes to manage your application<span style="color:#960050;background-color:#1e0010">&#39;</span>s lifecycle, which are critical <span style="color:#66d9ef">for</span> robust deployments. Spring Boot Actuator makes this incredibly easy.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Liveness Probe: Tells Kubernetes when to restart a container. If the liveness probe fails, Kubernetes will terminate the pod and start a new one.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Readiness Probe: Tells Kubernetes when a container is ready to serve traffic. If the readiness probe fails, Kubernetes will remove the pod from the service load balancers. This is crucial during startup or temporary overloads.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">Add</span> spring-boot-starter-actuator <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span> you haven<span style="color:#960050;background-color:#1e0010">&#39;</span>t already<span style="color:#f92672">)</span>:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>XML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>&lt;dependency&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>&lt;/dependency&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">Expose</span><span style="color:#e6db74"> health endpoints in application.properties:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Properties<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>management.endpoints.web.exposure.include<span style="color:#f92672">=</span>health,info<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>management.endpoint.health.show-details<span style="color:#f92672">=</span>always<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Update deployment.yaml with probes:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ... inside containers section of deployment.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        livenessProbe:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          httpGet:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            path: /actuator/health/liveness <span style="color:#75715e"># Spring Boot 2.3+ for liveness/readiness specific probes</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            port: <span style="color:#ae81ff">8080</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          initialDelaySeconds: <span style="color:#ae81ff">120</span> <span style="color:#75715e"># Give app time to start</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          periodSeconds: <span style="color:#ae81ff">10</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          failureThreshold: <span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        readinessProbe:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          httpGet:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            path: /actuator/health/readiness <span style="color:#75715e"># Spring Boot 2.3+</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            port: <span style="color:#ae81ff">8080</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          initialDelaySeconds: <span style="color:#ae81ff">30</span> <span style="color:#75715e"># Give app time to become ready</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          periodSeconds: <span style="color:#ae81ff">5</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          failureThreshold: <span style="color:#ae81ff">5</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ...</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>6. Configuration &amp; Secrets in Kubernetes<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Hardcoding configuration in your Docker image or application properties is a no-go <span style="color:#66d9ef">for</span> production. Kubernetes offers robust mechanisms.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>ConfigMaps: For non-sensitive configuration data.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># configmap.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>apiVersion: v1<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kind: ConfigMap<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  name: javayou-app-config<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>data:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  application.properties: |<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    spring.datasource.url<span style="color:#f92672">=</span>jdbc:postgresql://postgres-service:5432/myprod_db<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    spring.jpa.hibernate.ddl-auto<span style="color:#f92672">=</span>none<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    app.message<span style="color:#f92672">=</span>Hello from ConfigMap!<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Reference in deployment.yaml:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ... inside containers section of deployment.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    envFrom:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    - configMapRef:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        name: javayou-app-config<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    volumeMounts: <span style="color:#75715e"># Or mount as a file</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    - name: config-volume<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      mountPath: /app/config<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  volumes:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  - name: config-volume<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    configMap:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      name: javayou-app-config<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ...</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Spring Boot will automatically pick up properties from mounted files like /app/config/application.properties.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Secrets: For sensitive data. Kubernetes Secrets are base64 encoded, not truly encrypted at rest by default, so consider external secret management tools <span style="color:#f92672">(</span>e.g., HashiCorp Vault, cloud provider KMS services, or Kubernetes External Secrets<span style="color:#f92672">)</span>.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># secret.yaml (NEVER commit actual secrets to Git!)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>apiVersion: v1<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kind: Secret<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  name: javayou-app-secrets<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>type: Opaque<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>data:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  db_password: &lt;base64_encoded_password&gt; <span style="color:#75715e"># echo -n &#34;yourpassword&#34; | base64</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Reference in deployment.yaml:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ... inside containers section of deployment.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    env:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    - name: DB_PASSWORD<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      valueFrom:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        secretKeyRef:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          name: javayou-app-secrets<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          key: db_password<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ...</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>7. Resource Management: Requests and Limits<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>To ensure stability and prevent resource contention in a shared cluster, define resource requests and limits <span style="color:#66d9ef">for</span> your Spring Boot containers.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Requests: The minimum amount of CPU and memory your container needs. Kubernetes uses this <span style="color:#66d9ef">for</span> scheduling.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Limits: The maximum amount of CPU and memory your container can use. If a container exceeds its memory limit, it will be killed <span style="color:#f92672">(</span>OOMKilled<span style="color:#f92672">)</span>. If it exceeds CPU limit, it will be throttled.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Example in deployment.yaml:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ... inside containers section of deployment.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        resources:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          requests:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            memory: <span style="color:#e6db74">&#34;512Mi&#34;</span> <span style="color:#75715e"># Request 512 MB memory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            cpu: <span style="color:#e6db74">&#34;500m&#34;</span>    <span style="color:#75715e"># Request 0.5 CPU core</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          limits:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            memory: <span style="color:#e6db74">&#34;1Gi&#34;</span>  <span style="color:#75715e"># Limit to 1 GB memory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            cpu: <span style="color:#e6db74">&#34;1&#34;</span>       <span style="color:#75715e"># Limit to 1 CPU core</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ...</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Tuning these values is crucial and requires monitoring your application<span style="color:#960050;background-color:#1e0010">&#39;</span>s actual resource usage.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>8. Scaling Spring Boot Applications on Kubernetes<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>One of Kubernetes<span style="color:#960050;background-color:#1e0010">&#39;</span> biggest advantages is its ability to scale your applications automatically.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Horizontal Pod Autoscaler <span style="color:#f92672">(</span>HPA<span style="color:#f92672">)</span>:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>HPA automatically adjusts the number of pods in a deployment based on observed metrics like CPU utilization or custom metrics.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Example HPA manifest <span style="color:#f92672">(</span>hpa.yaml<span style="color:#f92672">)</span>:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># hpa.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>apiVersion: autoscaling/v2<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kind: HorizontalPodAutoscaler<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  name: javayou-app-hpa<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>spec:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  scaleTargetRef:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    apiVersion: apps/v1<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    kind: Deployment<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    name: javayou-app-deployment<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  minReplicas: <span style="color:#ae81ff">3</span> <span style="color:#75715e"># Minimum number of pods</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  maxReplicas: <span style="color:#ae81ff">10</span> <span style="color:#75715e"># Maximum number of pods</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  metrics:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  - type: Resource<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    resource:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      name: cpu<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      target:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        type: Utilization<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        averageUtilization: <span style="color:#ae81ff">70</span> <span style="color:#75715e"># Scale up when average CPU utilization hits 70%</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># You can also use custom metrics (e.g., requests per second)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Apply HPA: kubectl apply -f hpa.yaml<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>9. Logging and Monitoring in Kubernetes<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Just as with microservices <span style="color:#f92672">(</span>as discussed in our Mastering Observability article!<span style="color:#f92672">)</span>, centralized logging and robust monitoring are non-negotiable in Kubernetes.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Logging: Containers write logs to stdout/stderr. Kubernetes collects these. You<span style="color:#960050;background-color:#1e0010">&#39;</span>ll need a cluster-level logging solution like:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>ELK Stack <span style="color:#f92672">(</span>Elasticsearch, Logstash, Kibana<span style="color:#f92672">)</span>: Logstash agents <span style="color:#f92672">(</span>e.g., Fluentd, Filebeat as DaemonSets<span style="color:#f92672">)</span> collect logs from nodes and ship them to Elasticsearch, visualized by Kibana.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Loki + Grafana: A more lightweight, Prometheus-inspired log aggregation system, excellent <span style="color:#66d9ef">for</span> massive log volumes and integration with Grafana.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Cloud Provider Managed Services: AWS CloudWatch, Azure Monitor, Google Cloud Logging.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Ensure your Spring Boot application logs in a structured format <span style="color:#f92672">(</span>JSON<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> easier parsing and searching.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Monitoring:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Prometheus + Grafana: Deploy Prometheus to scrape metrics from your Spring Boot Actuator /actuator/prometheus endpoint. Grafana visualizes these metrics. <span style="color:#f92672">(</span>Refer back to our Mastering Observability article <span style="color:#66d9ef">for</span> Spring Boot setup!<span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Kubernetes Metrics Server: Provides basic CPU/memory metrics required by HPA.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Cloud Provider Monitoring: AWS CloudWatch, Azure Monitor, Google Cloud Monitoring.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>10. Ingress and External Access<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>For external users to reach your Spring Boot application on Kubernetes, you need an Ingress controller.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Ingress Controller: A component <span style="color:#f92672">(</span>e.g., Nginx Ingress Controller, Traefik, GKE Ingress<span style="color:#f92672">)</span> that provides HTTP/S routing.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Ingress Resource: Defines the routing rules <span style="color:#66d9ef">for</span> the Ingress controller.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Example Ingress Manifest <span style="color:#f92672">(</span>ingress.yaml<span style="color:#f92672">)</span>:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>YAML<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ingress.yaml</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>apiVersion: networking.k8s.io/v1<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>kind: Ingress<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>metadata:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  name: javayou-app-ingress<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  annotations:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#75715e"># Example for Nginx Ingress Controller</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    nginx.ingress.kubernetes.io/rewrite-target: /<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>spec:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  rules:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  - host: javayou.com <span style="color:#75715e"># Your domain</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    http:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      paths:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - path: /api/v1/products <span style="color:#75715e"># Path to your Spring Boot service</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        pathType: Prefix<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        backend:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>          service:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            name: javayou-app-service <span style="color:#75715e"># Your K8s service name</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>            port:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>              number: <span style="color:#ae81ff">80</span> <span style="color:#75715e"># Service port</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>You<span style="color:#960050;background-color:#1e0010">&#39;</span>ll need an Ingress Controller running in your cluster <span style="color:#66d9ef">for</span> this to work.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>11. Advanced Considerations <span style="color:#f92672">(</span>Briefly<span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Persistent Storage <span style="color:#f92672">(</span>PVC/PV<span style="color:#f92672">)</span>: For applications that need to persist data <span style="color:#f92672">(</span>e.g., databases, file uploads<span style="color:#f92672">)</span>, use Persistent Volumes <span style="color:#f92672">(</span>PV<span style="color:#f92672">)</span> and Persistent Volume Claims <span style="color:#f92672">(</span>PVC<span style="color:#f92672">)</span>.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>StatefulSets: For stateful applications like databases or message brokers, StatefulSets ensure stable network identities and ordered deployments/scaling.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Service Mesh <span style="color:#f92672">(</span>Istio, Linkerd<span style="color:#f92672">)</span>: For advanced traffic management, security <span style="color:#f92672">(</span>mTLS<span style="color:#f92672">)</span>, and more granular observability across many microservices without code changes.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>The Cloud-Native Ascent<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Migrating your Spring Boot applications to Kubernetes is a journey that transforms how you deploy, scale, and manage your software. It empowers your teams with unprecedented flexibility and efficiency, but it demands a solid understanding of cloud-native principles and Kubernetes mechanics.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>By diligently following these best practices ï¿½ from crafting efficient Dockerfiles and defining precise Kubernetes manifests to implementing robust health checks, smart configuration, and proactive observability ï¿½ you<span style="color:#e6db74">&#39;re not just deploying applications; you&#39;</span>re building a highly resilient, scalable, and future-proof cloud ecosystem. Embrace the challenge, and unlock the true potential of your Java applications in the cloud.<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>What was your biggest <span style="color:#e6db74">&#34;aha!&#34;</span> moment or challenge when moving your Spring Boot apps to Kubernetes? Share your insights and tips in the comments below!<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/cloud-native/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Cloud-Native</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/kubernetes/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Kubernetes</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/spring-boot/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Spring Boot</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/deployment/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Deployment</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/scaling/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Scaling</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/docker/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Docker</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/microservices/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Microservices</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/containerization/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Containerization</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/devops/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">DevOps</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/java/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Java</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/k8s/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">K8s</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/observability/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Observability</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/yaml/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">YAML</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-resilient-spring-boot-microservices/">Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-observability-spring-boot-microservices/">Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-data-jpa-advanced-techniques/">Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-best-practices-production/">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-3-ultimate-guide/">Spring Boot 3: The Ultimate Guide to Modern Java Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-microservices-spring-boot-3/">Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/reactive-programming-spring-webflux-r2dbc/">Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-intelligent-java-apps-ai-spring-ai/">Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

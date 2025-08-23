@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration) | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Dive deep into building powerful Generative AI applications using Java. Learn LangChain4j with Spring Boot, integrate with OpenAI, and explore local LLM options for privacy and performance. Your comprehensive guide to AI in Java.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+    
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="JavaYou" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="JavaYou" />
+      
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)">
+  <meta property="og:description" content="Dive deep into building powerful Generative AI applications using Java. Learn LangChain4j with Spring Boot, integrate with OpenAI, and explore local LLM options for privacy and performance. Your comprehensive guide to AI in Java.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)">
+  <meta itemprop="description" content="Dive deep into building powerful Generative AI applications using Java. Learn LangChain4j with Spring Boot, integrate with OpenAI, and explore local LLM options for privacy and performance. Your comprehensive guide to AI in Java.">
+  <meta itemprop="datePublished" content="2024-08-03T10:00:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-05T10:00:00+05:30">
+  <meta itemprop="wordCount" content="2160">
+  <meta itemprop="keywords" content="Java,AI,Generative AI,LLM,LangChain4j,Spring Boot,Ollama,Developer Tools,Tech Guide">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)">
+  <meta name="twitter:description" content="Dive deep into building powerful Generative AI applications using Java. Learn LangChain4j with Spring Boot, integrate with OpenAI, and explore local LLM options for privacy and performance. Your comprehensive guide to AI in Java.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+        </h1>
+        
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+            Dive deep into building powerful Generative AI applications using Java. Learn LangChain4j with Spring Boot, integrate with OpenAI, and explore local LLM options for privacy and performance. Your comprehensive guide to AI in Java.
+          </h2>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"><h1 id="mastering-generative-ai-in-java-building-your-first-llm-application-with-langchain4j-and-spring-boot-plus-local-model-integration">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</h1>
+<h2 id="introduction-the-ai-revolution-and-javas-enduring-role">Introduction: The AI Revolution and Java&rsquo;s Enduring Role</h2>
+<p>The landscape of software development is undergoing a seismic shift. Just a few short years ago, Artificial Intelligence felt like a distant, specialized discipline, often confined to academic research or the realms of data scientists. Today, Generative AI has burst into the mainstream, bringing with it capabilities that feel almost magical – from creating compelling text and realistic images to generating code and summarizing vast amounts of information in seconds.</p>
+<p>This revolution, powered primarily by Large Language Models (LLMs), is reshaping industries and redefining what&rsquo;s possible in applications. For many, the immediate thought turns to Python, the undisputed champion of the AI research world. But here’s a critical truth often overlooked: Java, the bedrock of enterprise software, is not just a spectator in this AI revolution; it’s poised to be a powerful participant.</p>
+<p>Generative AI, encompassing breakthroughs like LLMs (think OpenAI&rsquo;s GPT models, Google&rsquo;s Gemini, or Meta&rsquo;s Llama) and advanced diffusion models, allows machines to create rather than just classify or analyze. This transformative power is already driving new application features, enhancing user experiences, and unlocking unprecedented productivity.</p>
+<p>While Python excels in rapid prototyping and research, Java brings unparalleled strengths to the enterprise AI landscape:</p>
+<ul>
+<li><strong>Scalability &amp; Performance:</strong> Java&rsquo;s robust ecosystem, JVM optimizations, and concurrency features make it ideal for building high-performance, scalable AI-powered microservices and large-scale applications.</li>
+<li><strong>Reliability &amp; Maintainability:</strong> With its strong typing, mature tooling, and established best practices, Java fosters the creation of stable, maintainable, and secure systems – critical for production AI deployments.</li>
+<li><strong>Existing Infrastructure:</strong> Billions of devices and countless enterprise systems worldwide run on Java. Integrating AI capabilities directly into existing Java applications is far more efficient than building entirely new stacks.</li>
+<li><strong>Community &amp; Talent:</strong> A massive, global community of skilled Java developers ensures a continuous supply of talent and collaborative support.</li>
+</ul>
+<p>The narrative that Java is &ldquo;behind&rdquo; in AI is outdated. While Python laid the groundwork, Java is now rapidly evolving with frameworks and libraries that empower its vast developer base to harness Generative AI&rsquo;s potential. This article is your comprehensive guide to getting started.</p>
+<h2 id="2-langchain4j-the-essential-toolkit-for-java-llm-development">2. LangChain4j: The Essential Toolkit for Java LLM Development</h2>
+<p>If you&rsquo;ve dipped your toes into Python&rsquo;s AI ecosystem, you&rsquo;ve likely heard of LangChain – a powerful framework designed to simplify the development of applications powered by large language models. For Java developers, <strong>LangChain4j</strong> is its robust and idiomatic counterpart.</p>
+<p>LangChain4j isn&rsquo;t just a direct port; it&rsquo;s a meticulously crafted library that leverages Java&rsquo;s strengths, providing an intuitive API for interacting with various LLM providers, orchestrating complex AI workflows, and integrating with other data sources. It abstracts away much of the boilerplate, allowing you to focus on the business logic of your AI application.</p>
+<p><strong>Key Concepts in LangChain4j:</strong></p>
+<ul>
+<li><strong>Models:</strong> Connects to different LLM providers (e.g., OpenAI, Hugging Face, local models via Ollama).</li>
+<li><strong>Prompts:</strong> Defines the input for the LLM, often including variables for dynamic content.</li>
+<li><strong>Chains:</strong> Sequences of calls to LLMs or other utilities, allowing for multi-step operations.</li>
+<li><strong>Agents:</strong> Sophisticated constructs that use LLMs to decide which tools to use and in what order, enabling more autonomous and intelligent applications.</li>
+<li><strong>Memory:</strong> Allows LLMs to retain context across multiple interactions, crucial for conversational AI.</li>
+<li><strong>Embeddings &amp; Vector Stores:</strong> Facilitates Retrieval-Augmented Generation (RAG) by converting text into numerical vectors and storing them for efficient similarity searches, allowing LLMs to access external knowledge.</li>
+</ul>
+<p>LangChain4j&rsquo;s power lies in its modularity and extensibility, making it the ideal choice for building production-grade Generative AI applications in Java.</p>
+<h2 id="3-setting-up-your-spring-boot-project-for-ai-brilliance">3. Setting Up Your Spring Boot Project for AI Brilliance</h2>
+<p>Spring Boot, the leading framework for building Java microservices and web applications, provides an excellent foundation for integrating Generative AI. Its &ldquo;convention over configuration&rdquo; approach and robust ecosystem streamline development, allowing you to quickly get your LLM application up and running.</p>
+<p>Let&rsquo;s set up a basic Spring Boot project.</p>
+<h3 id="31-project-initialization">3.1. Project Initialization</h3>
+<p>You can initialize a new Spring Boot project using the Spring Initializr:</p>
+<ol>
+<li>
+<p><strong>Go to:</strong> <a href="https://start.spring.io/">https://start.spring.io/</a></p>
+</li>
+<li>
+<p><strong>Project:</strong> Maven Project or Gradle Project (Maven is common for enterprise)</p>
+</li>
+<li>
+<p><strong>Language:</strong> Java</p>
+</li>
+<li>
+<p><strong>Spring Boot:</strong> Latest Stable (e.g., 3.x.x)</p>
+</li>
+<li>
+<p><strong>Group:</strong> <code>com.javayou</code></p>
+</li>
+<li>
+<p><strong>Artifact:</strong> <code>llm-java-app</code></p>
+</li>
+<li>
+<p><strong>Packaging:</strong> Jar</p>
+</li>
+<li>
+<p><strong>Java:</strong> 17 or higher (LTS versions are recommended)</p>
+</li>
+<li>
+<p><strong>Dependencies:</strong> Add the following:</p>
+<ul>
+<li><code>Spring Web</code> (for REST endpoints)</li>
+<li><code>Spring Boot DevTools</code> (for faster development cycles)</li>
+<li><strong>Crucially, we&rsquo;ll add LangChain4j dependencies manually later, as they&rsquo;re not on Initializr.</strong></li>
+</ul>
+</li>
+<li>
+<p>Click <code>Generate</code> to download the project. Extract the zip file to your preferred development directory.</p>
+</li>
+</ol>
+<h3 id="32-adding-langchain4j-dependencies">3.2. Adding LangChain4j Dependencies</h3>
+<p>Open your <code>pom.xml</code> (if you chose Maven) or <code>build.gradle</code> (if Gradle) file.</p>
+<p><strong>For Maven (<code>pom.xml</code>):</strong></p>
+<p>Add the following inside the <code>&lt;dependencies&gt;</code> block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>dev.langchain4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>langchain4j<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.28.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>dev.langchain4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>langchain4j-openai<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.28.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>dev.langchain4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>langchain4j-spring<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.28.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>For Gradle (build.gradle):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Add the following inside the dependencies { ... } block:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Gradle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>implementation &#39;dev.langchain4j:langchain4j:0.28.0&#39; // Check LangChain4j GitHub for latest version
+</span></span><span style="display:flex;"><span>implementation &#39;dev.langchain4j:langchain4j-openai:0.28.0&#39; // Match core LangChain4j version
+</span></span><span style="display:flex;"><span>// Optional: If you plan to use LangChain4j with Spring Boot specifically
+</span></span><span style="display:flex;"><span>implementation &#39;dev.langchain4j:langchain4j-spring:0.28.0&#39; // Match core LangChain4j version
+</span></span><span style="display:flex;"><span>Important Note: Always check the official LangChain4j GitHub repository (https://github.com/langchain4j/langchain4j) for the very latest stable version. The version 0.28.0 used here is an example.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3.3. Basic Spring Boot Application Structure
+</span></span><span style="display:flex;"><span>Your main application class will look like this:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>package com.javayou.llmjavaapp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import org.springframework.boot.SpringApplication;
+</span></span><span style="display:flex;"><span>import org.springframework.boot.autoconfigure.SpringBootApplication;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@SpringBootApplication
+</span></span><span style="display:flex;"><span>public class LlmJavaAppApplication {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public static void main(String[] args) {
+</span></span><span style="display:flex;"><span>        SpringApplication.run(LlmJavaAppApplication.class, args);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>4. Building Your First LLM Application with OpenAI and LangChain4j
+</span></span><span style="display:flex;"><span>Now, let&#39;s create a simple service that interacts with OpenAI&#39;s powerful GPT models.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>4.1. Configure OpenAI API Key
+</span></span><span style="display:flex;"><span>First, you need an OpenAI API key. You can get one from https://platform.openai.com/account/api-keys.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>It&#39;s best practice to store sensitive keys securely, for example, in src/main/resources/application.properties (or application.yml) or as environment variables.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>src/main/resources/application.properties:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Properties
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>openai.api-key=YOUR_OPENAI_API_KEY
+</span></span><span style="display:flex;"><span>Replace YOUR_OPENAI_API_KEY with your actual key.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>4.2. Create an AI Service
+</span></span><span style="display:flex;"><span>Let&#39;s define a simple Spring component that uses LangChain4j to communicate with OpenAI.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Create a new package, e.g., com.javayou.llmjavaapp.service, and add AIService.java:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>package com.javayou.llmjavaapp.service;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import dev.langchain4j.model.openai.OpenAiChatModel;
+</span></span><span style="display:flex;"><span>import org.springframework.beans.factory.annotation.Value;
+</span></span><span style="display:flex;"><span>import org.springframework.stereotype.Service;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import javax.annotation.PostConstruct; // For Spring Boot 2.x
+</span></span><span style="display:flex;"><span>// import jakarta.annotation.PostConstruct; // For Spring Boot 3.x if using Jakarta EE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@Service
+</span></span><span style="display:flex;"><span>public class AIService {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @Value(&#34;${openai.api-key}&#34;)
+</span></span><span style="display:flex;"><span>    private String openaiApiKey;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    private OpenAiChatModel chatModel;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    // Use jakarta.annotation.PostConstruct for Spring Boot 3+ if you face issues
+</span></span><span style="display:flex;"><span>    @PostConstruct
+</span></span><span style="display:flex;"><span>    public void init() {
+</span></span><span style="display:flex;"><span>        chatModel = OpenAiChatModel.builder()
+</span></span><span style="display:flex;"><span>                .apiKey(openaiApiKey)
+</span></span><span style="display:flex;"><span>                .modelName(&#34;gpt-4o-mini&#34;) // Or &#34;gpt-3.5-turbo&#34;, &#34;gpt-4&#34; depending on your needs
+</span></span><span style="display:flex;"><span>                .temperature(0.7)
+</span></span><span style="display:flex;"><span>                .logRequests(true)
+</span></span><span style="display:flex;"><span>                .logResponses(true)
+</span></span><span style="display:flex;"><span>                .build();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public String chat(String userMessage) {
+</span></span><span style="display:flex;"><span>        // Simple chat interaction
+</span></span><span style="display:flex;"><span>        return chatModel.generate(userMessage);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public String generateJavaCode(String prompt) {
+</span></span><span style="display:flex;"><span>        // A more specific use case: generating Java code
+</span></span><span style="display:flex;"><span>        String fullPrompt = &#34;Generate a Java code snippet for the following request: &#34; + prompt + &#34;\n\nProvide only the code.&#34;;
+</span></span><span style="display:flex;"><span>        return chatModel.generate(fullPrompt);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>Note on PostConstruct: If you are using Spring Boot 3.x and encounter errors related to javax.annotation.PostConstruct, change the import to jakarta.annotation.PostConstruct;.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>4.3. Create a REST Controller
+</span></span><span style="display:flex;"><span>Now, expose this AI service via a REST endpoint.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Create a new package, e.g., com.javayou.llmjavaapp.controller, and add AIController.java:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>package com.javayou.llmjavaapp.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import com.javayou.llmjavaapp.service.AIService;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.GetMapping;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RequestParam;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RestController;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@RestController
+</span></span><span style="display:flex;"><span>@RequestMapping(&#34;/api/ai&#34;)
+</span></span><span style="display:flex;"><span>public class AIController {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    private final AIService aiService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public AIController(AIService aiService) {
+</span></span><span style="display:flex;"><span>        this.aiService = aiService;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @GetMapping(&#34;/chat&#34;)
+</span></span><span style="display:flex;"><span>    public String getChatResponse(@RequestParam String message) {
+</span></span><span style="display:flex;"><span>        return aiService.chat(message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @GetMapping(&#34;/generate-code&#34;)
+</span></span><span style="display:flex;"><span>    public String getGeneratedCode(@RequestParam String prompt) {
+</span></span><span style="display:flex;"><span>        return aiService.generateJavaCode(prompt);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>4.4. Running Your Application
+</span></span><span style="display:flex;"><span>Open your terminal or command prompt in your project&#39;s root directory (llm-java-app).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Run the application:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mvn spring-boot:run
+</span></span><span style="display:flex;"><span>or
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./gradlew bootRun
+</span></span><span style="display:flex;"><span>Once the application starts (usually on http://localhost:8080), you can test your endpoints:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Chat: Open your browser or use Postman/curl: http://localhost:8080/api/ai/chat?message=What is Java?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Generate Code: http://localhost:8080/api/ai/generate-code?prompt=A simple &#39;Hello, World!&#39; method
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You&#39;ve just built your first Java LLM application using LangChain4j and Spring Boot, integrating with OpenAI!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5. Local LLM Integration with Ollama: Privacy, Performance, and Control
+</span></span><span style="display:flex;"><span>While cloud-based LLMs like OpenAI are incredibly powerful, there are compelling reasons to explore local LLMs:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Data Privacy: Your data never leaves your infrastructure.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Cost Efficiency: No per-token charges after the initial model download.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Offline Capability: Run models without an internet connection.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Customization: Fine-tune models locally for specific use cases.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Performance: Lower latency for certain applications, especially if deployed on powerful local hardware.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ollama is a fantastic tool that simplifies running open-source LLMs locally. It provides a straightforward way to download, manage, and interact with models like Llama 2, Mistral, Gemma, and more via a simple API.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5.1. Install Ollama
+</span></span><span style="display:flex;"><span>Download Ollama: Go to https://ollama.com/download and download the installer for your operating system (Windows, macOS, Linux).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Install Ollama: Follow the installation instructions. Ollama will run in the background as a service.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Download a Model: Open your terminal and download a model, for example, Mistral:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ollama run mistral
+</span></span><span style="display:flex;"><span>This command will download the mistral model (it might take some time depending on your internet connection) and then launch an interactive chat. You can type a message and ollama will respond. Type /bye to exit.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You can browse other available models at https://ollama.com/library.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5.2. Integrate Ollama with LangChain4j
+</span></span><span style="display:flex;"><span>LangChain4j provides specific support for Ollama.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>First, add the Ollama dependency to your pom.xml or build.gradle:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>For Maven (pom.xml):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>XML
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>dev.langchain4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>langchain4j-ollama<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.28.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>For Gradle (build.gradle):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Gradle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>implementation &#39;dev.langchain4j:langchain4j-ollama:0.28.0&#39; // Match core LangChain4j version
+</span></span><span style="display:flex;"><span>5.3. Update Your AI Service for Ollama
+</span></span><span style="display:flex;"><span>Now, you can either create a new service or modify AIService.java to conditionally use Ollama based on configuration. For simplicity, let&#39;s add an Ollama-specific chat method.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Modify AIService.java:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>package com.javayou.llmjavaapp.service;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import dev.langchain4j.model.ollama.OllamaChatModel; // Import Ollama model
+</span></span><span style="display:flex;"><span>import dev.langchain4j.model.openai.OpenAiChatModel;
+</span></span><span style="display:flex;"><span>import org.springframework.beans.factory.annotation.Value;
+</span></span><span style="display:flex;"><span>import org.springframework.stereotype.Service;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import javax.annotation.PostConstruct; // For Spring Boot 2.x
+</span></span><span style="display:flex;"><span>// import jakarta.annotation.PostConstruct; // For Spring Boot 3.x if using Jakarta EE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@Service
+</span></span><span style="display:flex;"><span>public class AIService {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @Value(&#34;${openai.api-key:#{null}}&#34;) // Make OpenAI key optional for Ollama-only use
+</span></span><span style="display:flex;"><span>    private String openaiApiKey;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @Value(&#34;${ollama.base-url:http://localhost:11434}&#34;) // Default Ollama URL
+</span></span><span style="display:flex;"><span>    private String ollamaBaseUrl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @Value(&#34;${ollama.model:mistral}&#34;) // Default Ollama model
+</span></span><span style="display:flex;"><span>    private String ollamaModel;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    private OpenAiChatModel openAiChatModel;
+</span></span><span style="display:flex;"><span>    private OllamaChatModel ollamaChatModel; // Declare Ollama model
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @PostConstruct
+</span></span><span style="display:flex;"><span>    public void init() {
+</span></span><span style="display:flex;"><span>        if (openaiApiKey != null <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> !openaiApiKey.trim().isEmpty()) {
+</span></span><span style="display:flex;"><span>            openAiChatModel = OpenAiChatModel.builder()
+</span></span><span style="display:flex;"><span>                    .apiKey(openaiApiKey)
+</span></span><span style="display:flex;"><span>                    .modelName(&#34;gpt-4o-mini&#34;)
+</span></span><span style="display:flex;"><span>                    .temperature(0.7)
+</span></span><span style="display:flex;"><span>                    .logRequests(true)
+</span></span><span style="display:flex;"><span>                    .logResponses(true)
+</span></span><span style="display:flex;"><span>                    .build();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // Initialize Ollama model
+</span></span><span style="display:flex;"><span>        ollamaChatModel = OllamaChatModel.builder()
+</span></span><span style="display:flex;"><span>                .baseUrl(ollamaBaseUrl)
+</span></span><span style="display:flex;"><span>                .modelName(ollamaModel)
+</span></span><span style="display:flex;"><span>                .temperature(0.7)
+</span></span><span style="display:flex;"><span>                .build();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public String chatWithOpenAI(String userMessage) {
+</span></span><span style="display:flex;"><span>        if (openAiChatModel == null) {
+</span></span><span style="display:flex;"><span>            return &#34;OpenAI model not configured. Please provide openai.api-key.&#34;;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        return openAiChatModel.generate(userMessage);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public String chatWithOllama(String userMessage) {
+</span></span><span style="display:flex;"><span>        return ollamaChatModel.generate(userMessage);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>5.4. Update Your Controller for Ollama Endpoint
+</span></span><span style="display:flex;"><span>Modify AIController.java to add a new endpoint for Ollama:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>package com.javayou.llmjavaapp.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import com.javayou.llmjavaapp.service.AIService;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.GetMapping;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RequestParam;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RestController;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@RestController
+</span></span><span style="display:flex;"><span>@RequestMapping(&#34;/api/ai&#34;)
+</span></span><span style="display:flex;"><span>public class AIController {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    private final AIService aiService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public AIController(AIService aiService) {
+</span></span><span style="display:flex;"><span>        this.aiService = aiService;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @GetMapping(&#34;/chat-openai&#34;)
+</span></span><span style="display:flex;"><span>    public String getOpenAIChatResponse(@RequestParam String message) {
+</span></span><span style="display:flex;"><span>        return aiService.chatWithOpenAI(message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @GetMapping(&#34;/generate-code-openai&#34;)
+</span></span><span style="display:flex;"><span>    public String getOpenAIGeneratedCode(@RequestParam String prompt) {
+</span></span><span style="display:flex;"><span>        // You&#39;d need a separate method in AIService for OpenAI code gen now
+</span></span><span style="display:flex;"><span>        return aiService.chatWithOpenAI(&#34;Generate Java code for: &#34; + prompt);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @GetMapping(&#34;/chat-ollama&#34;)
+</span></span><span style="display:flex;"><span>    public String getOllamaChatResponse(@RequestParam String message) {
+</span></span><span style="display:flex;"><span>        return aiService.chatWithOllama(message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>5.5. Running with Ollama
+</span></span><span style="display:flex;"><span>Ensure Ollama is running in the background (it usually starts automatically after installation).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ensure you have downloaded the model you specified in application.properties (e.g., ollama run mistral or ollama pull mistral).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Start your Spring Boot application: mvn spring-boot:run or ./gradlew bootRun.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Test the Ollama endpoint: http://localhost:8080/api/ai/chat-ollama?message=Tell me a short story.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This setup allows you to seamlessly switch between or even combine powerful cloud-based LLMs and efficient local models, giving you immense flexibility in your Java Generative AI applications.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>6. Advanced Concepts <span style="color:#960050;background-color:#1e0010">&amp;</span> Next Steps
+</span></span><span style="display:flex;"><span>You&#39;ve built a foundational LLM application. The journey doesn&#39;t stop here! Consider exploring:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Retrieval-Augmented Generation (RAG): Integrate vector databases (like Chroma, Weaviate, Pinecone, or even simple in-memory vector stores with LangChain4j) to allow your LLM to answer questions based on your private, proprietary data, drastically reducing hallucinations and improving relevance.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Chains <span style="color:#960050;background-color:#1e0010">&amp;</span> Agents: Design more complex workflows where LLMs can use tools (like searching the web, calling external APIs, or executing code) to achieve multi-step tasks.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Memory <span style="color:#960050;background-color:#1e0010">&amp;</span> Conversation History: Implement different types of memory (e.g., chat message history, summary memory) to enable more natural and context-aware conversations.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Prompt Engineering: Master the art of crafting effective prompts to elicit the best responses from LLMs.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Model Fine-tuning: For highly specific tasks, fine-tuning smaller open-source models (with tools like Ollama and more advanced frameworks) can yield superior results and efficiency.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Deployment Strategies: Beyond local development, learn about deploying your Spring Boot AI applications to cloud platforms (AWS, Azure, GCP) or Kubernetes.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Conclusion: Java&#39;s Bright Future in Generative AI
+</span></span><span style="display:flex;"><span>The integration of Generative AI into Java applications is no longer a distant dream but a tangible reality. With powerful frameworks like LangChain4j and the robust ecosystem of Spring Boot, Java developers are incredibly well-equipped to build scalable, reliable, and innovative AI-powered solutions. Whether leveraging the might of cloud APIs like OpenAI or harnessing the privacy and control of local models via Ollama, Java is proving its enduring relevance at the cutting edge of software development.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Embrace this exciting new frontier. Your Java skills are not just foundational; they are your gateway to building the next generation of intelligent applications. Happy coding!
+</span></span></code></pre></div></section>
+    <section class="flex-ns mt5 flex-wrap justify-around">
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/getting-started-java/" class="link black dim">
+        Getting Started with Java Development: Your First Steps to Coding Success
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="getting-started-with-java-development-your-first-steps-to-coding-success">Getting Started with Java Development: Your First Steps to Coding Success</h1>
+<p>Welcome, aspiring developer, to the exciting world of Java! If you&rsquo;re looking to dive into one of the most powerful, versatile, and widely-used programming languages on the planet, you&rsquo;ve come to the right place. Java underpins everything from massive enterprise systems and cloud applications to Android apps and even parts of the world&rsquo;s most popular video games. It&rsquo;s a fantastic language to learn, offering both robust performance and a clear, object-oriented approach.</p>
+    </div>
+    <a href="/posts/getting-started-java/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/privacy-policy/" class="link black dim">
+        Privacy Policy
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="privacy-policy-for-javayoucom">Privacy Policy for JavaYou.com</h1>
+<p>This Privacy Policy describes how JavaYou.com (the &ldquo;Site&rdquo;) collects, uses, and discloses your Personal Information when you visit or make use of the Site.</p>
+<p><strong>1. Information We Collect</strong></p>
+<p>We collect various types of information for different purposes to provide and improve our service to you.</p>
+<ul>
+<li><strong>Usage Data:</strong> We may collect information about how the Site is accessed and used (&ldquo;Usage Data&rdquo;). This Usage Data may include information such as your computer&rsquo;s Internet Protocol address (e.g., IP address), browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.</li>
+<li><strong>Cookies Data:</strong> We use cookies and similar tracking technologies to track the activity on our Site and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Site.</li>
+</ul>
+<p><strong>2. Use of Data</strong></p>
+    </div>
+    <a href="/posts/privacy-policy/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/why-java-is-thriving-2025/" class="link black dim">
+        Why Java is Still Thriving in 2025: More Than Just Legacy Code
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="why-java-is-still-thriving-in-2025-more-than-just-legacy-code">Why Java is Still Thriving in 2025: More Than Just Legacy Code</h1>
+<p>If you&rsquo;ve spent any time in the tech world, you&rsquo;ve probably heard the whispers: &ldquo;Is Java dead?&rdquo; or &ldquo;Isn&rsquo;t Java just for old systems?&rdquo; As we move deeper into 2025, let&rsquo;s put those myths to rest. From where we stand, Java isn&rsquo;t just alive; it&rsquo;s absolutely thriving, continuously adapting, and remaining a powerhouse in modern software development.</p>
+<h2 id="a-rock-solid-foundation-that-keeps-evolving">A Rock-Solid Foundation that Keeps Evolving</h2>
+<p>One of Java&rsquo;s core strengths has always been its stability and reliability. When you&rsquo;re building mission-critical systems – think banking, healthcare, or large-scale enterprise applications – you need a language and ecosystem you can trust. Java delivers this with its robust type system, powerful JVM, and a mature community that has been perfecting best practices for decades.</p>
+    </div>
+    <a href="/posts/why-java-is-thriving-2025/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/why-java-still-thriving/" class="link black dim">
+        Why Java is Still Thriving in 2025: More Than Just Legacy Code
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="why-java-is-still-thriving-in-2025-more-than-just-legacy-code">Why Java is Still Thriving in 2025: More Than Just Legacy Code</h1>
+<p>If you&rsquo;ve spent any time in the tech world, you&rsquo;ve probably heard the rumours: &ldquo;Is Java dead?&rdquo; or &ldquo;Isn&rsquo;t Java just for old systems?&rdquo; As we move deeper into 2025, let&rsquo;s put those myths to rest. From where we stand, Java isn&rsquo;t just alive; it&rsquo;s absolutely thriving, continuously adapting, and remaining a powerhouse in modern software development.</p>
+    </div>
+    <a href="/posts/why-java-still-thriving/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/intellij-idea-ai-features/" class="link black dim">
+        The Definitive Guide to IntelliJ IDEA&#39;s AI Capabilities: Supercharge Java Development in 2025
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h2 id="the-definitive-guide-to-intellij-ideas-ai-capabilities-supercharge-java-development-in-2025">The Definitive Guide to IntelliJ IDEA&rsquo;s AI Capabilities: Supercharge Java Development in 2025</h2>
+<p>As we step deeper into 2025, the landscape of Java development is rapidly transforming, driven significantly by advancements in Artificial Intelligence. At the forefront of this evolution is <strong>IntelliJ IDEA</strong>, a long-time favorite IDE for Java developers, now supercharged with a suite of AI-powered capabilities designed to redefine productivity and code quality.</p>
+<p>This definitive guide will take you through the core AI features within IntelliJ IDEA, demonstrating how they are not just futuristic concepts but practical tools ready to be integrated into your daily workflow.</p>
+    </div>
+    <a href="/posts/intellij-idea-ai-features/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        July 19, 2025
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="/posts/top-10-java-ai-tools/" class="link black dim">
+        Top 10 Java Tools for Developers in 2025: Boosting Productivity with AI-Powered Assistance
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="welcome-to-javayoucom">Welcome to JavaYou.com!</h1>
+    </div>
+  <a href="/posts/top-10-java-ai-tools/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        July 19, 2025
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="/posts/top-10-java-tools-2025/" class="link black dim">
+        Top 10 Java Tools for Developers in 2025: Boosting Productivity with AI-Powered Assistance
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="welcome-to-javayoucom">Welcome to JavaYou.com!</h1>
+<p>This is where your amazing content will begin.
+Here you can start writing about the Top 10 Java Tools for 2025.</p>
+    </div>
+  <a href="/posts/top-10-java-tools-2025/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/test-article/" class="link black dim">
+        Test Article
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="this-is-a-test-article">This is a test article</h1>
+<p>Hello, world! This is a simple test to confirm file saving and Git pushing.</p>
+    </div>
+    <a href="/posts/test-article/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/changelog-old/" class="link black dim">
+        
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p>Generated by <a href="https://github.com/CookPete/auto-changelog"><code>auto-changelog</code></a>.</p>
+<h2 id="v261---2020-06-25"><a href="https://github.com/theNewDynamic/gohugo-theme-ananke/compare/v2.6.0...v2.6.1">v2.6.1</a> - 2020-06-25</h2>
+<h3 id="commits">Commits</h3>
+<ul>
+<li>Updated minimum theme to .55 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/commit/df4c78adb2ed004c3780f7a76254e9756dd024b5"><code>df4c78a</code></a></li>
+</ul>
+<h2 id="v260---2020-06-23"><a href="https://github.com/theNewDynamic/gohugo-theme-ananke/compare/2.6.0...v2.6.0">v2.6.0</a> - 2020-06-23</h2>
+<h3 id="merged">Merged</h3>
+<ul>
+<li>Update spanish translations <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/304"><code>#304</code></a></li>
+<li>Add automatic cover image support <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/303"><code>#303</code></a></li>
+</ul>
+<h2 id="260---2020-06-17"><a href="https://github.com/theNewDynamic/gohugo-theme-ananke/compare/v2.5.5...2.6.0">2.6.0</a> - 2020-06-17</h2>
+<h3 id="merged-1">Merged</h3>
+<ul>
+<li>Add translation for taxonomy page <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/299"><code>#299</code></a></li>
+<li>Site logo <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/284"><code>#284</code></a></li>
+<li>Add head partial <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/285"><code>#285</code></a></li>
+<li>Long urls or links extend beyond content and overlap sidebar <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/259"><code>#259</code></a></li>
+<li>Use relative URL for favicon <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/251"><code>#251</code></a></li>
+<li>Fix relURL for custom_css <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/252"><code>#252</code></a></li>
+<li>Fixed a typo in form-contact.html <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/266"><code>#266</code></a></li>
+<li>adding Bulgarian translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/267"><code>#267</code></a></li>
+<li>Use | relLangURL for the base url in the site-navigation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/277"><code>#277</code></a></li>
+<li>RSS svg icon <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/282"><code>#282</code></a></li>
+<li>Updated Windows instructions in README.md <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/276"><code>#276</code></a></li>
+<li>Replace another 2 .URL occurrences with .Permalink <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/275"><code>#275</code></a></li>
+<li>Add alternative method for running prod to the readme <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/273"><code>#273</code></a></li>
+<li>Swap the page title and site title in page &lt;title&gt; elements <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/272"><code>#272</code></a></li>
+<li>Add the post_content_classes param for changing post content font <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/260"><code>#260</code></a></li>
+<li>Add sharing links for the posts <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/255"><code>#255</code></a></li>
+<li>Safari Reader View lacks content <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/254"><code>#254</code></a></li>
+<li>Add Keybase social icon <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/248"><code>#248</code></a></li>
+<li>Add StackOverflow social <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/243"><code>#243</code></a></li>
+<li>Fix to take care of multiple author list, or for setting the <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/221"><code>#221</code></a></li>
+<li>Fix Slack icon size <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/237"><code>#237</code></a></li>
+<li>Correct the original translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/241"><code>#241</code></a></li>
+</ul>
+<h2 id="v256---2019-12-30"><a href="https://github.com/theNewDynamic/gohugo-theme-ananke/compare/v2.6.1...v2.5.6">v2.5.6</a> - 2019-12-30</h2>
+<h3 id="merged-2">Merged</h3>
+<ul>
+<li>Use Hugo&rsquo;s built in Site Config for copyright according to PR #199 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/240"><code>#240</code></a></li>
+<li>Add italian translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/239"><code>#239</code></a></li>
+</ul>
+<h2 id="v255---2019-11-15"><a href="https://github.com/theNewDynamic/gohugo-theme-ananke/compare/2.5.1...v2.5.5">v2.5.5</a> - 2019-11-15</h2>
+<h3 id="merged-3">Merged</h3>
+<ul>
+<li>Remove stray grave accent <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/231"><code>#231</code></a></li>
+<li>Add Slack to social options <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/236"><code>#236</code></a></li>
+<li>Fix URL for menus <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/230"><code>#230</code></a></li>
+<li>Fix word count heading typo in README.md <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/222"><code>#222</code></a></li>
+<li>Add auto-changelog <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/228"><code>#228</code></a></li>
+<li>Fix stackbit issues <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/226"><code>#226</code></a></li>
+<li>Add Stackbit Configuration <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/223"><code>#223</code></a></li>
+<li>Replace {{ .URL }} with {{ .Permalink }} <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/216"><code>#216</code></a></li>
+<li>Adds an author to blog posts. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/209"><code>#209</code></a></li>
+<li>Fixes #212. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/213"><code>#213</code></a></li>
+<li>Add ukrainian translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/214"><code>#214</code></a></li>
+<li>Add swedish translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/208"><code>#208</code></a></li>
+<li>Deprecation messages fixes. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/196"><code>#196</code></a></li>
+<li>Fix README instructions <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/204"><code>#204</code></a></li>
+<li>Use git submodules <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/183"><code>#183</code></a></li>
+<li>Remove Google News meta tags <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/197"><code>#197</code></a></li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fix URL for menus (#230) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/229"><code>#229</code></a></li>
+<li>Add auto-changelog (#228) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/227"><code>#227</code></a> <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/227"><code>#227</code></a></li>
+<li>Fix stackbit issues (#226) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/224"><code>#224</code></a></li>
+<li>Add Stackbit Configuration (#223) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/200"><code>#200</code></a></li>
+<li>Fixes #212. (#213) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/212"><code>#212</code></a></li>
+<li>Deprecation messages fixes. (#196) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/180"><code>#180</code></a></li>
+</ul>
+<h2 id="251---2019-08-12">2.5.1 - 2019-08-12</h2>
+<h3 id="merged-4">Merged</h3>
+<ul>
+<li>remove deprecated meta tags for old Windows Mobile and BlackBerry <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/191"><code>#191</code></a></li>
+<li>localization for form-contact shortcode <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/185"><code>#185</code></a></li>
+<li>Fix min_version <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/189"><code>#189</code></a></li>
+<li>Add portuguese translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/179"><code>#179</code></a></li>
+<li>Add commento <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/178"><code>#178</code></a></li>
+<li>feat: add RU translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/177"><code>#177</code></a></li>
+<li>Spanish Translation <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/175"><code>#175</code></a></li>
+<li>Dutch translations. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/171"><code>#171</code></a></li>
+<li>Correcting issue with cached i18n menu <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/174"><code>#174</code></a></li>
+<li>Create zh.toml <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/170"><code>#170</code></a></li>
+<li>Fix TOC header <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/168"><code>#168</code></a></li>
+<li>Optimisation &ldquo;partialCached&rdquo; <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/165"><code>#165</code></a></li>
+<li>Add a link to &ldquo;mastodon&rdquo; <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/159"><code>#159</code></a></li>
+<li>Create fr.toml <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/157"><code>#157</code></a></li>
+<li>add i18n translation support <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/156"><code>#156</code></a></li>
+<li>Support hiding the featured image header text. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/155"><code>#155</code></a></li>
+<li>enable localization/modification of &ldquo;Recent&rdquo; string <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/154"><code>#154</code></a></li>
+<li>add basic support for post translations <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/144"><code>#144</code></a></li>
+<li>Keep article padding throughout widths <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/152"><code>#152</code></a></li>
+<li>Improve semantic structure of pages <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/151"><code>#151</code></a></li>
+<li>Improve social link accessibility <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/147"><code>#147</code></a></li>
+<li>Add explicit path to image example <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/146"><code>#146</code></a></li>
+<li>Open social media links in new tab and add Medium icon <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/143"><code>#143</code></a></li>
+<li>Make cover dimming class customisable. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/140"><code>#140</code></a></li>
+<li>Removed hardcoded theme sample hero image. This will allow the user to &ldquo;blank&rdquo; out the hero default set in the config. The if statement for blank was unreachable. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/133"><code>#133</code></a></li>
+<li>Use relative url function for custom CSS files <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/132"><code>#132</code></a></li>
+<li>Add Gitlab to social icons <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/131"><code>#131</code></a></li>
+<li>Add div to wrap social icons <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/128"><code>#128</code></a></li>
+<li>Fix asset paths when baseURL has sub-folder <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/103"><code>#103</code></a></li>
+<li>Add inheritance for social links. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/107"><code>#107</code></a></li>
+<li>Issue 98 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/101"><code>#101</code></a></li>
+<li>Replace Asset References with a data file instead of paths <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/96"><code>#96</code></a></li>
+<li>Pre-2.0 Enhancements <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/94"><code>#94</code></a></li>
+<li>Don&rsquo;t duplicate site title in home page TITLE tag <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/78"><code>#78</code></a></li>
+<li>Fix pagination <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/76"><code>#76</code></a></li>
+<li>#68|Parmeterize number of recent posts in index.html <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/69"><code>#69</code></a></li>
+<li>Fix typo in single.html <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/67"><code>#67</code></a></li>
+<li>Fixed line breaks in code (resolves budparr/gohugo-theme-ananke#56). <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/57"><code>#57</code></a></li>
+<li>Favicons <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/54"><code>#54</code></a></li>
+<li>indent fix <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/45"><code>#45</code></a></li>
+<li>Social icon updates <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/51"><code>#51</code></a></li>
+<li>Add GitHub social icon <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/48"><code>#48</code></a></li>
+<li>Make Hero image work out-of-the box <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/40"><code>#40</code></a></li>
+<li>Removed excess o in Facebook <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/34"><code>#34</code></a></li>
+<li>Fixes #31 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/32"><code>#32</code></a></li>
+<li>Bp/fix now function Fixes #29 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/30"><code>#30</code></a></li>
+<li>fix clunky construction on home page to get section name <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/25"><code>#25</code></a></li>
+<li>fix clunky construction on home page to get section name <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/24"><code>#24</code></a></li>
+<li>fix clunky construction on home page to get section name <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/17"><code>#17</code></a></li>
+<li>tweak hero default behavior <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/16"><code>#16</code></a></li>
+<li>improve terms template <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/15"><code>#15</code></a></li>
+<li>improve image handling for edge cases Fixes #11 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/14"><code>#14</code></a></li>
+<li>Improve featured image handling Ref #11 + minor homepage impvs <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/12"><code>#12</code></a></li>
+<li>Dev changes <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/10"><code>#10</code></a></li>
+<li>pull in dev changes <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/9"><code>#9</code></a></li>
+<li>keeping things in order <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/8"><code>#8</code></a></li>
+<li>Improve home page posts  <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/7"><code>#7</code></a></li>
+<li>make form email comment make more sense. Ref #5 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/6"><code>#6</code></a></li>
+<li>use a cleaner way to include language code <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/3"><code>#3</code></a></li>
+<li>update from DEV <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/2"><code>#2</code></a></li>
+<li>add taxonomy templates <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/pull/1"><code>#1</code></a></li>
+</ul>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Add blockquote styling <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/169"><code>#169</code></a></li>
+<li>Keep article padding throughout widths (#152) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/130"><code>#130</code></a></li>
+<li>Update readme for formspree change <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/150"><code>#150</code></a></li>
+<li>Improve semantic structure of pages (#151) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/149"><code>#149</code></a></li>
+<li>Add global background color class to footer <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/135"><code>#135</code></a></li>
+<li>Add div to wrap social icons (#128) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/127"><code>#127</code></a></li>
+<li>Fix article padding on mobile <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/115"><code>#115</code></a></li>
+<li>Make asset paths absolute <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/97"><code>#97</code></a></li>
+<li>Fix linkedin icon to match the other social icons <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/70"><code>#70</code></a></li>
+<li>Be smarter about linking to posts on home page. <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/50"><code>#50</code></a></li>
+<li>Add body_classes parameter to body <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/43"><code>#43</code></a></li>
+<li>Fixes #31 (#32) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/31"><code>#31</code></a></li>
+<li>Bp/fix now function Fixes #29 (#30) <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/29"><code>#29</code></a></li>
+<li>Merge pull request #14 from budparr/dev <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/11"><code>#11</code></a></li>
+<li>improve image handling for edge cases Fixes #11 <a href="https://github.com/theNewDynamic/gohugo-theme-ananke/issues/11"><code>#11</code></a></li>
+</ul>
+    </div>
+    <a href="/posts/changelog-old/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/changelog/" class="link black dim">
+        
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="changelog">Changelog</h1>
+<h2 id="2121-2025-05-13"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.12.0...v2.12.1">2.12.1</a> (2025-05-13)</h2>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>update README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a0019812ff62d978781392c765addbaee1c1eddf">a001981</a>)</li>
+</ul>
+<h3 id="theme">Theme</h3>
+<ul>
+<li><strong>fix:</strong> hyperlink text color on home different from other pages (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/cd830339f0dc4734236438aaeb03707c64d2c8de">cd83033</a>)</li>
+<li><strong>fix:</strong> hyperlink text color on home different from other pages (on more layouts) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/c78947380207ee002825c5ee58e48757f13605b8">c789473</a>)</li>
+<li><strong>fix:</strong> replace username only when given (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1027ebf14686d2a0a3829d66b79c694dc6afbc0d">1027ebf</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/843">#843</a></li>
+<li><strong>fix:</strong> use html.dir attribute configured in language setup (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/92ee7adbb8717c2788b047d9a94d4513ee75c02c">92ee7ad</a>)</li>
+</ul>
+<h3 id="refactors">Refactors</h3>
+<ul>
+<li>move all template methods to proper GoHugo methods (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/180471112e2ccc50150a90cab1684f70ea635390">1804711</a>)</li>
+<li>sort css classes (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/36503c4f9dabcb4aad8a5bd25f17af8341eec7a2">36503c4</a>)</li>
+</ul>
+<h3 id="build-system">Build System</h3>
+<ul>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/markdownlint-config from 2025.0.1 to 2025.0.2 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/824">#824</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/348b85867822f2086f753ed0941b44b4f9a1617b">348b858</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1795">#1795</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1794">#1794</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1793">#1793</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1777">#1777</a></li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/release-config from 2025.0.1 to 2025.0.2 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/825">#825</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/3f0b2aa33feefe18b76cb1b64fced8ae800fac5d">3f0b2aa</a>)</li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/tools from 2025.0.1 to 2025.0.2 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/828">#828</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/6ed950bd9bdb298367f4102a995c04e83206cbea">6ed950b</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1795">#1795</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1794">#1794</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1793">#1793</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1777">#1777</a></li>
+<li><strong>deps:</strong> bump postcss from 8.5.1 to 8.5.3 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/826">#826</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f6facde5b3451727970a0ab47303d15fc7197779">f6facde</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/2016">#2016</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/2012">#2012</a></li>
+<li><strong>deps:</strong> bump postcss-preset-env from 10.1.3 to 10.1.5 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/827">#827</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/3754523882d384b0a9176996304a45f9dca0bec1">3754523</a>), closes <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical/CHANGELOG.md/issues/810">/github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical/CHANGELOG.md#810</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/color-helpers/CHANGELOG.md/issues/502">/github.com/csstools/postcss-plugins/tree/main/packages/color-helpers/CHANGELOG.md#502</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/css-calc/CHANGELOG.md/issues/212">/github.com/csstools/postcss-plugins/tree/main/packages/css-calc/CHANGELOG.md#212</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/css-color-parser/CHANGELOG.md/issues/308">/github.com/csstools/postcss-plugins/tree/main/packages/css-color-parser/CHANGELOG.md#308</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/plugins/postcss-initial/CHANGELOG.md/issues/201">/github.com/csstools/postcss-plugins/tree/main/plugins/postcss-initial/CHANGELOG.md#201</a></li>
+<li><strong>deps:</strong> update dependencies (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/7e80c50deea0002bf053eb623c46bf2561511e06">7e80c50</a>)</li>
+<li><strong>deps:</strong> update dependencies (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/b96a6dd562fac9b8ab245345ffb7477a7d6cb101">b96a6dd</a>)</li>
+<li><strong>fix:</strong> remove exampleSite from setup (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/7a7de28a52e105c6be1e833b0cb926336eb0003b">7a7de28</a>)</li>
+</ul>
+<h2 id="2120-2025-02-09"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.11.3...v2.12.0">2.12.0</a> (2025-02-09)</h2>
+<h3 id="build-system-1">Build System</h3>
+<ul>
+<li><strong>fix:</strong> add release:minor script (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0e25604ceb6b8c69f5e21280927691e6b06bf41b">0e25604</a>)</li>
+</ul>
+<h2 id="2113-2025-02-09"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.11.2...v2.11.3">2.11.3</a> (2025-02-09)</h2>
+<h3 id="content">Content</h3>
+<ul>
+<li><strong>fix:</strong> add Netlify demo site to theme.toml (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/33e51d6b58f0a932dc6f0c1cb3ae2ec687c359c8">33e51d6</a>)</li>
+<li><strong>fix:</strong> use Hugo page on Wikipedia for sample link (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/50996e875fc4e9f3a6110e3863357689f4f9cb90">50996e8</a>)</li>
+</ul>
+<h3 id="documentation-1">Documentation</h3>
+<ul>
+<li><strong>fix:</strong> fix Formspree free plan description (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/774">#774</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f5a55994e27657525ec4b7d795700b16b16145fe">f5a5599</a>)</li>
+<li><strong>fix:</strong> fix markdown in README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/64541839631299339912c6f364705693d781f940">6454183</a>)</li>
+<li><strong>fix:</strong> remove ref to &lsquo;Production&rsquo; section in README (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/778">#778</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/2247bc582ccda9babd13d5db52a91ebe55458fb0">2247bc5</a>)</li>
+<li><strong>fix:</strong> typos (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/775">#775</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/61c3ec6fd4664b516c9955ef359649791c0701bc">61c3ec6</a>)</li>
+<li><strong>fix:</strong> update wording in README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/324da65cca35b864a7f1619a7cfb6f748a05aa29">324da65</a>)</li>
+<li>remove comments about HUGO_ENV (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e726c8b70f6a84812d998da4436765827483e602">e726c8b</a>)</li>
+</ul>
+<h3 id="theme-1">Theme</h3>
+<ul>
+<li><strong>fix:</strong> add author bylines and fix author generation (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/3fc0dba4012108749f433da017d9e02cf64b6503">3fc0dba</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/623">#623</a></li>
+<li><strong>fix:</strong> add show_recent_posts parameter to stop showing recent posts on index (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/795">#795</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/b06949eb2d8c8196527aab93fe92898fa56c9bc1">b06949e</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/123">#123</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/794">#794</a></li>
+<li><strong>fix:</strong> move by.html into single.html (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f6729791492796b322ae57b62f8047f3963c1bdf">f672979</a>)</li>
+<li><strong>fix:</strong> remove additional config load and some refactoring (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1f4ac20f4f5be825c0cb4f79d90ab6c8539224f3">1f4ac20</a>)</li>
+<li><strong>fix:</strong> rework of the way the main sections for index.html are calculated (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/40fea59c8b5474ccc60750bed159032b2a55ca28">40fea59</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/686">#686</a></li>
+<li><strong>fix:</strong> social follow/share using new config (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/821">#821</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e64f74c4929edbd8336d66fd81bdd36aa79828ee">e64f74c</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/808">#808</a></li>
+<li><strong>fix:</strong> update module paths to v2 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/4c02c19e519fbe75e8de1c51f07274a68eacefe6">4c02c19</a>)</li>
+</ul>
+<h3 id="refactors-1">Refactors</h3>
+<ul>
+<li><strong>codestyle:</strong> rewrite author meta tag generation (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/2bd232b5ec387fc5375e47ea942aec1444e69388">2bd232b</a>)</li>
+<li>using full file names for partials (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/5ab0adb0e1c5ec37b82419aeac7eecd6c2612a68">5ab0adb</a>)</li>
+</ul>
+<h3 id="chore">Chore</h3>
+<ul>
+<li>cleanup workspace configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d6ef8f2b758d8f8bf24d51257dcea46a2c0e671a">d6ef8f2</a>)</li>
+<li><strong>config:</strong> update dependabot to monthly runs (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/6a77b14638ca18d48f87d311a0de276d16f4156f">6a77b14</a>)</li>
+<li><strong>config:</strong> update gitignore (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1839b4fe3fa370dfa8c7f1eb84faa55079a4954f">1839b4f</a>)</li>
+<li><strong>fix:</strong> update PR template (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/02994de6b0f66560c9586415d88c4b2b4243dd1c">02994de</a>)</li>
+<li>remove go.sum from exampleSite (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1f8374642fe62573cbf0f98b4e9ceef68f039daa">1f83746</a>)</li>
+<li><strong>setup:</strong> set GO_VERSION to 1.21 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0ba75ea1e50ad5ddcaeb25f02bef64448ad42891">0ba75ea</a>)</li>
+<li><strong>setup:</strong> update gitignore file (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/799886d396100695c11168b83c253d5d6ebc678f">799886d</a>)</li>
+<li><strong>setup:</strong> update issue template (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/b119a21663b0df4688ceb5d18a2eed30c2d88974">b119a21</a>)</li>
+<li><strong>setup:</strong> update issue templates (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/294ab0b04b37506713bb776d70634010e95c875a">294ab0b</a>)</li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>improve configuration for example site (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/786">#786</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/8d55b508d3811e07d5fa5dfae08387537cf8e2d0">8d55b50</a>)</li>
+</ul>
+<h3 id="build-system-2">Build System</h3>
+<ul>
+<li><strong>config:</strong> add .nvmrc (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/78d6b6fd331fd3681ddf84de71b7b48f6fbe9fac">78d6b6f</a>)</li>
+<li><strong>config:</strong> update gitignore with Hugo generated files (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a2764932a6bb756b565f02fc559dd61144881b3c">a276493</a>)</li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/markdownlint-config from 2024.4.6 to 2024.4.8 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/788">#788</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/c708f0d15eafb163f289d7c50d99f7fd24ca4aea">c708f0d</a>)</li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/release-config from 2024.4.6 to 2024.4.8 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/787">#787</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/dfbaa5289f85503532f8f77d555c59906ce0d7de">dfbaa52</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1676">#1676</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1670">#1670</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1658">#1658</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1657">#1657</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1656">#1656</a></li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/tools from 2024.4.6 to 2024.4.8 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/789">#789</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/bedc2ec05f02a102207afcac34adb54f84d27d0e">bedc2ec</a>)</li>
+<li><strong>deps:</strong> bump postcss from 8.4.47 to 8.4.49 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/793">#793</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/40c8d5f5eea3034ce80b7c86d705da1027b638c4">40c8d5f</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1983">#1983</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1980">#1980</a></li>
+<li><strong>deps:</strong> bump postcss-preset-env from 10.0.8 to 10.0.9 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/790">#790</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/5ddbcd3da9c649ceda29796f601cf550339424d6">5ddbcd3</a>), closes <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer/CHANGELOG.md/issues/303">/github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer/CHANGELOG.md#303</a></li>
+<li><strong>deps:</strong> bump postcss-preset-env from 10.0.9 to 10.1.0 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/792">#792</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/8031d999a4ef2b0dfc260d4ee789270a3c4e80d0">8031d99</a>), closes <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/css-calc/CHANGELOG.md/issues/210">/github.com/csstools/postcss-plugins/tree/main/packages/css-calc/CHANGELOG.md#210</a></li>
+<li><strong>deps:</strong> update dependencies (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/891147fc3108a08c64af30dd8085a2df818832b4">891147f</a>)</li>
+<li><strong>deps:</strong> update dependencies (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/600bddab7cd7dc6e4032b531c65779ae249dfd5b">600bdda</a>)</li>
+<li><strong>deps:</strong> update dependencies (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9c30c1974e7b219cc598381ed93a974ad696b02e">9c30c19</a>)</li>
+<li><strong>feat:</strong> add discord notification for new releases (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/819f6730370988d3e0524a4f000550d153b2f534">819f673</a>)</li>
+<li><strong>fix:</strong> log server output into log file (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f5eaa5f8f79ff8d942a2cbcc0ac59d13a4665f4b">f5eaa5f</a>)</li>
+<li><strong>fix:</strong> remove obsolete CLI parameters from server commands (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1e84edf23bd9abecd1181bb97f0d0d7dcac705c9">1e84edf</a>)</li>
+<li><strong>setup:</strong> add .wireit to gitignore (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d67f0616584d28b60931e1a51f20db74f88ca1c8">d67f061</a>)</li>
+<li><strong>setup:</strong> more verbose server command (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/907f15826dff69fff10a2bf39179872e41b7c18f">907f158</a>)</li>
+</ul>
+<h3 id="ci">CI</h3>
+<ul>
+<li><strong>fix:</strong> remove CODEOWNERS structure (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e8ccda023c3621b19d23a9cde52526361a402347">e8ccda0</a>)</li>
+<li><strong>workflow:</strong> add CODEOWNERS for i18n (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/649eb224b7fc81a06d69a6a2eb9849496271fa4d">649eb22</a>)</li>
+</ul>
+<h2 id="2112-2024-10-27"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.11.1...v2.11.2">2.11.2</a> (2024-10-27)</h2>
+<h3 id="chore-1">Chore</h3>
+<ul>
+<li><strong>release:</strong> v2.11.1 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/065de4e1963100ab7c4241adab64d9e6647124a0">065de4e</a>)</li>
+</ul>
+<h2 id="2110-2024-10-24"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.6...v2.11.0">2.11.0</a> (2024-10-24)</h2>
+<h3 id="chore-2">Chore</h3>
+<ul>
+<li><strong>release:</strong> v2.11.0 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/503fbc91019814a24d8b4506422638fea869714d">503fbc9</a>)</li>
+</ul>
+<h2 id="2110-2024-10-24-1"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.6...v2.11.0">2.11.0</a> (2024-10-24)</h2>
+<h2 id="2101-prerelease6-2024-10-24"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.4...v2.10.1-prerelease.6">2.10.1-prerelease.6</a> (2024-10-24)</h2>
+<h3 id="documentation-2">Documentation</h3>
+<ul>
+<li><strong>fix:</strong> update theme.toml with min version and authors (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/ae14ccf4072c13069e1f28e3c5f39bce4b917885">ae14ccf</a>)</li>
+</ul>
+<h3 id="theme-2">Theme</h3>
+<ul>
+<li><strong>fix:</strong> add transform.Plainify to the summary body content of the share links (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/758">#758</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/2cfb09e9a3aa720b902535a5bdf3641bcd8a903f">2cfb09e</a>)</li>
+<li><strong>fix:</strong> paths to social func partials (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1bcc471e003643c5b72a2fad6c1024b16e829233">1bcc471</a>)</li>
+<li><strong>fix:</strong> remove caching of share links (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/757">#757</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/473c7c14c68d3e5a97dee31138a2b176c7ac2302">473c7c1</a>)</li>
+</ul>
+<h3 id="chore-3">Chore</h3>
+<ul>
+<li><strong>release:</strong> v2.10.1-prerelease.5 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/aced7bda5c3fea9afda93d0b87cf3337f2407d5b">aced7bd</a>)</li>
+</ul>
+<h3 id="configuration-1">Configuration</h3>
+<ul>
+<li><strong>fix:</strong> no default networks, move networks config to exampleSite (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/396d0138ace7c53a6378711dcd5570099bfa0b95">396d013</a>)</li>
+</ul>
+<h2 id="2101-prerelease5-2024-10-24"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.4...v2.10.1-prerelease.5">2.10.1-prerelease.5</a> (2024-10-24)</h2>
+<h3 id="documentation-3">Documentation</h3>
+<ul>
+<li><strong>fix:</strong> update theme.toml with min version and authors (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/ae14ccf4072c13069e1f28e3c5f39bce4b917885">ae14ccf</a>)</li>
+</ul>
+<h3 id="theme-3">Theme</h3>
+<ul>
+<li><strong>fix:</strong> add transform.Plainify to the summary body content of the share links (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/758">#758</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/2cfb09e9a3aa720b902535a5bdf3641bcd8a903f">2cfb09e</a>)</li>
+<li><strong>fix:</strong> paths to social func partials (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1bcc471e003643c5b72a2fad6c1024b16e829233">1bcc471</a>)</li>
+</ul>
+<h3 id="configuration-2">Configuration</h3>
+<ul>
+<li><strong>fix:</strong> no default networks, move networks config to exampleSite (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/396d0138ace7c53a6378711dcd5570099bfa0b95">396d013</a>)</li>
+</ul>
+<h2 id="2101-prerelease4-2024-10-23"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.3...v2.10.1-prerelease.4">2.10.1-prerelease.4</a> (2024-10-23)</h2>
+<h3 id="documentation-4">Documentation</h3>
+<ul>
+<li><strong>fix:</strong> add note about WIP on the README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0a307d7521bfd1e41daa3567a692f036351324a1">0a307d7</a>)</li>
+<li><strong>fix:</strong> update link to demo (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e22c42896a9222d94de69fffa752954aa969f8df">e22c428</a>)</li>
+</ul>
+<h3 id="chore-4">Chore</h3>
+<ul>
+<li><strong>deps:</strong> update dependencies (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/088c3e7a577c90c85080447341e4af962c3f4a53">088c3e7</a>)</li>
+</ul>
+<h3 id="build-system-3">Build System</h3>
+<ul>
+<li><strong>fix:</strong> revert to go 1.22 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d544d76af70ba83a5bdce2b58a1fc2fc79d03882">d544d76</a>)</li>
+</ul>
+<h2 id="2101-prerelease3-2024-10-21"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.0...v2.10.1-prerelease.3">2.10.1-prerelease.3</a> (2024-10-21)</h2>
+<h3 id="documentation-5">Documentation</h3>
+<ul>
+<li>add fontawesome license remark to README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d7a12f353aa1906bf66a6d12e064194596093a1a">d7a12f3</a>)</li>
+<li><strong>fix:</strong> add discord link (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a41140e4dfd1931c860e7c7082845062a1624978">a41140e</a>)</li>
+<li><strong>fix:</strong> remove obsolete docs (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e7f28b0de4effbb8f20760611873d226f833b278">e7f28b0</a>)</li>
+<li>typo (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e38869bc383e27ca10c4f09e2f3be170b0745284">e38869b</a>)</li>
+<li>typo (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f68e6ff4c3905323545ee4260766ed3b124929e3">f68e6ff</a>)</li>
+<li>update LICENSE.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0aec28fef66a40e9ff619520d4d98c757b046790">0aec28f</a>)</li>
+</ul>
+<h3 id="theme-4">Theme</h3>
+<ul>
+<li><strong>fix:</strong> bring some logic into /disabled sharing (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a9cd70d1e6b0dbec55c9ee8597add754a0a68893">a9cd70d</a>)</li>
+<li><strong>fix:</strong> header image positioning (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/731">#731</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9fc4b73a36721caeea48455b2c089dd476a00ecf">9fc4b73</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/729">#729</a></li>
+<li><strong>fix:</strong> proper configuration for all networks (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9df0c0a8789feb7a2d6d3163fdeea68cdd321b76">9df0c0a</a>)</li>
+<li><strong>fix:</strong> use internal methods to evaluate environment (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/cc6da237ea3e659a19be8faaa0f365898b5b878f">cc6da23</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/625">#625</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/733">#733</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/453">#453</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/574">#574</a></li>
+</ul>
+<h3 id="chore-5">Chore</h3>
+<ul>
+<li><strong>config:</strong> add markdownlint configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/65c8a115e1e823697afd446c2990850e05934128">65c8a11</a>)</li>
+<li><strong>release:</strong> v2.10.1-prerelease.1 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/5afb33c5c1a17c4a8c3de9b5fb8c420c92c327d5">5afb33c</a>)</li>
+<li><strong>release:</strong> v2.10.1-prerelease.2 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9332bad76670f87a45f7f2f065ac491401aa81d2">9332bad</a>)</li>
+</ul>
+<h3 id="build-system-4">Build System</h3>
+<ul>
+<li><strong>fix:</strong> proper replacement path (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e8f39dd2ed953c6120e554888287f78a0fb3e00f">e8f39dd</a>)</li>
+</ul>
+<h2 id="2101-prerelease2-2024-10-21"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.0...v2.10.1-prerelease.2">2.10.1-prerelease.2</a> (2024-10-21)</h2>
+<h3 id="documentation-6">Documentation</h3>
+<ul>
+<li>add fontawesome license remark to README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d7a12f353aa1906bf66a6d12e064194596093a1a">d7a12f3</a>)</li>
+<li><strong>fix:</strong> add discord link (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a41140e4dfd1931c860e7c7082845062a1624978">a41140e</a>)</li>
+<li>typo (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e38869bc383e27ca10c4f09e2f3be170b0745284">e38869b</a>)</li>
+<li>typo (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f68e6ff4c3905323545ee4260766ed3b124929e3">f68e6ff</a>)</li>
+<li>update LICENSE.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0aec28fef66a40e9ff619520d4d98c757b046790">0aec28f</a>)</li>
+</ul>
+<h3 id="theme-5">Theme</h3>
+<ul>
+<li><strong>fix:</strong> bring some logic into /disabled sharing (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a9cd70d1e6b0dbec55c9ee8597add754a0a68893">a9cd70d</a>)</li>
+<li><strong>fix:</strong> proper configuration for all networks (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9df0c0a8789feb7a2d6d3163fdeea68cdd321b76">9df0c0a</a>)</li>
+</ul>
+<h3 id="chore-6">Chore</h3>
+<ul>
+<li><strong>config:</strong> add markdownlint configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/65c8a115e1e823697afd446c2990850e05934128">65c8a11</a>)</li>
+<li><strong>release:</strong> v2.10.1-prerelease.1 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/5afb33c5c1a17c4a8c3de9b5fb8c420c92c327d5">5afb33c</a>)</li>
+</ul>
+<h3 id="build-system-5">Build System</h3>
+<ul>
+<li><strong>fix:</strong> proper replacement path (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e8f39dd2ed953c6120e554888287f78a0fb3e00f">e8f39dd</a>)</li>
+</ul>
+<h2 id="2101-prerelease1-2024-10-21"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.1-prerelease.0...v2.10.1-prerelease.1">2.10.1-prerelease.1</a> (2024-10-21)</h2>
+<h3 id="documentation-7">Documentation</h3>
+<ul>
+<li>add fontawesome license remark to README.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d7a12f353aa1906bf66a6d12e064194596093a1a">d7a12f3</a>)</li>
+<li><strong>fix:</strong> add discord link (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a41140e4dfd1931c860e7c7082845062a1624978">a41140e</a>)</li>
+<li>typo (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/f68e6ff4c3905323545ee4260766ed3b124929e3">f68e6ff</a>)</li>
+<li>update LICENSE.md (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0aec28fef66a40e9ff619520d4d98c757b046790">0aec28f</a>)</li>
+</ul>
+<h3 id="theme-6">Theme</h3>
+<ul>
+<li><strong>fix:</strong> bring some logic into /disabled sharing (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a9cd70d1e6b0dbec55c9ee8597add754a0a68893">a9cd70d</a>)</li>
+<li><strong>fix:</strong> proper configuration for all networks (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9df0c0a8789feb7a2d6d3163fdeea68cdd321b76">9df0c0a</a>)</li>
+</ul>
+<h3 id="chore-7">Chore</h3>
+<ul>
+<li><strong>config:</strong> add markdownlint configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/65c8a115e1e823697afd446c2990850e05934128">65c8a11</a>)</li>
+</ul>
+<h2 id="2101-prerelease0-2024-10-20"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.0...v2.10.1-prerelease.0">2.10.1-prerelease.0</a> (2024-10-20)</h2>
+<h3 id="content-1">Content</h3>
+<ul>
+<li><strong>fix:</strong> remove default value from front matter (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d866e892032c84d57f766b51f8e087f311fe3da4">d866e89</a>)</li>
+</ul>
+<h3 id="documentation-8">Documentation</h3>
+<ul>
+<li>changelog fixes (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/33178c0d498edb18634bfe0f906ca191796ce307">33178c0</a>)</li>
+<li>update README.md with markup changes (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/739">#739</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d4898fb4cf5a9bd2cd778b6b92f9bcf28258968c">d4898fb</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/735">#735</a></li>
+</ul>
+<h3 id="theme-7">Theme</h3>
+<ul>
+<li><strong>feat:</strong> social media follow links (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/4f3e709d8334f7f2634efa91450db96433c550d5">4f3e709</a>)</li>
+<li><strong>feat:</strong> social share links (wip) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d9f9cb513f78fc48467b95c6f24a49542087b815">d9f9cb5</a>)</li>
+<li><strong>fix:</strong> add configs for various networks (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e2360e7ce7f657f426dc5ad8142f0032f4976911">e2360e7</a>)</li>
+<li><strong>fix:</strong> add labels and label override functionality (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/7913086a0f255a8c3a7878a152471270d0b15805">7913086</a>)</li>
+<li><strong>fix:</strong> cleanup unused functions (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/825ea52af92555f0f0aaff912afdc179f2a80aaf">825ea52</a>)</li>
+<li><strong>fix:</strong> hover color for social icons (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/14eeb655ce9dacaa93bcc4e5fc4f3359cc9ef719">14eeb65</a>)</li>
+<li><strong>fix:</strong> making sure the noopener rel attribute stays even with other configurations (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/8762f563f9bf0d35a1c3ece6bf8bdd1fc63b054c">8762f56</a>)</li>
+<li><strong>fix:</strong> override profile link generation with full link (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9254c455c97b59963af6bf2d1c791cc6cb6c10df">9254c45</a>)</li>
+<li><strong>fix:</strong> smaller config fixes for social media integration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/ef4a6a0cfef5bdd2550512b1aa5499f036b8e8b2">ef4a6a0</a>)</li>
+</ul>
+<h3 id="refactors-2">Refactors</h3>
+<ul>
+<li>removed a space (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/c018578ca098da4e86b2b9a83bdc9a5055247f90">c018578</a>)</li>
+<li>Simplify lang attribute in html element (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0b0fe2fd451a1737df8ecd0e748a384de7de78cc">0b0fe2f</a>)</li>
+</ul>
+<h3 id="chore-8">Chore</h3>
+<ul>
+<li><strong>config:</strong> update workspace configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/0608f9f9fcd782c74335c557ee08d6f1106c75e2">0608f9f</a>)</li>
+<li><strong>deps:</strong> update go module configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/dcc979b66db3dec4fe3bf63cf339e8e4f5497941">dcc979b</a>)</li>
+<li><strong>git:</strong> merge pull request <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/738">#738</a> from jmooring:simplify-lang-attribute (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/773f06c207bf99a02b4c43d9bd46137ef556eb8b">773f06c</a>)</li>
+<li><strong>git:</strong> merge pull request <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/740">#740</a> from theNewDynamic/fix/netlify-config (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/8e1a6dc21313d3a765f122c2bd76bdc8ad174e67">8e1a6dc</a>)</li>
+<li><strong>git:</strong> revert last commit (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1ff34173399dad9822fc904c470a344b7b633c3b">1ff3417</a>)</li>
+</ul>
+<h3 id="configuration-3">Configuration</h3>
+<ul>
+<li><strong>fix:</strong> move paginate to pagination.pagerSize (deprecation) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/363bd2e656f0bcb60176204073844dcf45b1aefd">363bd2e</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/746">#746</a></li>
+</ul>
+<h3 id="build-system-6">Build System</h3>
+<ul>
+<li>add netlify.toml for Netlify deploy (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/ad80eb217f9760054ec368bb00ca28c731dd5157">ad80eb2</a>)</li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/release-config from 2024.3.46 to 2024.4.5 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/742">#742</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/37f11f0dbcb255e199b681ef59663b83e59006d8">37f11f0</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1602">#1602</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1603">#1603</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1601">#1601</a></li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/tools from 2024.3.46 to 2024.4.5 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/46376750ccbd2f562e573879d85eb1f584298c39">4637675</a>)</li>
+<li><strong>deps-dev:</strong> bump @davidsneighbour/tools from 2024.3.46 to 2024.4.5 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/744">#744</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/73eaa774a60b72206caa894e5f0d458ea2ac0513">73eaa77</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1602">#1602</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1603">#1603</a> <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/1601">#1601</a></li>
+<li><strong>deps:</strong> bump postcss-preset-env from 10.0.5 to 10.0.7 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/743">#743</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d240de7419c0869cc410f19fd23b933e60d61915">d240de7</a>), closes <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media/CHANGELOG.md/issues/1103">/github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media/CHANGELOG.md#1103</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/media-query-list-parser/CHANGELOG.md/issues/400">/github.com/csstools/postcss-plugins/tree/main/packages/media-query-list-parser/CHANGELOG.md#400</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer/CHANGELOG.md/issues/302">/github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer/CHANGELOG.md#302</a> <a href="https://github.com/thenewdynamic//github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media/CHANGELOG.md/issues/1102">/github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media/CHANGELOG.md#1102</a></li>
+<li><strong>feat:</strong> add proper npm run server script (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/6e465653ec8d8a55c6425c9b7129ac62706f042c">6e46565</a>)</li>
+<li><strong>fix:</strong> proper configuration for netlify (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/db073d61a0a28bdfdb06871908e90c27254d4dd0">db073d6</a>)</li>
+</ul>
+<h2 id="2100-2024-09-28"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.10.0-prerelease.0...v2.10.0">2.10.0</a> (2024-09-28)</h2>
+<h2 id="2100-prerelease0-2024-09-26"><a href="https://github.com/thenewdynamic/gohugo-theme-ananke/compare/v2.9.1...v2.10.0-prerelease.0">2.10.0-prerelease.0</a> (2024-09-26)</h2>
+<h3 id="documentation-9">Documentation</h3>
+<ul>
+<li><strong>fix:</strong> add note about powershell environment (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/c1530b7c0db44fea3c65b0e4a0393cf83de81d19">c1530b7</a>)</li>
+<li><strong>fix:</strong> move old changelog (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/e086aa9f8a3fc86bd819110c96ac570356d638a0">e086aa9</a>)</li>
+<li><strong>fix:</strong> proper TOML format for frontmatter sample (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/717">#717</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/ca6da4883e767628fff9b09827d7ac05c81a3df7">ca6da48</a>)</li>
+<li><strong>fix:</strong> remove todo note that can&rsquo;t be traced to any issue (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/b1f6a2834f9c2b641be3c3f17087930e8e90edcc">b1f6a28</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add canonical url support (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/650">#650</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/221a0d881758f6b6b7fba99eecb894cd5fa911ec">221a0d8</a>)</li>
+</ul>
+<h3 id="theme-8">Theme</h3>
+<ul>
+<li><strong>fix:</strong> replace deprecated resources.ToCSS with css.Sass (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/321680f6ee8f36ffa900ba5ab55b1d60ddfe258b">321680f</a>), closes <a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/712">#712</a></li>
+<li><strong>i18n:</strong> add indonesian language (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/issues/672">#672</a>) (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/53463ffaa20adb213452ee39baa2223a34b63600">53463ff</a>)</li>
+</ul>
+<h3 id="refactors-3">Refactors</h3>
+<ul>
+<li>indentation and file formatting changes (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/76460d7a33bd77e72d62749e4f547e97c01cd8fe">76460d7</a>)</li>
+</ul>
+<h3 id="chore-9">Chore</h3>
+<ul>
+<li>add package lockfile (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/8a7847ffc37269b1194a3e3051fa464a69b75e41">8a7847f</a>)</li>
+<li><strong>config:</strong> add dependabot configuration (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/3c3478addf7cc6aa69a768bb1a95464967cba075">3c3478a</a>)</li>
+<li><strong>config:</strong> add github templates for issues and pull requests (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/7c5c9c307b474f20d02dd48d910a79c8f85c414d">7c5c9c3</a>)</li>
+<li><strong>config:</strong> add resources to ignored files (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/549d73576e31becdbf714cb75e636ddc5a256ddf">549d735</a>)</li>
+<li><strong>config:</strong> add workspace configuration file for vscode (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/1a4ad28b87ac8b6dca7a80dd77fabc14d554b5cb">1a4ad28</a>)</li>
+<li><strong>config:</strong> move configuration into config subfolder structure and require 0.128.0 (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/4e613a92d0fa3d81b40a0047e9d3fa592dc87f3f">4e613a9</a>)</li>
+<li><strong>config:</strong> update dependencies and package.json content (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/d0490cba6625174141c9496523a89d1a01a832c3">d0490cb</a>)</li>
+<li><strong>fix:</strong> being maintained again (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/9a0a974089461e25f96aa7727e90452754d4388b">9a0a974</a>)</li>
+<li><strong>fix:</strong> full URL to discussion forum (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/791c4008ac6277753694286d3267c9c471b7894f">791c400</a>)</li>
+</ul>
+<h3 id="build-system-7">Build System</h3>
+<ul>
+<li><strong>fix:</strong> add release scripts (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/a889122fbd5c65aa6c7f2329b2383cdde2220ae5">a889122</a>)</li>
+<li><strong>fix:</strong> recover build system (<a href="https://github.com/thenewdynamic/gohugo-theme-ananke/commit/dccde1ec30fbb58e4df82941e15faa131746b82f">dccde1e</a>)</li>
+</ul>
+<h2 id="older-changelogs">older changelogs</h2>
+<p>Find older changelog entries in .github/changelog-old.md</p>
+    </div>
+    <a href="/posts/changelog/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/4/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

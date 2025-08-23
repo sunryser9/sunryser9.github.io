@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Master JVM monitoring and performance tuning for your production Java applications. Dive deep into Garbage Collection, memory management, and essential tools like JFR, JConsole, and VisualVM to optimize performance and prevent bottlenecks.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="By JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/jvm-monitoring-performance-tuning/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/jvm-monitoring-performance-tuning/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications">
+  <meta property="og:description" content="Master JVM monitoring and performance tuning for your production Java applications. Dive deep into Garbage Collection, memory management, and essential tools like JFR, JConsole, and VisualVM to optimize performance and prevent bottlenecks.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-02T14:30:00+05:30">
+    <meta property="article:modified_time" content="2025-08-02T14:30:00+05:30">
+    <meta property="article:tag" content="JVM">
+    <meta property="article:tag" content="Performance Tuning">
+    <meta property="article:tag" content="Monitoring">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Garbage Collection">
+    <meta property="article:tag" content="Memory Management">
+
+  <meta itemprop="name" content="JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications">
+  <meta itemprop="description" content="Master JVM monitoring and performance tuning for your production Java applications. Dive deep into Garbage Collection, memory management, and essential tools like JFR, JConsole, and VisualVM to optimize performance and prevent bottlenecks.">
+  <meta itemprop="datePublished" content="2025-08-02T14:30:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-02T14:30:00+05:30">
+  <meta itemprop="wordCount" content="1634">
+  <meta itemprop="keywords" content="JVM,performance,tuning,,Java,memory,optimization,,Garbage,Collection,tuning,,JVM,monitoring,tools,,production,Java,applications,,JFR,,JConsole,,VisualVM,,Java,performance,guide,,JVM,diagnostics,,Heap,analysis,,Java,application,bottlenecks">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications">
+  <meta name="twitter:description" content="Master JVM monitoring and performance tuning for your production Java applications. Dive deep into Garbage Collection, memory management, and essential tools like JFR, JConsole, and VisualVM to optimize performance and prevent bottlenecks.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications</h1>
+      
+      <p class="tracked"><strong>By JavaYou.com Team</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-02T14:30:00+05:30">August 2, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="jvm-monitoring-and-performance-tuning-a-comprehensive-guide-for-production-java-applications">JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications</h1>
+<p>Welcome, Java engineers and site reliability experts! In the demanding world of production applications, simply writing functional code isn&rsquo;t enough. The true test of a robust Java application lies in its <strong>performance, stability, and resource efficiency</strong> under real-world load. And at the heart of every running Java application is the <strong>Java Virtual Machine (JVM)</strong>.</p>
+<p>Optimizing the JVM is often the most critical, yet frequently overlooked, aspect of ensuring your Java applications run smoothly, consume fewer resources, and scale effectively. This comprehensive guide from JavaYou.com will demystify JVM monitoring and performance tuning, providing you with the knowledge and tools to keep your production Java applications running at peak performance.</p>
+<h2 id="1-why-jvm-performance-tuning-matters-so-much">1. Why JVM Performance Tuning Matters So Much</h2>
+<p>Imagine a beautifully designed microservice that processes orders, but under moderate load, its response times spike, or it crashes with an <code>OutOfMemoryError</code>. The culprit? Often, it&rsquo;s not the application logic itself, but an unoptimized JVM struggling to manage memory, execute threads, or handle garbage collection efficiently.</p>
+<p>Effective JVM tuning can lead to:</p>
+<ul>
+<li><strong>Reduced Latency:</strong> Faster response times for your users or integrated systems.</li>
+<li><strong>Increased Throughput:</strong> Your application can handle more requests per second.</li>
+<li><strong>Lower Infrastructure Costs:</strong> Optimized JVMs require fewer CPU and memory resources, meaning you can run more services on the same hardware or smaller cloud instances.</li>
+<li><strong>Improved Stability:</strong> Fewer <code>OutOfMemoryError</code> crashes, less unpredictable behavior, and more consistent performance.</li>
+<li><strong>Faster Startup Times:</strong> Crucial for modern cloud-native and serverless deployments.</li>
+</ul>
+<h2 id="2-understanding-the-jvms-architecture-a-quick-recap">2. Understanding the JVM&rsquo;s Architecture (A Quick Recap)</h2>
+<p>Before tuning, it&rsquo;s essential to grasp the key components of the JVM that directly impact performance:</p>
+<ul>
+<li><strong>Classloader Subsystem:</strong> Loads, links, and initializes class files.</li>
+<li><strong>Runtime Data Areas:</strong>
+<ul>
+<li><strong>Method Area:</strong> Stores class-level data (metadata, static variables, code for methods). Shared among all threads.</li>
+<li><strong>Heap Area:</strong> The largest part of the JVM memory, where all object instances and arrays are allocated. This is the primary focus of Garbage Collection (GC) tuning. Shared among all threads.</li>
+<li><strong>JVM Stacks:</strong> Stores local variables and partial results. Each thread has its own private JVM stack.</li>
+<li><strong>PC Registers:</strong> Stores the address of the currently executing instruction. Each thread has its own private PC register.</li>
+<li><strong>Native Method Stacks:</strong> Stores information used by native methods.</li>
+</ul>
+</li>
+<li><strong>Execution Engine:</strong> Executes the bytecode, involving:
+<ul>
+<li><strong>Interpreter:</strong> Interprets bytecode line by line.</li>
+<li><strong>JIT (Just-In-Time) Compiler:</strong> Compiles frequently executed bytecode sections into native machine code for faster execution.</li>
+<li><strong>Garbage Collector (GC):</strong> Automatically reclaims memory used by objects that are no longer referenced. This is where most tuning efforts are directed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-demystifying-garbage-collection-gc-and-memory-management">3. Demystifying Garbage Collection (GC) and Memory Management</h2>
+<p>Garbage Collection is arguably the single most impactful factor in JVM performance. An inefficient GC can lead to &ldquo;Stop-The-World&rdquo; (STW) pauses, where your entire application freezes while GC runs.</p>
+<h3 id="key-gc-concepts">Key GC Concepts:</h3>
+<ul>
+<li><strong>Generational Hypothesis:</strong> Most objects are short-lived, and a few are long-lived. The Heap is divided into:
+<ul>
+<li><strong>Young Generation (Eden, S0, S1):</strong> New objects are allocated here. Most objects die quickly (minor GC).</li>
+<li><strong>Old Generation (Tenured):</strong> Long-lived objects that survive multiple minor GCs are promoted here (major GC or full GC).</li>
+<li><strong>Metaspace (Java 8+):</strong> Replaced PermGen. Stores class metadata, dynamically resizes, and avoids OOMEs related to classloading.</li>
+</ul>
+</li>
+<li><strong>GC Algorithms:</strong>
+<ul>
+<li><strong>Serial GC:</strong> Single-threaded, simple. Not for production.</li>
+<li><strong>Parallel GC (Throughput Collector):</strong> Default in Java 8. Multi-threaded young and old generation collection. Still &ldquo;stop-the-world.&rdquo; Good for high throughput where latency spikes are acceptable.</li>
+<li><strong>Concurrent Mark-Sweep (CMS) GC:</strong> Low-pause. Primarily concurrent, but has some STW phases. Deprecated in Java 9, removed in Java 14.</li>
+<li><strong>Garbage-First (G1) GC:</strong> Default from Java 9+. Region-based, concurrent, aims for high throughput and low pauses. Predictable pause targets. Excellent general-purpose collector.</li>
+<li><strong>ZGC (Z Garbage Collector) / Shenandoah:</strong> Low-latency, scalable collectors. Concurrent, aims for sub-millisecond pauses regardless of heap size. Ideal for very large heaps and extremely low-latency requirements. (Experimental in earlier versions, production-ready in newer Javas).</li>
+</ul>
+</li>
+</ul>
+<h3 id="common-gc-related-issues">Common GC-Related Issues:</h3>
+<ul>
+<li><strong>High GC Pauses:</strong> Long STW pauses impacting latency.</li>
+<li><strong>Frequent GC Cycles:</strong> Too much memory churn leading to constant GC activity.</li>
+<li><strong><code>OutOfMemoryError</code> (OOME):</strong> Heap exhaustion (<code>java.lang.OutOfMemoryError: Java heap space</code>) or Metaspace exhaustion (<code>java.lang.OutOfMemoryError: Metaspace</code>).</li>
+</ul>
+<h2 id="4-essential-jvm-monitoring-tools">4. Essential JVM Monitoring Tools</h2>
+<p>To tune effectively, you must first monitor. These tools are indispensable:</p>
+<ul>
+<li><strong>JVisualVM (Java VisualVM):</strong> A powerful all-in-one visual tool included with the JDK. It can monitor local and remote JVMs, view heap dumps, analyze GC activity, monitor threads, and even profile CPU/memory usage.
+<ul>
+<li><strong>How to launch:</strong> Type <code>jvisualvm</code> in your terminal.</li>
+</ul>
+</li>
+<li><strong>JConsole (Java Monitoring and Management Console):</strong> Another JDK tool that uses JMX (Java Management Extensions) to monitor JVM resources like memory, threads, classes, and MBeans. Simpler than VisualVM.
+<ul>
+<li><strong>How to launch:</strong> Type <code>jconsole</code> in your terminal.</li>
+</ul>
+</li>
+<li><strong>JMC (Java Mission Control) &amp; JFR (Java Flight Recorder):</strong> JFR is a low-overhead data collection framework for the JVM, included in the JDK (from Java 11, commercial feature in Java 8 required license). JMC is the visualization tool for JFR recordings. JFR records events from the JVM and application, providing deep insights into runtime behavior, hot methods, lock contention, GC activity, I/O, etc.
+<ul>
+<li><strong>Starting JFR:</strong> <code>-XX:+FlightRecorder -XX:StartFlightRecording=duration=60s,filename=myrecording.jfr</code></li>
+<li><strong>Analyzing with JMC:</strong> Open the <code>.jfr</code> file in JMC.</li>
+</ul>
+</li>
+<li><strong>Built-in JVM Arguments and Tools:</strong>
+<ul>
+<li><code>-Xms&lt;size&gt;</code> and <code>-Xmx&lt;size&gt;</code>: Initial and maximum heap size. Critical for memory allocation.</li>
+<li><code>-XX:+PrintGCDetails -XX:+PrintGCDateStamps</code>: Prints detailed GC logs.</li>
+<li><code>jstat</code>: Command-line tool to monitor JVM statistics (GC, class loading, JIT compilation). Example: <code>jstat -gcutil &lt;pid&gt; 1s</code></li>
+<li><code>jmap</code>: Command-line tool to print memory maps or heap histograms for a running process, or to dump the heap. Example: <code>jmap -heap &lt;pid&gt;</code>, <code>jmap -dump:format=b,file=heap.hprof &lt;pid&gt;</code></li>
+<li><code>jstack</code>: Command-line tool to print Java thread stack traces for a running process. Useful for deadlocks, high CPU usage. Example: <code>jstack &lt;pid&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-practical-jvm-performance-tuning-strategies">5. Practical JVM Performance Tuning Strategies</h2>
+<p>Tuning is iterative: monitor, analyze, tune, repeat.</p>
+<h3 id="51-heap-size-allocation--xms--xmx">5.1. Heap Size Allocation (<code>-Xms</code>, <code>-Xmx</code>)</h3>
+<ul>
+<li><strong>Rule of Thumb:</strong> Start by setting <code>-Xms</code> (initial heap size) and <code>-Xmx</code> (maximum heap size) to the <em>same value</em>. This prevents the JVM from constantly resizing the heap, which can cause minor pauses.</li>
+<li><strong>Determine Size:</strong> Start with a reasonable amount (e.g., 2GB, 4GB) and monitor. Don&rsquo;t over-allocate, as it impacts GC pauses. Don&rsquo;t under-allocate, causing frequent OOMEs.</li>
+<li><strong>Containers:</strong> In containerized environments (Docker, Kubernetes), be cautious. Ensure your JVM&rsquo;s <code>Xmx</code> does not exceed the container&rsquo;s memory limit, or the container will be killed. (JVMs older than Java 10 might not correctly detect container memory limits; use <code>-XX:MaxRAMPercentage</code> for newer JVMs or explicit <code>Xmx</code>).</li>
+</ul>
+<h3 id="52-choosing-the-right-garbage-collector">5.2. Choosing the Right Garbage Collector</h3>
+<ul>
+<li><strong>Modern Java (Java 11+):</strong>
+<ul>
+<li><strong>G1 GC:</strong> Still the default and a great general-purpose choice for balanced throughput and pause times. Suitable for most server applications.</li>
+<li><strong>ZGC / Shenandoah:</strong> Consider these for applications with very large heaps (many GBs to TBs) and strict, sub-millisecond latency requirements. They are designed to scale pauses almost independently of heap size.</li>
+</ul>
+</li>
+<li><strong>Legacy Java (Java 8):</strong>
+<ul>
+<li><strong>Parallel GC:</strong> Default. Good for high throughput if occasional long pauses are acceptable.</li>
+<li><strong>CMS GC (if you absolutely need low pause):</strong> Though deprecated, some legacy systems still use it. Be aware of its known issues (fragmentation).</li>
+<li><strong>G1 GC:</strong> If using Java 8u112+, G1 can be a good option for lower pauses than Parallel GC. Enable with <code>-XX:+UseG1GC</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="53-gc-tuning-parameters-beyond-the-basics">5.3. GC Tuning Parameters (Beyond the basics)</h3>
+<ul>
+<li><strong>Print GC Logs:</strong> Always enable detailed GC logging during initial tuning:
+<ul>
+<li><code>-Xlog:gc*:file=gc.log</code>: For Java 9+ (unified logging).</li>
+<li><code>-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:gc.log</code>: For Java 8.</li>
+<li>Analyze these logs using tools like GCViewer or GCEasy.</li>
+</ul>
+</li>
+<li><strong>Young Generation Size (G1):</strong> <code>–XX:G1NewSizePercent</code> and <code>–XX:G1MaxNewSizePercent</code>. Usually, G1 manages this well.</li>
+<li><strong>Target Pause Time (G1):</strong> <code>–XX:MaxGCPauseMillis=&lt;milliseconds&gt;</code>. G1 will <em>try</em> to meet this target, but it’s not a guarantee.</li>
+<li><strong>Adaptive Policy:</strong> Let the GC adapt. Avoid over-tuning too many minor flags initially.</li>
+</ul>
+<h3 id="54-thread-pool-sizing">5.4. Thread Pool Sizing</h3>
+<ul>
+<li><strong>Too Few Threads:</strong> Leads to queues and delays.</li>
+<li><strong>Too Many Threads:</strong> Leads to high context switching overhead, consuming more CPU and memory.</li>
+<li><strong>CPU-bound:</strong> Number of threads = Number of CPU cores.</li>
+<li><strong>I/O-bound:</strong> Number of threads = Number of CPU cores * (1 + Wait Time / Compute Time).</li>
+<li><strong>Monitoring:</strong> Use JConsole/VisualVM/JFR to identify thread contention, deadlocks, and bottlenecks. <code>jstack</code> is vital for analyzing thread dumps.</li>
+</ul>
+<h3 id="55-code-level-optimizations-beyond-jvm-flags">5.5. Code-Level Optimizations (Beyond JVM Flags)</h3>
+<p>While JVM flags are powerful, sometimes the bottleneck is in your code:</p>
+<ul>
+<li><strong>Object Allocation Rate:</strong> High object creation rates put more pressure on GC. Profile your application to find &ldquo;hot spots&rdquo; of object allocation.</li>
+<li><strong>Immutable Objects:</strong> Encourage immutability. While seemingly creating more objects, it simplifies concurrency and can be optimized by GC.</li>
+<li><strong>Data Structures:</strong> Use efficient data structures for your access patterns.</li>
+<li><strong>Caching:</strong> Implement caching layers (e.g., Guava, Caffeine, Redis) to reduce repetitive computations or database calls.</li>
+<li><strong>Database Query Optimization:</strong> Slow queries are a common performance killer. Optimize SQL, add indexes, and use connection pooling.</li>
+<li><strong>Logging Levels:</strong> Excessive logging can introduce significant I/O overhead. Tune logging levels appropriately for production.</li>
+</ul>
+<h2 id="6-continuous-monitoring-in-production">6. Continuous Monitoring in Production</h2>
+<p>JVM tuning is not a one-time event. Production environments are dynamic. Implement continuous monitoring:</p>
+<ul>
+<li><strong>Metrics Collection:</strong> Use tools like Prometheus, Micrometer, or New Relic/Datadog to collect JVM metrics (heap usage, GC pauses, thread count, CPU, memory, uptime) and application-specific metrics.</li>
+<li><strong>Dashboards:</strong> Visualize these metrics using Grafana, Kibana, or your APM tool’s dashboards.</li>
+<li><strong>Alerting:</strong> Set up alerts for critical thresholds (e.g., high GC pause times, low free memory, high CPU usage, OOMEs).</li>
+<li><strong>Distributed Tracing:</strong> Tools like Zipkin, Jaeger, or Spring Cloud Sleuth help trace requests across microservices, identifying bottlenecks in complex architectures.</li>
+</ul>
+<h2 id="the-journey-to-a-high-performance-jvm">The Journey to a High-Performance JVM</h2>
+<p>JVM monitoring and performance tuning are ongoing processes that require a blend of theoretical understanding and practical application. By leveraging the right tools, understanding GC algorithms, and systematically analyzing your application&rsquo;s behavior under load, you can unlock significant performance gains, ensuring your Java applications are not just functional, but truly optimized for the demands of a production environment.</p>
+<p>Start small, monitor aggressively, and iterate. Your users and your infrastructure budget will thank you!</p>
+<p>What are your go-to JVM tuning tips or monitoring tools? Share your experiences and questions in the comments below!</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/jvm/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">JVM</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/performance-tuning/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Performance Tuning</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/monitoring/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Monitoring</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/java/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Java</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/garbage-collection/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Garbage Collection</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/memory-management/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Memory Management</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/jfr/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">JFR</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/jconsole/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">JConsole</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/visualvm/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">VisualVM</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/production-applications/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Production Applications</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/optimization/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Optimization</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-3-ultimate-guide/">Spring Boot 3: The Ultimate Guide to Modern Java Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-data-jpa-advanced-techniques/">Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-best-practices-production/">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes-2/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/reactive-programming-spring-webflux-r2dbc/">Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/top-10-java-ai-tools/">Top 10 Java Tools for Developers in 2025: Boosting Productivity with AI-Powered Assistance</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/top-10-java-tools-2025/">Top 10 Java Tools for Developers in 2025: Boosting Productivity with AI-Powered Assistance</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-security-oauth2-jwt/">Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-resilient-spring-boot-microservices/">Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-intelligent-java-apps-ai-spring-ai/">Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-microservices-spring-boot-3/">Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

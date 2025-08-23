@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A comprehensive deep dive into GraalVM&#39;s Ahead-of-Time (AOT) compilation and its application in Spring Boot. Learn how to build native images to achieve near-instant startup times and minimal memory footprint, essential for serverless and containerized environments.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications">
+  <meta property="og:description" content="A comprehensive deep dive into GraalVM&#39;s Ahead-of-Time (AOT) compilation and its application in Spring Boot. Learn how to build native images to achieve near-instant startup times and minimal memory footprint, essential for serverless and containerized environments.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-11T09:00:00+05:30">
+    <meta property="article:modified_time" content="2025-08-11T09:00:00+05:30">
+    <meta property="article:tag" content="GraalVM">
+    <meta property="article:tag" content="AOT">
+    <meta property="article:tag" content="Spring Boot">
+    <meta property="article:tag" content="Native Image">
+    <meta property="article:tag" content="Microservices">
+    <meta property="article:tag" content="JVM">
+
+  <meta itemprop="name" content="Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications">
+  <meta itemprop="description" content="A comprehensive deep dive into GraalVM&#39;s Ahead-of-Time (AOT) compilation and its application in Spring Boot. Learn how to build native images to achieve near-instant startup times and minimal memory footprint, essential for serverless and containerized environments.">
+  <meta itemprop="datePublished" content="2025-08-11T09:00:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-11T09:00:00+05:30">
+  <meta itemprop="wordCount" content="891">
+  <meta itemprop="keywords" content="GraalVM Spring Boot,Ahead-of-Time compilation,Java native image,Spring Boot native compilation,low-memory Java,fast startup Java,Spring Boot on Kubernetes">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications">
+  <meta name="twitter:description" content="A comprehensive deep dive into GraalVM&#39;s Ahead-of-Time (AOT) compilation and its application in Spring Boot. Learn how to build native images to achieve near-instant startup times and minimal memory footprint, essential for serverless and containerized environments.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications</h1>
+      
+      <p class="tracked"><strong>JavaYou.com Team</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-11T09:00:00+05:30">August 11, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="mastering-the-graalvm-ahead-of-time-aot-compilation-for-ultra-fast-low-memory-spring-boot-applications">Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications</h1>
+<p>Welcome, JavaYou.com community! We&rsquo;ve spent a lot of time discussing how to optimize the JVM, but what if we could bypass a large part of the JVM&rsquo;s startup overhead entirely? What if your Spring Boot application could launch in milliseconds and use a fraction of the memory? This isn&rsquo;t a fantasy; it&rsquo;s the reality of <strong>Ahead-of-Time (AOT) compilation</strong> with <strong>GraalVM</strong>.</p>
+<p>In the world of cloud-native and serverless computing, startup time and memory footprint are paramount. A traditional JVM-based Spring Boot application can take several seconds to start and consume hundreds of megabytes of RAM. GraalVM&rsquo;s Native Image technology changes this by compiling your Java application into a standalone executable. The result? Near-instant startup and a dramatically reduced memory footprint.</p>
+<p>This comprehensive guide will take you from a basic understanding of GraalVM to a master-level grasp of its features, showing you how to build, optimize, and deploy ultra-fast Spring Boot applications with AOT compilation.</p>
+<h2 id="the-problem-jit-vs-aot">The Problem: JIT vs. AOT</h2>
+<p>To understand the power of GraalVM, let&rsquo;s first look at the traditional JVM model, which uses <strong>Just-in-Time (JIT) compilation</strong>.</p>
+<p><em>JIT Compilation: The JVM interprets bytecode and compiles it to machine code at runtime. This allows for powerful optimizations but adds significant startup overhead.</em></p>
+<p><strong>Ahead-of-Time (AOT) compilation</strong>, on the other hand, performs this compilation step before the application even starts.</p>
+<p><em>AOT Compilation: The code is compiled into a native executable beforehand. At runtime, the application starts and runs instantly with no compilation overhead.</em></p>
+<h2 id="why-graalvm-for-spring-boot">Why GraalVM for Spring Boot?</h2>
+<p>GraalVM Native Image is not a simple compiler; it’s a sophisticated tool that performs a <strong>static analysis</strong> of your application&rsquo;s code to determine which classes, methods, and libraries are actually reachable. This process is known as <strong>Closed-World Assumption</strong>. It then compiles only the reachable code into a native executable, excluding the parts of the JVM that are not needed.</p>
+<p>For a complex framework like Spring Boot, which relies heavily on reflection, dynamic proxies, and resource loading, this presents a unique challenge. Thankfully, the Spring team has worked tirelessly to make Spring Boot fully compatible with GraalVM. Since Spring Boot 3, there has been built-in support for generating the necessary hints for GraalVM to handle these dynamic parts of the framework correctly.</p>
+<h2 id="setting-up-your-project-for-aot-compilation">Setting Up Your Project for AOT Compilation</h2>
+<p>To get started, you&rsquo;ll need two things: a GraalVM installation and a Spring Boot project with the necessary dependencies.</p>
+<h3 id="step-1-install-graalvm">Step 1: Install GraalVM</h3>
+<p>The easiest way to install GraalVM is by using the SDKMAN! tool.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install GraalVM</span>
+</span></span><span style="display:flex;"><span>sdk install java 21-graal
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set GraalVM as the default Java version</span>
+</span></span><span style="display:flex;"><span>sdk use java 21-graal
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install the Native Image tool</span>
+</span></span><span style="display:flex;"><span>gu install native-image
+</span></span><span style="display:flex;"><span>Step 2: Configure Your Spring Boot Project
+</span></span><span style="display:flex;"><span>You<span style="color:#e6db74">&#39;ll need a Spring Boot project with the spring-boot-starter-web dependency and the spring-boot-starter-actuator for management endpoints. The key dependency is the spring-boot-starter-parent which brings in all the necessary tools.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">In your pom.xml, the spring-boot-maven-plugin handles all the magic. It includes a native profile that is specifically designed to build the native image.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">XML
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;project&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;parent&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;version&gt;3.3.2&lt;/version&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;relativePath/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/parent&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;dependencies&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;dependency&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/dependency&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/dependencies&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;build&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;plugins&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;plugin&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/plugin&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/plugins&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/build&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/project&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Step 3: Write Your Code
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">You can write a standard Spring Boot application. GraalVM&#39;</span>s Native Image will handle the compilation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Java
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import org.springframework.boot.SpringApplication;
+</span></span><span style="display:flex;"><span>import org.springframework.boot.autoconfigure.SpringBootApplication;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.GetMapping;
+</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RestController;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@SpringBootApplication
+</span></span><span style="display:flex;"><span>@RestController
+</span></span><span style="display:flex;"><span>public class GraalvmDemoApplication <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public static void main<span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        SpringApplication.run<span style="color:#f92672">(</span>GraalvmDemoApplication.class, args<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @GetMapping<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    public String hello<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello from a native Spring Boot application!&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>Building the Native Image
+</span></span><span style="display:flex;"><span>With your project configured and GraalVM installed, building the native image is as simple as running a single Maven command.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./mvnw -Pnative native:compile
+</span></span><span style="display:flex;"><span>This command will trigger a complex process that analyzes your application, collects the necessary hints, and compiles it into a native executable located in the target directory.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Performance: The Proof is in the Pudding
+</span></span><span style="display:flex;"><span>The difference in performance is dramatic.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Metric	Traditional JVM	GraalVM Native Image
+</span></span><span style="display:flex;"><span>Startup Time	3-5 seconds	~50 milliseconds
+</span></span><span style="display:flex;"><span>Memory Footprint	~300 MB	~50 MB
+</span></span><span style="display:flex;"><span>Image Size	&gt;200 MB	~50 MB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Export to Sheets
+</span></span><span style="display:flex;"><span>The Native Image application is a single, self-contained binary. This makes it perfect <span style="color:#66d9ef">for</span> containerized environments, where faster startup times lead to quicker scaling and reduced costs.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Advanced Topics: The native-maven-plugin and Build Hints
+</span></span><span style="display:flex;"><span>While Spring Boot provides excellent auto-configuration, you may run into issues with third-party libraries that rely on reflection or other dynamic features. In these cases, you will need to provide build hints.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You can define these hints in a configuration file within your project<span style="color:#e6db74">&#39;s META-INF/native-image/ directory.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">JSON
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;name&#34;: &#34;com.example.MyReflectiveClass&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;allDeclaredConstructors&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;allDeclaredMethods&#34;: true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">This tells GraalVM to include MyReflectiveClass in the native image, even though its use isn&#39;</span>t immediately apparent during the static analysis phase.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Conclusion: The Future of Java is Native
+</span></span><span style="display:flex;"><span>GraalVM<span style="color:#e6db74">&#39;s Native Image is not just a performance trick; it represents a fundamental shift in how we build and deploy Java applications. For cloud-native microservices, serverless functions, and any environment where resource efficiency is a top priority, AOT compilation is quickly becoming the standard.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">By mastering GraalVM and its integration with Spring Boot, you&#39;</span>re not just writing Java code; you<span style="color:#960050;background-color:#1e0010">&#39;</span>re building next-generation applications that are faster, lighter, and more resilient than ever before. The future of Java is native, and the time to get started is now.
+</span></span></code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/graalvm/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">GraalVM</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/aot/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">AOT</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/spring-boot/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Spring Boot</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/native-image/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Native Image</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/microservices/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Microservices</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/jvm/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">JVM</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/cloud-native/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Cloud-Native</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/performance-tuning/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Performance Tuning</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/optimizing-jvm-metaspace-dynamic-class-loading/">Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes-2/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/project-loom-virtual-threads-spring-boot-java/">Unleashing Java&#39;s Concurrency Power: Mastering Project Loom (Virtual Threads) in Spring Boot for High-Performance Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/jvm-monitoring-performance-tuning/">JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-security-oauth2-jwt/">Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/microservices-communication-patterns-spring-boot/">Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-resilient-spring-boot-microservices/">Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-observability-spring-boot-microservices/">Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-best-practices-production/">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-data-jpa-advanced-techniques/">Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-3-ultimate-guide/">Spring Boot 3: The Ultimate Guide to Modern Java Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-microservices-spring-boot-3/">Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/reactive-programming-spring-webflux-r2dbc/">Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Go beyond the basics with essential Spring Boot best practices for building robust, secure, and high-performance production-ready applications. Master configuration, security, testing, error handling, and deployment strategies.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="By JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/spring-boot-best-practices-production/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/spring-boot-best-practices-production/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics">
+  <meta property="og:description" content="Go beyond the basics with essential Spring Boot best practices for building robust, secure, and high-performance production-ready applications. Master configuration, security, testing, error handling, and deployment strategies.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-02T09:30:00+05:30">
+    <meta property="article:modified_time" content="2025-08-02T09:30:00+05:30">
+    <meta property="article:tag" content="Spring Boot">
+    <meta property="article:tag" content="Best Practices">
+    <meta property="article:tag" content="Production Ready">
+    <meta property="article:tag" content="Microservices">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Testing">
+
+  <meta itemprop="name" content="Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics">
+  <meta itemprop="description" content="Go beyond the basics with essential Spring Boot best practices for building robust, secure, and high-performance production-ready applications. Master configuration, security, testing, error handling, and deployment strategies.">
+  <meta itemprop="datePublished" content="2025-08-02T09:30:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-02T09:30:00+05:30">
+  <meta itemprop="wordCount" content="1701">
+  <meta itemprop="keywords" content="Spring,Boot,production,guide,,Spring,Boot,best,practices,,secure,Spring,Boot,,Spring,Boot,testing,strategies,,optimizing,Spring,Boot,,Spring,Boot,microservices,best,practices,,Spring,Boot,error,handling,,Spring,Boot,logging,,Spring,Boot,deployment,,Spring,Boot,performance,tuning">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics">
+  <meta name="twitter:description" content="Go beyond the basics with essential Spring Boot best practices for building robust, secure, and high-performance production-ready applications. Master configuration, security, testing, error handling, and deployment strategies.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</h1>
+      
+      <p class="tracked"><strong>By JavaYou.com Team</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-02T09:30:00+05:30">August 2, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="spring-boot-best-practices-for-production-ready-applications-beyond-the-basics">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</h1>
+<p>Alright, fellow Java developers, let&rsquo;s talk real talk. Spring Boot makes building applications incredibly easy, almost deceptively so. You can spin up a functional API in minutes, and that&rsquo;s fantastic. But taking that quick-start project from your local machine to a production environment – where it needs to be secure, stable, performant, and maintainable under pressure – that&rsquo;s a whole different ballgame.</p>
+<p>This isn&rsquo;t just about writing code that <em>works</em>. It&rsquo;s about writing code that <em>thrives</em> in the wild. At JavaYou.com, we&rsquo;ve seen the good, the bad, and the ugly in production. This guide distills years of experience into concrete <strong>Spring Boot best practices</strong> that will elevate your applications from &ldquo;it runs&rdquo; to &ldquo;it&rsquo;s rock-solid, even when things go sideways.&rdquo; Let&rsquo;s dive deep into what it truly means to be production-ready.</p>
+<h2 id="1-configuration-management-no-more-hardcoding">1. Configuration Management: No More Hardcoding!</h2>
+<p>Hardcoding values directly into your application is a rookie mistake that can haunt you in production. Different environments (dev, test, staging, prod) need different settings.</p>
+<h3 id="best-practices">Best Practices:</h3>
+<ul>
+<li><strong>Externalize Everything:</strong> Use <code>application.properties</code> or <code>application.yml</code> for defaults, but always override sensitive or environment-specific values via:
+<ul>
+<li><strong>Environment Variables:</strong> Ideal for containerized deployments (Docker, Kubernetes). E.g., <code>SPRING_DATASOURCE_URL=jdbc:postgresql://prod-db:5432/mydb</code>.</li>
+<li><strong>Command-Line Arguments:</strong> Useful for quick overrides during startup. E.g., <code>java -jar app.jar --server.port=8081</code>.</li>
+<li><strong>Spring Cloud Config Server:</strong> For complex microservice landscapes, a centralized configuration server is a lifesaver.</li>
+</ul>
+</li>
+<li><strong>Profile-Specific Properties:</strong> Leverage Spring profiles (<code>application-dev.yml</code>, <code>application-prod.yml</code>) for environment-specific configurations. Activate with <code>spring.profiles.active=prod</code>.</li>
+<li><strong>Sensitive Data Handling:</strong> Never commit secrets (passwords, API keys) to Git. Use environment variables, external secret management services (Vault, AWS Secrets Manager, Kubernetes Secrets), or Spring Cloud Config with encryption.</li>
+<li><strong>Fail Fast for Missing Config:</strong> If a critical configuration property is missing, make your application fail fast during startup rather than at runtime. Use <code>@Value(&quot;${my.required.property:}&quot;)</code> with a default empty string and then validate it, or use <code>@ConfigurationProperties</code> with validation.</li>
+</ul>
+<h2 id="2-robust-security-lock-it-down-tight">2. Robust Security: Lock It Down Tight</h2>
+<p>Security isn&rsquo;t an afterthought; it&rsquo;s foundational. Spring Security is powerful, but you need to configure it correctly.</p>
+<h3 id="best-practices-1">Best Practices:</h3>
+<ul>
+<li><strong>Least Privilege Principle:</strong> Grant only the necessary permissions. If an endpoint doesn&rsquo;t need to be public, secure it. If a user role doesn&rsquo;t need admin access, don&rsquo;t give it.</li>
+<li><strong>CSRF Protection:</strong> Enable CSRF (Cross-Site Request Forgery) protection for state-changing operations (POST, PUT, DELETE). Spring Security enables it by default for most web applications.</li>
+<li><strong>CORS Configuration:</strong> Explicitly configure CORS (Cross-Origin Resource Sharing) headers to allow only trusted origins to access your API. Don&rsquo;t use <code>*</code> unless absolutely necessary and understood.</li>
+<li><strong>HTTPS Everywhere:</strong> Always use HTTPS in production. Configure your load balancer or reverse proxy to handle SSL termination.</li>
+<li><strong>Input Validation &amp; Sanitization:</strong> Never trust user input. Validate all incoming data (e.g., using Bean Validation with <code>@Valid</code> and <code>@NotNull</code>, <code>@Size</code>, <code>@Pattern</code>). Sanitize inputs to prevent XSS (Cross-Site Scripting) and SQL injection.</li>
+<li><strong>Dependency Security Checks:</strong> Regularly scan your project dependencies for known vulnerabilities using tools like OWASP Dependency-Check or Snyk.</li>
+<li><strong>Strong Passwords &amp; Hashing:</strong> Store passwords using strong, one-way hashing algorithms like BCrypt. Never store plain-text passwords.</li>
+<li><strong>Rate Limiting:</strong> Implement rate limiting on critical endpoints (e.g., login, password reset) to prevent brute-force attacks.</li>
+</ul>
+<h2 id="3-comprehensive-testing-strategies-trust-but-verify">3. Comprehensive Testing Strategies: Trust, But Verify</h2>
+<p>If it&rsquo;s not tested, it&rsquo;s broken. Period. For production-ready applications, a robust testing pyramid is non-negotiable.</p>
+<h3 id="best-practices-2">Best Practices:</h3>
+<ul>
+<li><strong>Unit Tests:</strong> Test individual components (classes, methods) in isolation. Fast and numerous. Use Mockito for dependencies.</li>
+<li><strong>Integration Tests:</strong> Verify interactions between components (e.g., controller to service, service to repository, database integration). Use <code>@SpringBootTest</code> with <code>@AutoConfigureMockMvc</code> or Testcontainers for real database interactions.</li>
+<li><strong>Component Tests:</strong> Test a slice of your application (e.g., a web layer with <code>@WebMvcTest</code>).</li>
+<li><strong>End-to-End (E2E) Tests:</strong> Test the entire application flow from the user&rsquo;s perspective. Often involves a UI and backend.</li>
+<li><strong>Contract Testing (Consumer-Driven Contracts):</strong> Essential for microservices. Ensure services adhere to agreed-upon API contracts, preventing breaking changes between independent teams. Tools like Pact or Spring Cloud Contract are excellent here.</li>
+<li><strong>Performance Tests:</strong> Simulate load to identify bottlenecks and ensure your application meets performance SLAs.</li>
+<li><strong>Chaos Engineering:</strong> (Advanced) Intentionally inject failures into your system to test its resilience and your observability.</li>
+</ul>
+<h2 id="4-graceful-error-handling-fail-nicely">4. Graceful Error Handling: Fail Nicely</h2>
+<p>When things go wrong (and they will), your application needs to handle errors gracefully, provide meaningful feedback, and avoid exposing sensitive information.</p>
+<h3 id="best-practices-3">Best Practices:</h3>
+<ul>
+<li><strong>Centralized Exception Handling:</strong> Use Spring&rsquo;s <code>@ControllerAdvice</code> and <code>@ExceptionHandler</code> to centralize error handling logic across your controllers. Return consistent, well-defined error responses (e.g., JSON with an error code and message).</li>
+<li><strong>Custom Exceptions:</strong> Create custom exceptions for specific business logic errors.</li>
+<li><strong>HTTP Status Codes:</strong> Use appropriate HTTP status codes (e.g., 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error, 503 Service Unavailable).</li>
+<li><strong>Logging Errors:</strong> Log exceptions with sufficient detail (stack traces, relevant context) but <strong>never</strong> log sensitive user data.</li>
+<li><strong>User-Friendly Messages:</strong> For client-facing errors, provide clear, concise messages that guide the user, not technical jargon.</li>
+<li><strong>Circuit Breakers &amp; Retries:</strong> For inter-service communication in microservices, implement circuit breakers (e.g., Resilience4j) to prevent cascading failures and retry mechanisms for transient errors.</li>
+</ul>
+<h2 id="5-logging-and-monitoring-see-whats-happening">5. Logging and Monitoring: See What&rsquo;s Happening</h2>
+<p>You can&rsquo;t fix what you can&rsquo;t see. Robust logging and monitoring are your eyes and ears in production.</p>
+<h3 id="best-practices-4">Best Practices:</h3>
+<ul>
+<li><strong>Structured Logging (JSON):</strong> Output logs in a structured format (JSON) using Logback with a Logstash encoder. This makes them easily parsable by centralized logging systems (ELK Stack, Loki).</li>
+<li><strong>Appropriate Logging Levels:</strong> Use <code>INFO</code> for operational messages, <code>DEBUG</code> for detailed troubleshooting, <code>WARN</code> for potential issues, and <code>ERROR</code> for critical failures. Don&rsquo;t spam <code>DEBUG</code> in production.</li>
+<li><strong>Centralized Logging:</strong> Aggregate logs from all services into a central system (e.g., ELK Stack, Loki/Grafana) for easy searching, filtering, and analysis.</li>
+<li><strong>Metrics (Micrometer, Prometheus, Grafana):</strong> Instrument your application with Micrometer to collect key metrics (HTTP request latency, error rates, custom business metrics). Export them to Prometheus and visualize with Grafana. (This ties directly into our &ldquo;Mastering Observability&rdquo; article!)</li>
+<li><strong>Distributed Tracing (OpenTelemetry, Zipkin/Jaeger):</strong> Implement distributed tracing to track requests across multiple microservices. This is invaluable for debugging latency and understanding complex call flows. (Again, links to our &ldquo;Mastering Observability&rdquo; article!)</li>
+<li><strong>Health Checks:</strong> Leverage Spring Boot Actuator&rsquo;s <code>/actuator/health</code> endpoint for readiness and liveness probes in Kubernetes.</li>
+<li><strong>Alerting:</strong> Set up alerts for critical thresholds (e.g., high error rates, low disk space, long GC pauses, high CPU/memory usage) to notify your team proactively.</li>
+</ul>
+<h2 id="6-database-interactions-efficient-and-resilient">6. Database Interactions: Efficient and Resilient</h2>
+<p>Databases are often the bottleneck. Optimize your interactions.</p>
+<h3 id="best-practices-5">Best Practices:</h3>
+<ul>
+<li><strong>Connection Pooling:</strong> Always use a robust connection pool (HikariCP is the default and excellent choice in Spring Boot). Tune its size appropriately.</li>
+<li><strong>Lazy Loading vs. Eager Loading:</strong> Understand and manage N+1 problems. Use lazy loading where appropriate, but fetch eagerly with <code>JOIN FETCH</code> or <code>EntityGraph</code> when you know you&rsquo;ll need associated data to avoid multiple queries.</li>
+<li><strong>Batch Processing:</strong> For bulk inserts or updates, use batch operations to reduce database round trips.</li>
+<li><strong>Indexing:</strong> Ensure your database tables have appropriate indexes for frequently queried columns.</li>
+<li><strong>Transactions:</strong> Use <code>@Transactional</code> correctly. Keep transactions as short as possible. Don&rsquo;t perform long-running operations inside a transaction.</li>
+<li><strong>Database Migrations:</strong> Use tools like Flyway or Liquibase to manage database schema changes in a controlled, versioned way.</li>
+<li><strong>Reactive Databases (R2DBC):</strong> For high-concurrency, non-blocking applications, consider R2DBC for reactive database access, especially with Spring WebFlux. (Links to our &ldquo;Reactive Programming&rdquo; article!)</li>
+</ul>
+<h2 id="7-performance-optimization-every-millisecond-counts">7. Performance Optimization: Every Millisecond Counts</h2>
+<p>Beyond JVM tuning, application-level performance matters.</p>
+<h3 id="best-practices-6">Best Practices:</h3>
+<ul>
+<li><strong>JVM Tuning:</strong> (As discussed in our previous article!) Understand and tune JVM memory (Heap, Metaspace) and Garbage Collection (G1, ZGC).</li>
+<li><strong>Caching:</strong> Implement caching layers (e.g., Spring Cache with Caffeine, Redis, or Ehcache) for frequently accessed, slow-changing data.</li>
+<li><strong>Asynchronous Processing:</strong> Use <code>@Async</code> or Spring WebFlux/Project Reactor for non-blocking I/O and long-running operations to free up threads.</li>
+<li><strong>Thread Pool Management:</strong> Configure and monitor thread pools for various tasks (web servers, messaging, custom executors) to prevent exhaustion or excessive context switching.</li>
+<li><strong>Serialization Optimization:</strong> Be mindful of the overhead of serialization/deserialization, especially over the network.</li>
+<li><strong>Minimize Network Calls:</strong> Batch requests, use GraphQL, or optimize API design to reduce chatty communication between services.</li>
+</ul>
+<h2 id="8-deployment-and-operations-smooth-sailing">8. Deployment and Operations: Smooth Sailing</h2>
+<p>Getting your application into production and keeping it there requires thoughtful deployment strategies.</p>
+<h3 id="best-practices-7">Best Practices:</h3>
+<ul>
+<li><strong>Containerization (Docker):</strong> Package your Spring Boot application into a Docker image. This provides consistency across environments.</li>
+<li><strong>Orchestration (Kubernetes):</strong> For microservices, use Kubernetes to manage deployment, scaling, healing, and load balancing.</li>
+<li><strong>Health Endpoints:</strong> Expose Spring Boot Actuator&rsquo;s <code>/actuator/health</code> and <code>/actuator/info</code> endpoints for readiness, liveness, and application information.</li>
+<li><strong>Externalized Logging &amp; Monitoring:</strong> As mentioned, ensure logs go to a central system and metrics are collected by tools like Prometheus.</li>
+<li><strong>Automated CI/CD:</strong> Implement a robust Continuous Integration/Continuous Delivery pipeline to automate building, testing, and deploying your applications.</li>
+<li><strong>Immutable Infrastructure:</strong> Treat your servers/containers as immutable. Don&rsquo;t make manual changes to running instances; deploy new ones with changes.</li>
+<li><strong>Resource Limits:</strong> In container orchestrators, set CPU and memory limits to prevent a single service from hogging resources and impacting others.</li>
+</ul>
+<h2 id="9-code-quality-and-maintainability-the-long-game">9. Code Quality and Maintainability: The Long Game</h2>
+<p>Production applications live for years. Make them easy to understand and modify.</p>
+<h3 id="best-practices-8">Best Practices:</h3>
+<ul>
+<li><strong>Clean Code Principles:</strong> Adhere to principles like DRY (Don&rsquo;t Repeat Yourself), KISS (Keep It Simple, Stupid), and SOLID.</li>
+<li><strong>Meaningful Naming:</strong> Use clear, descriptive names for classes, methods, and variables.</li>
+<li><strong>Code Reviews:</strong> Implement a rigorous code review process.</li>
+<li><strong>Static Analysis Tools:</strong> Use tools like SonarQube, Checkstyle, or PMD to enforce coding standards and identify potential issues early.</li>
+<li><strong>Documentation:</strong> Document complex logic, APIs, and architectural decisions. Use OpenAPI/Swagger for API documentation.</li>
+<li><strong>Modularity:</strong> Design your application with clear module boundaries and separation of concerns.</li>
+<li><strong>Semantic Versioning:</strong> Version your APIs and applications correctly (e.g., <code>v1.0.0</code>) to manage compatibility.</li>
+</ul>
+<h2 id="the-journey-to-production-excellence">The Journey to Production Excellence</h2>
+<p>Building production-ready Spring Boot applications is a continuous journey, not a destination. It requires a mindset shift from simply making code work to making it resilient, secure, performant, and maintainable under any circumstance. By embracing these best practices – from meticulous configuration and robust security to comprehensive testing and proactive monitoring – you&rsquo;re not just writing better code; you&rsquo;re building a foundation for long-term success.</p>
+<p>These aren&rsquo;t just theoretical concepts; they are lessons learned in the trenches of real-world deployments. Start integrating them into your development workflow today, and watch your Spring Boot applications transform into true production powerhouses.</p>
+<p>What&rsquo;s one Spring Boot best practice you swear by in production? Share your wisdom and war stories in the comments below!</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/spring-boot/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Spring Boot</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/best-practices/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Best Practices</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/production-ready/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Production Ready</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/microservices/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Microservices</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/security/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Security</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/testing/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Testing</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/error-handling/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Error Handling</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/configuration/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Configuration</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/deployment/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Deployment</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/performance/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Performance</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/logging/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Logging</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/observability/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Observability</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/java/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Java</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-3-ultimate-guide/">Spring Boot 3: The Ultimate Guide to Modern Java Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/reactive-programming-spring-webflux-r2dbc/">Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-data-jpa-advanced-techniques/">Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-microservices-spring-boot-3/">Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-intelligent-java-apps-ai-spring-ai/">Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

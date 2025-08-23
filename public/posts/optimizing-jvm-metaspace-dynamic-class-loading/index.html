@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A deep dive into JVM Metaspace management and optimization strategies for Spring Boot microservices that heavily rely on dynamic class loading, preventing OutOfMemoryErrors and ensuring stability.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices">
+  <meta property="og:description" content="A deep dive into JVM Metaspace management and optimization strategies for Spring Boot microservices that heavily rely on dynamic class loading, preventing OutOfMemoryErrors and ensuring stability.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-05T09:00:00+05:30">
+    <meta property="article:modified_time" content="2025-08-05T09:00:00+05:30">
+    <meta property="article:tag" content="JVM">
+    <meta property="article:tag" content="Metaspace">
+    <meta property="article:tag" content="ClassLoading">
+    <meta property="article:tag" content="Microservices">
+    <meta property="article:tag" content="Spring Boot">
+    <meta property="article:tag" content="Performance Tuning">
+
+  <meta itemprop="name" content="Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices">
+  <meta itemprop="description" content="A deep dive into JVM Metaspace management and optimization strategies for Spring Boot microservices that heavily rely on dynamic class loading, preventing OutOfMemoryErrors and ensuring stability.">
+  <meta itemprop="datePublished" content="2025-08-05T09:00:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-05T09:00:00+05:30">
+  <meta itemprop="wordCount" content="1121">
+  <meta itemprop="keywords" content="JVM Metaspace optimization,dynamic class loading Java,Spring Boot Metaspace OOM,Java microservices memory tuning,ClassLoader leaks,PermGen vs Metaspace,Class Unloading JVM">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices">
+  <meta name="twitter:description" content="A deep dive into JVM Metaspace management and optimization strategies for Spring Boot microservices that heavily rely on dynamic class loading, preventing OutOfMemoryErrors and ensuring stability.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</h1>
+      
+      <p class="tracked"><strong>JavaYou.com Team</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-05T09:00:00+05:30">August 5, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="optimizing-jvm-metaspace-for-dynamic-class-loading-in-spring-boot-microservices">Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</h1>
+<p>Welcome, advanced Java architects and site reliability engineers! In the complex landscape of modern microservices, especially those built with Spring Boot, ensuring predictable and stable performance is paramount. While heap memory is often the primary focus of optimization, the <strong>Metaspace</strong> — where the JVM stores class metadata — frequently becomes an overlooked villain, silently leading to <code>OutOfMemoryError: Metaspace</code> in long-running or dynamically evolving systems.</p>
+<p>This comprehensive guide from JavaYou.com will demystify Metaspace, delve into the challenges posed by dynamic class loading in Spring Boot microservices, and provide actionable strategies to monitor, tune, and prevent Metaspace-related issues, ensuring your applications remain robust and resilient.</p>
+<h2 id="understanding-jvm-metaspace-beyond-permgen">Understanding JVM Metaspace: Beyond PermGen</h2>
+<p>Before Java 8, class metadata was stored in the PermGen (Permanent Generation) space, a fixed-size memory area within the JVM heap. This often led to <code>OutOfMemoryError: PermGen space</code> if too many classes were loaded or if classloaders leaked.</p>
+<p>With Java 8, PermGen was removed and replaced by <strong>Metaspace</strong>. Key differences:</p>
+<ul>
+<li><strong>Location:</strong> Metaspace is part of the native memory, not the JVM heap. This means it&rsquo;s limited only by the amount of available native memory on your system (or by explicit configuration).</li>
+<li><strong>Elasticity:</strong> It can grow dynamically by default, which is an improvement, but also makes leaks harder to detect without proper monitoring.</li>
+<li><strong>Garbage Collection:</strong> Class metadata in Metaspace is garbage collected when the associated classloader is no longer alive and all its loaded classes are unreachable. This is crucial for dynamic class loading scenarios.</li>
+</ul>
+<h2 id="the-challenge-dynamic-class-loading-in-microservices">The Challenge: Dynamic Class Loading in Microservices</h2>
+<p>Many modern Java microservices architectures, particularly those adopting plugin systems, runtime extensions, or hot code deployments, rely heavily on dynamic class loading. Frameworks like Spring often create numerous proxy classes at runtime, especially with AOP (Aspect-Oriented Programming) or Spring Data repositories.</p>
+<p>Consider scenarios like:</p>
+<ul>
+<li><strong>OSGi or Plugin Architectures:</strong> Loading and unloading modules at runtime.</li>
+<li><strong>Low-Code Platforms:</strong> Generating and compiling code on the fly.</li>
+<li><strong>JVM Languages (e.g., Groovy, Kotlin):</strong> More dynamic class generation.</li>
+<li><strong>Custom Class Loaders:</strong> Often used for isolation or specific deployment models.</li>
+</ul>
+<p>The primary risk here is a <strong>ClassLoader leak</strong>. If a classloader, or any classes loaded by it, remain reachable even after they&rsquo;re logically &ldquo;unloaded&rdquo; (e.g., a plugin is deactivated but its classloader isn&rsquo;t truly eligible for GC), their associated Metaspace usage persists, leading to a slow, insidious memory leak that eventually exhausts available native memory.</p>
+<h2 id="monitoring-metaspace-usage-in-production">Monitoring Metaspace Usage in Production</h2>
+<p>Effective monitoring is the first line of defense. You need visibility into Metaspace consumption and classloader activity.</p>
+<h3 id="1-using-jstat-for-real-time-monitoring">1. Using <code>jstat</code> for Real-time Monitoring</h3>
+<p><code>jstat</code> (Java Statistics Monitoring Tool) is invaluable for quick checks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jstat -gcmetaspace &lt;pid&gt; 1s
+</span></span><span style="display:flex;"><span>This command shows Metaspace usage <span style="color:#f92672">(</span>MC <span style="color:#66d9ef">for</span> capacity, MU <span style="color:#66d9ef">for</span> used, CCSC <span style="color:#66d9ef">for</span> compressed class space capacity, CCSU <span style="color:#66d9ef">for</span> used<span style="color:#f92672">)</span> and GC activity. Look <span style="color:#66d9ef">for</span> MU growing steadily without corresponding drops after full GCs.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2. JMX and VisualVM/JConsole
+</span></span><span style="display:flex;"><span>Enable JMX on your Spring Boot application <span style="color:#f92672">(</span>e.g., spring.jmx.enabled<span style="color:#f92672">=</span>true<span style="color:#f92672">)</span>. You can <span style="color:#66d9ef">then</span> connect with tools like VisualVM or JConsole.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In VisualVM, navigate to the <span style="color:#e6db74">&#34;Monitor&#34;</span> tab. You<span style="color:#e6db74">&#39;ll see &#34;Metaspace&#34; usage graphs.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">More importantly, in VisualVM&#39;</span>s <span style="color:#e6db74">&#34;Classes&#34;</span> tab, you can track the number of loaded classes. In the <span style="color:#e6db74">&#34;Sampler&#34;</span> tab, sampling by <span style="color:#e6db74">&#34;Classes&#34;</span> can reveal which classloaders are active and what classes they hold.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Look <span style="color:#66d9ef">for</span> a steady increase in loaded classes without a decrease.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3. JVM Flags <span style="color:#66d9ef">for</span> Detailed Logging
+</span></span><span style="display:flex;"><span>For deeper analysis, especially during OOM occurrences, enable verbose Metaspace logging:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-XX:+PrintGCDetails
+</span></span><span style="display:flex;"><span>-XX:+PrintGCDateStamps
+</span></span><span style="display:flex;"><span>-XX:+PrintClassHistogram
+</span></span><span style="display:flex;"><span>-XX:+PrintGCApplicationStoppedTime
+</span></span><span style="display:flex;"><span>-Xlog:gc*:file<span style="color:#f92672">=</span>/var/log/your_app_gc.log:time,level,tags:filecount<span style="color:#f92672">=</span>10,filesize<span style="color:#f92672">=</span>10M
+</span></span><span style="display:flex;"><span>In Java 8, the more specific Metaspace flags were:
+</span></span><span style="display:flex;"><span>-XX:+PrintFlagsFinal <span style="color:#f92672">(</span>to see default Metaspace size<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>-XX:MetaspaceSize<span style="color:#f92672">=</span>&lt;initial_size&gt; <span style="color:#f92672">(</span>initial committed size<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>-XX:MaxMetaspaceSize<span style="color:#f92672">=</span>&lt;max_size&gt; <span style="color:#f92672">(</span>maximum size<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Proactive Optimization Strategies
+</span></span><span style="display:flex;"><span>Once you understand the dynamics, you can implement proactive measures.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>1. Configure MaxMetaspaceSize Wisely
+</span></span><span style="display:flex;"><span>While Metaspace is off-heap, setting a reasonable maximum <span style="color:#f92672">(</span>-XX:MaxMetaspaceSize<span style="color:#f92672">)</span> is critical. It prevents Metaspace from consuming all available native memory, potentially starving other processes on the host. Start by observing peak usage and add a buffer.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java -XX:MaxMetaspaceSize<span style="color:#f92672">=</span>256m -jar your-app.jar
+</span></span><span style="display:flex;"><span>A common mistake is setting this too low, leading to premature OOMs.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2. Identify and Eliminate ClassLoader Leaks
+</span></span><span style="display:flex;"><span>This is the hardest part. A ClassLoader leak occurs when classes loaded by a classloader become unreachable, but the classloader itself remains reachable <span style="color:#f92672">(</span>often via a stray thread, a static reference, or a listener not properly de-registered<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Heap Dumps: When OutOfMemoryError: Metaspace occurs, capture a heap dump <span style="color:#f92672">(</span>-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath<span style="color:#f92672">=</span>/path/to/dump<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Analyze with Eclipse MAT or YourKit:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Look <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;Leak Suspects&#34;</span> reports.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Use <span style="color:#e6db74">&#34;Path to GC Roots&#34;</span> to identify what<span style="color:#e6db74">&#39;s holding onto the problematic classloader instances.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Common culprits: ThreadLocals not cleaned up, static fields holding references to objects from old classloaders, or event listeners not properly de-registered when a component is unloaded.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Spring Boot Context Management: Ensure proper shutdown of Spring contexts. If you&#39;</span>re programmatically creating child contexts or custom ApplicationContext instances, make sure they are closed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3. Minimize Dynamic Code Generation
+</span></span><span style="display:flex;"><span>If possible, reduce the reliance on excessive runtime code generation. While Spring is highly dynamic, be mindful of:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>JSP/Groovy Templates: Can lead to high class loading on first access. Pre-compile <span style="color:#66d9ef">if</span> possible.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Bytecode Manipulation Libraries: Be aware of their classloading behavior.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>4. Optimize Class Unloading
+</span></span><span style="display:flex;"><span>While Metaspace grows, class unloading does happen when a classloader becomes unreachable. Ensure your application architecture allows <span style="color:#66d9ef">for</span> classloaders to become eligible <span style="color:#66d9ef">for</span> garbage collection.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>If using custom classloaders <span style="color:#66d9ef">for</span> plugins, ensure you have a clean <span style="color:#e6db74">&#34;unloading&#34;</span> mechanism that severs all references to the plugin<span style="color:#960050;background-color:#1e0010">&#39;</span>s classloader and its loaded classes.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5. JVM Version and Bug Fixes
+</span></span><span style="display:flex;"><span>Newer JVM versions often contain performance improvements and bug fixes related to Metaspace management and classloader handling. Regularly update your JVM to the latest patch release.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Advanced Techniques: Diving Deeper
+</span></span><span style="display:flex;"><span>For persistent issues, more advanced techniques might be required:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>1. Custom ClassLoader Monitoring
+</span></span><span style="display:flex;"><span>If you implement custom classloaders, add logging to track their lifecycle: creation, loading classes, and <span style="color:#f92672">(</span>attempted<span style="color:#f92672">)</span> destruction. This helps pinpoint when a classloader fails to unload.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2. Debugging with jmap and jcmd
+</span></span><span style="display:flex;"><span>jmap -histo:live &lt;pid&gt;: Shows a histogram of live objects, including class names. Useful <span style="color:#66d9ef">for</span> seeing what classes are heavily loaded.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jcmd &lt;pid&gt; GC.class_stats: Provides detailed statistics about classes loaded, how much Metaspace they consume, and which classloader loaded them. Extremely powerful <span style="color:#66d9ef">for</span> identifying classloader leaks.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3. Class Unloading Verification
+</span></span><span style="display:flex;"><span>After you believe a component has been unloaded, verify its classes are no longer in jmap -histo:live. If they are, something is still holding a reference.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Conclusion
+</span></span><span style="display:flex;"><span>Optimizing JVM Metaspace <span style="color:#66d9ef">for</span> dynamic class loading in Spring Boot microservices is a specialized but critical aspect of performance tuning <span style="color:#66d9ef">for</span> robust production systems. It requires a deep understanding of JVM internals, diligent monitoring, and meticulous attention to classloader lifecycles. By proactively addressing Metaspace growth and identifying classloader leaks, you can prevent costly OutOfMemoryErrors and ensure your Java applications remain performant and stable under dynamic conditions.
+</span></span></code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/jvm/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">JVM</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/metaspace/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Metaspace</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/classloading/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">ClassLoading</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/microservices/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Microservices</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/spring-boot/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Spring Boot</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/performance-tuning/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Performance Tuning</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/memory-management/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Memory Management</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/java/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Java</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/jvm-monitoring-performance-tuning/">JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-security-oauth2-jwt/">Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-resilient-spring-boot-microservices/">Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes-2/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-best-practices-production/">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-data-jpa-advanced-techniques/">Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-microservices-spring-boot-3/">Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/microservices-communication-patterns-spring-boot/">Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-observability-spring-boot-microservices/">Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/reactive-programming-spring-webflux-r2dbc/">Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-3-ultimate-guide/">Spring Boot 3: The Ultimate Guide to Modern Java Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-intelligent-java-apps-ai-spring-ai/">Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI | JavaYou</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Unlock the true potential of LLMs in Java! Learn to build intelligent AI agents that use tools (function calling) to interact with external systems and solve complex problems with Spring AI.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="JavaYou.com Team">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://javayou.com/posts/building-intelligent-llm-agents-java-spring-ai/">
+    
+
+    <meta property="og:url" content="https://javayou.com/posts/building-intelligent-llm-agents-java-spring-ai/">
+  <meta property="og:site_name" content="JavaYou">
+  <meta property="og:title" content="Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI">
+  <meta property="og:description" content="Unlock the true potential of LLMs in Java! Learn to build intelligent AI agents that use tools (function calling) to interact with external systems and solve complex problems with Spring AI.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-05T10:00:00+05:30">
+    <meta property="article:modified_time" content="2025-08-05T10:00:00+05:30">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="LLM Agents">
+    <meta property="article:tag" content="Tool Use">
+    <meta property="article:tag" content="Function Calling">
+    <meta property="og:image" content="https://javayou.com/images/llm-agents-java-spring-ai-banner.jpg">
+
+  <meta itemprop="name" content="Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI">
+  <meta itemprop="description" content="Unlock the true potential of LLMs in Java! Learn to build intelligent AI agents that use tools (function calling) to interact with external systems and solve complex problems with Spring AI.">
+  <meta itemprop="datePublished" content="2025-08-05T10:00:00+05:30">
+  <meta itemprop="dateModified" content="2025-08-05T10:00:00+05:30">
+  <meta itemprop="wordCount" content="2296">
+  <meta itemprop="image" content="https://javayou.com/images/llm-agents-java-spring-ai-banner.jpg">
+  <meta itemprop="keywords" content="Java,AI,Generative AI,LLM Agents,Tool Use,Function Calling,Spring AI,Prompt Engineering,Autonomous AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://javayou.com/images/llm-agents-java-spring-ai-banner.jpg">
+  <meta name="twitter:title" content="Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI">
+  <meta name="twitter:description" content="Unlock the true potential of LLMs in Java! Learn to build intelligent AI agents that use tools (function calling) to interact with external systems and solve complex problems with Spring AI.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        JavaYou
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI</h1>
+      
+      <p class="tracked"><strong>JavaYou.com Team</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-05T10:00:00+05:30">August 5, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="beyond-chatgpt-building-intelligent-llm-agents-and-tool-using-applications-in-java-with-spring-ai">Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI</h1>
+<p>Welcome back, fellow Java innovators! In our last guide, we explored the foundational power of Generative AI and how Spring AI makes it incredibly easy to integrate Large Language Models (LLMs) into your Java applications. We touched on generating text, summarization, and basic Q&amp;A. But what if you want your LLM to do more than just generate text? What if you need it to fetch real-time data, interact with your internal APIs, or perform complex, multi-step actions?</p>
+<p>This is where the true magic of <strong>LLM Agents</strong> and <strong>Tool Use (Function Calling)</strong> comes into play. No longer are LLMs just &ldquo;chatbots&rdquo;; they&rsquo;re becoming intelligent components capable of reasoning, planning, and executing actions in the real world. And the best part? Spring AI provides robust, developer-friendly features to bring this cutting-edge capability right into your familiar Java ecosystem.</p>
+<p>In this deep dive, we&rsquo;ll go beyond basic conversational AI. We&rsquo;ll unravel the concepts of LLM agents and tools, demonstrate how Spring AI empowers your Java applications to leverage these features, and walk through practical examples to build truly intelligent, action-oriented systems. Get ready to transform your Java applications from reactive responses to proactive intelligence!</p>
+<h2 id="1-the-next-frontier-llm-agents-and-tool-use">1. The Next Frontier: LLM Agents and Tool Use</h2>
+<p>To truly unlock the power of LLMs in enterprise applications, we need them to move beyond simple text generation. They need to become active participants, capable of interacting with the world around them.</p>
+<h3 id="11-what-are-llm-agents">1.1 What are LLM Agents?</h3>
+<p>An <strong>LLM Agent</strong> is an LLM that is equipped with:</p>
+<ol>
+<li><strong>Reasoning Capabilities:</strong> The ability to understand a goal, break it down into steps, and determine what actions are needed.</li>
+<li><strong>Memory:</strong> The ability to remember past interactions or context (short-term and long-term).</li>
+<li><strong>Tools:</strong> Access to external functions or APIs that allow it to interact with the real world (e.g., search the web, query a database, send an email, call a weather API).</li>
+<li><strong>Observation &amp; Iteration:</strong> The ability to observe the results of its actions and iterate on its plan if needed.</li>
+</ol>
+<p>Essentially, an LLM agent uses an LLM as its &ldquo;brain&rdquo; to decide <em>what to do next</em>, often by selecting and using one of its available &ldquo;tools.&rdquo;</p>
+<h3 id="12-what-is-tool-use-function-calling">1.2 What is Tool Use (Function Calling)?</h3>
+<p><strong>Tool Use</strong>, often referred to as <strong>Function Calling</strong> (especially by OpenAI and Google), is the mechanism that allows an LLM to decide when and how to invoke external functions. Instead of just generating a text response, the LLM generates a structured output (e.g., JSON) that specifies:</p>
+<ul>
+<li>Which tool/function to call.</li>
+<li>What arguments to pass to that tool.</li>
+</ul>
+<p>Your application then intercepts this output, executes the specified tool, and optionally feeds the tool&rsquo;s result back to the LLM for further reasoning or response generation. This creates powerful feedback loops.</p>
+<p><strong>Why is this a game-changer for Java?</strong></p>
+<ul>
+<li><strong>Connecting LLMs to Business Logic:</strong> LLMs can now directly interact with your existing microservices, databases, and APIs.</li>
+<li><strong>Real-time Data:</strong> Inject dynamic, up-to-date information into LLM responses.</li>
+<li><strong>Automated Workflows:</strong> Build complex workflows where the LLM orchestrates actions.</li>
+<li><strong>Reduced Hallucination:</strong> By providing the LLM with direct access to facts via tools (like a search engine or internal knowledge base), you significantly reduce its tendency to &ldquo;hallucinate&rdquo; incorrect information.</li>
+</ul>
+<h2 id="2-spring-ais-elegant-approach-to-tools">2. Spring AI&rsquo;s Elegant Approach to Tools</h2>
+<p>Spring AI makes integrating tools with LLMs remarkably straightforward, leveraging familiar Spring idioms. It handles the low-level API calls to tell the LLM about your available functions and parse the LLM&rsquo;s tool call requests.</p>
+<h3 id="21-the-functioncallback-and-functioncallbackwrapper">2.1 The <code>FunctionCallback</code> and <code>FunctionCallbackWrapper</code></h3>
+<p>Spring AI introduces the concept of <code>FunctionCallback</code> (or more commonly, <code>FunctionCallbackWrapper</code> for simpler use) to register your Java methods as callable &ldquo;tools&rdquo; for the LLM.</p>
+<p><strong>Key steps in Spring AI Tool Use:</strong></p>
+<ol>
+<li><strong>Define your Tool/Function:</strong> Create a simple Java method that performs a specific task (e.g., <code>getWeather</code>, <code>searchProduct</code>).</li>
+<li><strong>Describe the Tool:</strong> Provide a clear description of what the tool does and its parameters. This description is sent to the LLM so it knows when and how to use it.</li>
+<li><strong>Register the Tool:</strong> Register this function with Spring AI&rsquo;s <code>ChatClient</code>.</li>
+<li><strong>Invoke the LLM:</strong> Make a request to the <code>ChatClient</code>. If the LLM determines a tool is needed, it will generate a tool call.</li>
+<li><strong>Execute the Tool:</strong> Your application receives the tool call from Spring AI, executes the actual Java method, and then optionally sends the result back to the LLM.</li>
+</ol>
+<h2 id="3-practical-example-building-a-weather-assistant-with-tools">3. Practical Example: Building a Weather Assistant with Tools</h2>
+<p>Let&rsquo;s build a Spring Boot application that enables an LLM to fetch real-time weather information using a tool.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>JDK 17 or higher</li>
+<li>Maven or Gradle</li>
+<li>An IDE (IntelliJ IDEA)</li>
+<li>An API Key for an LLM provider (e.g., OpenAI or Google Gemini).</li>
+<li><em>Optional:</em> An API Key for a weather service (e.g., OpenWeatherMap, if you were to build a real external API call). For simplicity, we&rsquo;ll use a dummy weather service in our example.</li>
+</ul>
+<h3 id="31-project-setup">3.1 Project Setup</h3>
+<ol>
+<li>Go to <a href="https://start.spring.io/">start.spring.io</a></li>
+<li><strong>Project:</strong> Maven Project</li>
+<li><strong>Language:</strong> Java</li>
+<li><strong>Spring Boot:</strong> 3.x.x (latest stable)</li>
+<li><strong>Java:</strong> 17</li>
+<li><strong>Dependencies:</strong>
+<ul>
+<li><code>Spring Web</code></li>
+<li><code>Spring AI OpenAI Chat Starter</code> (or <code>Spring AI Google Gemini Chat Starter</code>)</li>
+</ul>
+</li>
+<li>Click &ldquo;Generate&rdquo; and download, then open in your IDE.</li>
+</ol>
+<h3 id="32-configure-api-keys">3.2 Configure API Keys</h3>
+<p>Add your LLM API key to <code>src/main/resources/application.properties</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">spring.ai.openai.api-key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&lt;YOUR_OPENAI_API_KEY&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or for Gemini:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># spring.ai.google.gemini.api-key=&lt;YOUR_GOOGLE_GEMINI_API_KEY&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">3.3</span> <span style="color:#e6db74">Define Your Weather Tool</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">First,</span> <span style="color:#e6db74">let&#39;s create a simple service that simulates fetching weather data. In a real application, this would call an external weather API.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Create</span> <span style="color:#e6db74">src/main/java/com/example/aichatbot/WeatherService.java:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Java</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">package</span> <span style="color:#e6db74">com.example.aichatbot;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.stereotype.Service;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">//</span> <span style="color:#e6db74">Define a record for the weather response, mapping to tool&#39;s output schema</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">record</span> <span style="color:#e6db74">WeatherResponse(String city, String temperature, String conditions, String unit) {}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">public</span> <span style="color:#e6db74">class WeatherService {</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    /**</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">*</span> <span style="color:#e6db74">Retrieves the current weather for a given city.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">*</span> <span style="color:#e6db74">This method acts as a &#34;tool&#34; for the LLM.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">*</span> <span style="color:#e6db74">@param city The city name for which to get the weather.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">*</span> <span style="color:#e6db74">@param unit The unit of temperature (e.g., &#34;celsius&#34; or &#34;fahrenheit&#34;).</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">*</span> <span style="color:#e6db74">@return Weather information in a structured format.</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">public</span> <span style="color:#e6db74">WeatherResponse getCurrentWeather(String city, String unit) {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">In a real app, this would call an external weather API</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">For demonstration, we&#39;ll return mock data based on city/unit</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">System.out.println(&#34;DEBUG</span><span style="color:#f92672">:</span> <span style="color:#e6db74">Calling WeatherService for city: &#34; + city + &#34;, unit: &#34; + unit); // Log tool call</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">if</span> <span style="color:#e6db74">(&#34;london&#34;.equalsIgnoreCase(city) &amp;&amp; &#34;celsius&#34;.equalsIgnoreCase(unit)) {</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">return</span> <span style="color:#e6db74">new WeatherResponse(city, &#34;15�C&#34;, &#34;Cloudy&#34;, &#34;celsius&#34;);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">}</span> <span style="color:#e6db74">else if (&#34;london&#34;.equalsIgnoreCase(city) &amp;&amp; &#34;fahrenheit&#34;.equalsIgnoreCase(unit)) {</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">return</span> <span style="color:#e6db74">new WeatherResponse(city, &#34;59�F&#34;, &#34;Cloudy&#34;, &#34;fahrenheit&#34;);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">}</span> <span style="color:#e6db74">else if (&#34;new york&#34;.equalsIgnoreCase(city) &amp;&amp; &#34;fahrenheit&#34;.equalsIgnoreCase(unit)) {</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">return</span> <span style="color:#e6db74">new WeatherResponse(city, &#34;72�F&#34;, &#34;Sunny&#34;, &#34;fahrenheit&#34;);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">}</span> <span style="color:#e6db74">else if (&#34;new york&#34;.equalsIgnoreCase(city) &amp;&amp; &#34;celsius&#34;.equalsIgnoreCase(unit)) {</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">return</span> <span style="color:#e6db74">new WeatherResponse(city, &#34;22�C&#34;, &#34;Sunny&#34;, &#34;celsius&#34;);</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">        }</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">return</span> <span style="color:#e6db74">new WeatherResponse(city, &#34;N/A&#34;, &#34;Unknown&#34;, unit);</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    }</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">3.4</span> <span style="color:#e6db74">Create Your AI Controller with Tool Registration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Now,</span> <span style="color:#e6db74">let&#39;s integrate this WeatherService as a tool with our ChatClient.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Create</span> <span style="color:#e6db74">src/main/java/com/example/aichatbot/AiToolController.java:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Java</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">package</span> <span style="color:#e6db74">com.example.aichatbot;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.ai.chat.client.ChatClient;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.ai.chat.client.Request;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.ai.chat.model.ChatResponse;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.ai.chat.prompt.Prompt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.ai.model.function.FunctionCallback;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.ai.model.function.FunctionCallbackWrapper;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.context.annotation.Bean;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.web.bind.annotation.GetMapping;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.web.bind.annotation.RequestParam;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">org.springframework.web.bind.annotation.RestController;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">java.util.List;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">import</span> <span style="color:#e6db74">java.util.function.Function;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">public</span> <span style="color:#e6db74">class AiToolController {</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">private</span> <span style="color:#e6db74">final ChatClient chatClient;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">//</span> <span style="color:#e6db74">Inject the WeatherService</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">private</span> <span style="color:#e6db74">final WeatherService weatherService;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">//</span> <span style="color:#e6db74">The FunctionCallbackWrapper requires a Function. We&#39;ll define a record for input.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">//</span> <span style="color:#e6db74">This record&#39;s fields define the parameters the LLM can use for the tool.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">record</span> <span style="color:#e6db74">WeatherFunctionInput(String city, String unit) {}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">public</span> <span style="color:#e6db74">AiToolController(ChatClient.Builder chatClientBuilder, WeatherService weatherService) {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">this.weatherService</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">weatherService;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">1. Define the FunctionCallbackWrapper for our tool</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">FunctionCallback</span> <span style="color:#e6db74">weatherFunction = FunctionCallbackWrapper.builder(</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">&#34;getCurrentWeather&#34;,</span> <span style="color:#e6db74">// This is the name the LLM will see and try to call</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">&#34;Get</span> <span style="color:#e6db74">the current weather for a specified city.&#34;, // Description for the LLM</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">(json)</span> <span style="color:#e6db74">-&gt; { // Lambda that processes the JSON arguments from the LLM</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">//</span> <span style="color:#e6db74">Convert JSON arguments into our input record</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">WeatherFunctionInput</span> <span style="color:#e6db74">input = new WeatherFunctionInput(</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">(String)</span> <span style="color:#e6db74">json.get(&#34;city&#34;),</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">(String)</span> <span style="color:#e6db74">json.get(&#34;unit&#34;));</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">//</span> <span style="color:#e6db74">Call our actual Java service method with the extracted arguments</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">return</span> <span style="color:#e6db74">weatherService.getCurrentWeather(input.city(), input.unit());</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                })</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">.with</span>  <span style="color:#e6db74">(new Function&lt;WeatherFunctionInput, WeatherResponse&gt;() {</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                    @Override</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">public</span> <span style="color:#e6db74">WeatherResponse apply(WeatherFunctionInput weatherFunctionInput) {</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">return</span> <span style="color:#e6db74">weatherService.getCurrentWeather(weatherFunctionInput.city(), weatherFunctionInput.unit());</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                    }</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                })</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                .build();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">2. Build the ChatClient and register the tool</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">this.chatClient</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">chatClientBuilder</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">.functions(weatherFunction)</span> <span style="color:#e6db74">// Register our tool with the ChatClient</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                .build();</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    }</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    @GetMapping(&#34;/weather-chat&#34;)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">public</span> <span style="color:#e6db74">String chatWithWeatherTool(@RequestParam(value = &#34;message&#34;, defaultValue = &#34;What&#39;s the weather like in London?&#34;) String message) {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ChatResponse</span> <span style="color:#e6db74">response = chatClient.prompt()</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                .user(message)</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                .call()</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">.chatResponse();</span> <span style="color:#e6db74">// Get the full chat response object</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">Check if the LLM decided to call a tool</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">if</span> <span style="color:#e6db74">(response.getResult().getOutput().getFunctionCall() != null) {</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">//</span> <span style="color:#e6db74">In a real scenario, you&#39;d handle the tool call, execute the function,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">//</span> <span style="color:#e6db74">and then potentially send the result back to the LLM.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">//</span> <span style="color:#e6db74">For now, let&#39;s just indicate that a tool was called.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">return</span> <span style="color:#e6db74">&#34;The AI decided to call the &#39;getCurrentWeather&#39; tool. &#34; +</span>
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">&#34;Output</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34; + response.getResult().getOutput().getContent();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">}</span> <span style="color:#e6db74">else {</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">return</span> <span style="color:#e6db74">response.getResult().getOutput().getContent();</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">        }</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    }</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    @GetMapping(&#34;/weather-agent&#34;)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">public</span> <span style="color:#e6db74">String weatherAgent(@RequestParam(value = &#34;query&#34;, defaultValue = &#34;What is the temperature in New York in Celsius?&#34;) String query) {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">This demonstrates a more &#34;agent-like&#34; flow where the LLM can use the tool</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">and then provide a human-readable answer.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">The chatClient is configured with the tool.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">We prompt the LLM. Spring AI will handle the function calling mechanism.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">If the LLM decides to call the &#39;getCurrentWeather&#39; function,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">//</span> <span style="color:#e6db74">our WeatherService will be invoked and its result fed back to the LLM.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">return</span> <span style="color:#e6db74">chatClient.prompt()</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                .user(query)</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">                .call()</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">.content();</span> <span style="color:#e6db74">// This directly gets the final content from the LLM, after tool use</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    }</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">A</span> <span style="color:#e6db74">note on the FunctionCallbackWrapper: The FunctionCallbackWrapper setup is where you define the name of your tool, its description, and the lambda that extracts arguments from the JSON provided by the LLM and calls your actual Java method (weatherService.getCurrentWeather).</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">3.5</span> <span style="color:#e6db74">Run and Test Your Agent</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Run</span> <span style="color:#e6db74">your Spring Boot application (e.g., from your IDE or ./mvnw spring-boot:run).</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Open</span> <span style="color:#e6db74">your web browser or use Postman/curl:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#e6db74">//localhost:8080/weather-chat?message=What is the weather like in London right now?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Expected</span> <span style="color:#e6db74">behavior: The LLM should recognize it needs weather data and try to invoke the getCurrentWeather tool. You should see DEBUG: Calling WeatherService... in your application logs. The response in your browser will indicate the tool was called.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#e6db74">//localhost:8080/weather-agent?query=What is the temperature in New York in Celsius?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Expected</span> <span style="color:#e6db74">behavior: The LLM should understand the query, call the getCurrentWeather tool (you&#39;ll see the DEBUG log), and then use the result to provide a natural language answer like &#34;The temperature in New York is 22�C, and it&#39;s Sunny.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#e6db74">//localhost:8080/weather-chat?message=Tell me a joke.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Expected</span> <span style="color:#e6db74">behavior: The LLM will not call the weather tool, as it&#39;s not relevant. It will just tell you a joke directly.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">This</span> <span style="color:#e6db74">demonstrates how Spring AI bridges the gap, allowing your LLM to intelligently decide when and how to interact with your Java business logic.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">4.</span> <span style="color:#e6db74">Building More Sophisticated LLM Agents</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">The</span> <span style="color:#e6db74">weather example is a starting point. Real-world LLM agents are more complex, involving multiple tools and a sophisticated decision-making process.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">4.1</span> <span style="color:#e6db74">Orchestrating Multiple Tools</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Your</span> <span style="color:#e6db74">agent can have access to many tools: a product search API, an order placement API, an email sender, a knowledge base lookup, etc. The LLM&#39;s role is to decide which tool (or sequence of tools) to use to achieve the user&#39;s goal.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Spring</span> <span style="color:#e6db74">AI allows you to register multiple FunctionCallbackWrapper instances with your ChatClient.Builder.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Java</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">//</span> <span style="color:#e6db74">Example: Adding another tool</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">FunctionCallback</span> <span style="color:#e6db74">sendEmailFunction = FunctionCallbackWrapper.builder(</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">        &#34;sendEmail&#34;,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">&#34;Send</span> <span style="color:#e6db74">an email to a recipient with a subject and body.&#34;,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">(json)</span> <span style="color:#e6db74">-&gt; { /* logic to send email */ })</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">        .build();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">this.chatClient</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">chatClientBuilder</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">.functions(weatherFunction,</span> <span style="color:#e6db74">sendEmailFunction) // Register multiple tools</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">        .build();</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">4.2</span> <span style="color:#e6db74">Handling Complex Agentic Workflows</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">For</span> <span style="color:#e6db74">truly complex tasks, a simple single-turn tool call might not suffice. LLM agents often involve:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Planning</span><span style="color:#f92672">:</span> <span style="color:#e6db74">The LLM internally outlines a plan (e.g., &#34;First, search for product. If found, add to cart. Then, confirm order.&#34;).</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Execution</span><span style="color:#f92672">:</span> <span style="color:#e6db74">Executing steps based on the plan, possibly calling multiple tools sequentially.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Observation</span><span style="color:#f92672">:</span> <span style="color:#e6db74">The agent observes the results of tool calls.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Re-planning/Iteration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">If a tool call fails or doesn&#39;t yield expected results, the agent can re-plan or ask for clarification.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">While</span> <span style="color:#e6db74">Spring AI provides the core tool-calling mechanism, building a full-fledged autonomous agent often involves combining it with:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">State</span> <span style="color:#e6db74">Management: Storing conversation history and intermediate steps.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Feedback</span> <span style="color:#e6db74">Loops: Feeding tool output back to the LLM prompt.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Error</span> <span style="color:#e6db74">Handling: Gracefully managing failed tool calls.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">4.3</span> <span style="color:#e6db74">Agent Frameworks (Conceptual)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">More</span> <span style="color:#e6db74">advanced agentic behaviors might leverage higher-level frameworks (which Spring AI is continuously evolving to support):</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Chains</span><span style="color:#f92672">:</span> <span style="color:#e6db74">A predefined sequence of LLM calls and tool uses.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Agents</span><span style="color:#f92672">:</span> <span style="color:#e6db74">The LLM decides the sequence and tools dynamically.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">5.</span> <span style="color:#e6db74">Agent Design Principles for Enterprise Java</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">When</span> <span style="color:#e6db74">building LLM agents in production Java environments, consider:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Security</span><span style="color:#f92672">:</span> <span style="color:#e6db74">Ensure tool functions have appropriate access control. LLMs should only be able to invoke functions they are authorized for.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Auditability</span><span style="color:#f92672">:</span> <span style="color:#e6db74">Log all LLM inputs, tool calls, and outputs for debugging, compliance, and monitoring.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Idempotency</span><span style="color:#f92672">:</span> <span style="color:#e6db74">Design your tool functions to be idempotent where possible, meaning repeated calls have the same effect, to gracefully handle retries.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Latency</span> <span style="color:#e6db74">&amp; Performance: LLM API calls and tool executions can introduce latency. Design for asynchronous operations where appropriate (e.g., using Spring WebFlux or Java&#39;s Virtual Threads for non-blocking I/O).</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cost</span> <span style="color:#e6db74">Optimization: Monitor token usage. Design prompts and tools efficiently to minimize unnecessary LLM calls.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">6.</span> <span style="color:#e6db74">The Future of Intelligent Java Applications</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">The</span> <span style="color:#e6db74">ability to build LLM agents and use tools is a pivotal moment for Java development. It transforms LLMs from mere content generators into powerful, interactive components within your existing enterprise architectures.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Imagine</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">An</span> <span style="color:#e6db74">internal HR assistant that can retrieve employee data, update records, and draft emails based on natural language commands.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">A</span> <span style="color:#e6db74">customer support agent that can check order status, initiate refunds, and troubleshoot issues by integrating with your backend systems.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">A</span> <span style="color:#e6db74">financial analyst tool that queries real-time market data, performs calculations, and generates detailed reports, all orchestrated by an LLM.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Spring</span> <span style="color:#e6db74">AI is rapidly evolving to support even more sophisticated agentic workflows, paving the way for a new generation of intelligent, automated, and hyper-responsive Java applications. The blend of Java&#39;s enterprise readiness with AI&#39;s intelligence is truly powerful.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Are</span> <span style="color:#e6db74">you ready to build the next generation of intelligent, tool-using Java applications? Share your insights in the comments below!</span>
+</span></span></code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/java/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Java</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ai/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">AI</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/generative-ai/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Generative AI</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/llm-agents/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">LLM Agents</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/tool-use/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Tool Use</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/function-calling/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Function Calling</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/spring-ai/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Spring AI</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/prompt-engineering/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Prompt Engineering</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/autonomous-ai/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Autonomous AI</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-intelligent-java-apps-ai-spring-ai/">Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/optimizing-jvm-metaspace-dynamic-class-loading/">Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/jvm-monitoring-performance-tuning/">JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-security-oauth2-jwt/">Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-resilient-spring-boot-microservices/">Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cloud-native-java-spring-boot-kubernetes-2/">Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-best-practices-production/">Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-spring-data-jpa-advanced-techniques/">Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/reactive-programming-spring-webflux-r2dbc/">Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/spring-boot-3-ultimate-guide/">Spring Boot 3: The Ultimate Guide to Modern Java Microservices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mastering-microservices-spring-boot-3/">Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://javayou.com/" >
+    &copy;  JavaYou 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
