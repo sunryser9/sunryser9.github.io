@@ -140,6 +140,9 @@
     <loc>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</loc>
     <lastmod>2025-08-05T09:00:00+05:30</lastmod>
   </url><url>
+    <loc>https://javayou.com/posts/loom-virtual-threads/</loc>
+    <lastmod>2025-08-03T16:00:00+05:30</lastmod>
+  </url><url>
     <loc>https://javayou.com/tags/garbage-collection/</loc>
     <lastmod>2025-08-02T14:30:00+05:30</lastmod>
   </url><url>
