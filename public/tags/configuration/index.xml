@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on JavaYou</title>
+    <link>https://javayou.com/tags/configuration/</link>
+    <description>Recent content in Configuration on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 09:30:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</title>
+      <link>https://javayou.com/posts/spring-boot-best-practices-production/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/spring-boot-best-practices-production/</guid>
+      <description>&lt;h1 id=&#34;spring-boot-best-practices-for-production-ready-applications-beyond-the-basics&#34;&gt;Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics&lt;/h1&gt;&#xA;&lt;p&gt;Alright, fellow Java developers, let&amp;rsquo;s talk real talk. Spring Boot makes building applications incredibly easy, almost deceptively so. You can spin up a functional API in minutes, and that&amp;rsquo;s fantastic. But taking that quick-start project from your local machine to a production environment � where it needs to be secure, stable, performant, and maintainable under pressure � that&amp;rsquo;s a whole different ballgame.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool Use on JavaYou</title>
+    <link>https://javayou.com/tags/tool-use/</link>
+    <description>Recent content in Tool Use on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/tool-use/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI</title>
+      <link>https://javayou.com/posts/building-intelligent-llm-agents-java-spring-ai/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/building-intelligent-llm-agents-java-spring-ai/</guid>
+      <description>&lt;h1 id=&#34;beyond-chatgpt-building-intelligent-llm-agents-and-tool-using-applications-in-java-with-spring-ai&#34;&gt;Beyond ChatGPT: Building Intelligent LLM Agents and Tool-Using Applications in Java with Spring AI&lt;/h1&gt;&#xA;&lt;p&gt;Welcome back, fellow Java innovators! In our last guide, we explored the foundational power of Generative AI and how Spring AI makes it incredibly easy to integrate Large Language Models (LLMs) into your Java applications. We touched on generating text, summarization, and basic Q&amp;amp;A. But what if you want your LLM to do more than just generate text? What if you need it to fetch real-time data, interact with your internal APIs, or perform complex, multi-step actions?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memory Management on JavaYou</title>
+    <link>https://javayou.com/tags/memory-management/</link>
+    <description>Recent content in Memory Management on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Aug 2025 09:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/memory-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</title>
+      <link>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</link>
+      <pubDate>Tue, 05 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</guid>
+      <description>&lt;h1 id=&#34;optimizing-jvm-metaspace-for-dynamic-class-loading-in-spring-boot-microservices&#34;&gt;Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, advanced Java architects and site reliability engineers! In the complex landscape of modern microservices, especially those built with Spring Boot, ensuring predictable and stable performance is paramount. While heap memory is often the primary focus of optimization, the &lt;strong&gt;Metaspace&lt;/strong&gt; � where the JVM stores class metadata � frequently becomes an overlooked villain, silently leading to &lt;code&gt;OutOfMemoryError: Metaspace&lt;/code&gt; in long-running or dynamically evolving systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications</title>
+      <link>https://javayou.com/posts/jvm-monitoring-performance-tuning/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/jvm-monitoring-performance-tuning/</guid>
+      <description>&lt;h1 id=&#34;jvm-monitoring-and-performance-tuning-a-comprehensive-guide-for-production-java-applications&#34;&gt;JVM Monitoring and Performance Tuning: A Comprehensive Guide for Production Java Applications&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, Java engineers and site reliability experts! In the demanding world of production applications, simply writing functional code isn&amp;rsquo;t enough. The true test of a robust Java application lies in its &lt;strong&gt;performance, stability, and resource efficiency&lt;/strong&gt; under real-world load. And at the heart of every running Java application is the &lt;strong&gt;Java Virtual Machine (JVM)&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Optimizing the JVM is often the most critical, yet frequently overlooked, aspect of ensuring your Java applications run smoothly, consume fewer resources, and scale effectively. This comprehensive guide from JavaYou.com will demystify JVM monitoring and performance tuning, providing you with the knowledge and tools to keep your production Java applications running at peak performance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

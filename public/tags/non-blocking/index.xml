@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Non-Blocking on JavaYou</title>
+    <link>https://javayou.com/tags/non-blocking/</link>
+    <description>Recent content in Non-Blocking on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Jul 2025 23:02:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/non-blocking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications</title>
+      <link>https://javayou.com/posts/reactive-programming-spring-webflux-r2dbc/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/reactive-programming-spring-webflux-r2dbc/</guid>
+      <description>&lt;h1 id=&#34;reactive-programming-with-spring-webflux-and-r2dbc-building-high-performance-non-blocking-applications&#34;&gt;Reactive Programming with Spring WebFlux and R2DBC: Building High-Performance, Non-Blocking Applications&lt;/h1&gt;&#xA;&lt;p&gt;Are you tired of your Java applications hitting performance bottlenecks under heavy load? Does the thought of scaling your microservices efficiently keep you up at night? Welcome to the world of &lt;strong&gt;Reactive Programming&lt;/strong&gt; – a paradigm shift in how we build high-performance, resilient, and highly scalable applications. And at the heart of modern reactive Java development lies the powerful duo of &lt;strong&gt;Spring WebFlux&lt;/strong&gt; and &lt;strong&gt;R2DBC&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

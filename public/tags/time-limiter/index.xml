@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Time Limiter on JavaYou</title>
+    <link>https://javayou.com/tags/time-limiter/</link>
+    <description>Recent content in Time Limiter on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/time-limiter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</title>
+      <link>https://javayou.com/posts/building-resilient-spring-boot-microservices/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/building-resilient-spring-boot-microservices/</guid>
+      <description>&lt;h1 id=&#34;building-resilient-spring-boot-microservices-a-comprehensive-guide-to-fault-tolerance-with-resilience4j&#34;&gt;Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, microservices architects and reliability gurus! If you&amp;rsquo;re running distributed systems in production, you know the brutal truth: &lt;strong&gt;failure is inevitable.&lt;/strong&gt; Services go down, networks get flaky, databases get overloaded. The real challenge isn&amp;rsquo;t preventing failures entirely (often impossible), but designing your applications to &lt;strong&gt;gracefully handle these failures&lt;/strong&gt;, prevent cascading outages, and maintain overall system stability.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

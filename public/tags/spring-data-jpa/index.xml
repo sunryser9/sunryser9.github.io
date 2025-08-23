@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Data JPA on JavaYou</title>
+    <link>https://javayou.com/tags/spring-data-jpa/</link>
+    <description>Recent content in Spring Data JPA on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 09:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/spring-data-jpa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</title>
+      <link>https://javayou.com/posts/mastering-spring-data-jpa-advanced-techniques/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-spring-data-jpa-advanced-techniques/</guid>
+      <description>&lt;h1 id=&#34;mastering-spring-data-jpa-advanced-techniques-and-best-practices-for-high-performance-data-access&#34;&gt;Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access&lt;/h1&gt;&#xA;&lt;p&gt;Alright, fellow Java engineers, let&amp;rsquo;s get down to business with data! Spring Data JPA is an absolute game-changer. It takes the pain out of data access, letting us write less boilerplate code and focus on business logic. But here�s the thing: while getting basic CRUD operations working is delightfully simple, building &lt;strong&gt;high-performance, resilient, and scalable data access layers&lt;/strong&gt; for production applications is where the real mastery comes in.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

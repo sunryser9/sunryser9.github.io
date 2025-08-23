@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud-Native on JavaYou</title>
+    <link>https://javayou.com/tags/cloud-native/</link>
+    <description>Recent content in Cloud-Native on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Aug 2025 09:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/cloud-native/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications</title>
+      <link>https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/</guid>
+      <description>&lt;h1 id=&#34;mastering-the-graalvm-ahead-of-time-aot-compilation-for-ultra-fast-low-memory-spring-boot-applications&#34;&gt;Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, JavaYou.com community! We&amp;rsquo;ve spent a lot of time discussing how to optimize the JVM, but what if we could bypass a large part of the JVM&amp;rsquo;s startup overhead entirely? What if your Spring Boot application could launch in milliseconds and use a fraction of the memory? This isn&amp;rsquo;t a fantasy; it&amp;rsquo;s the reality of &lt;strong&gt;Ahead-of-Time (AOT) compilation&lt;/strong&gt; with &lt;strong&gt;GraalVM&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</title>
+      <link>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/</guid>
+      <description>&lt;h1 id=&#34;cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes&#34;&gt;Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, cloud adventurers and Java maestros! If you&amp;rsquo;re building modern applications, the terms &amp;ldquo;Cloud-Native&amp;rdquo; and &amp;ldquo;Kubernetes&amp;rdquo; are probably as common in your daily vocabulary as &amp;ldquo;Spring Boot&amp;rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap � one that promises unparalleled scalability, resilience, and operational efficiency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</title>
+      <link>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes&#34;&gt;Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, cloud adventurers and Java maestros! If you&amp;rsquo;re building modern applications, the terms &amp;ldquo;Cloud-Native&amp;rdquo; and &amp;ldquo;Kubernetes&amp;rdquo; are probably as common in your daily vocabulary as &amp;ldquo;Spring Boot&amp;rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap � one that promises unparalleled scalability, resilience, and operational efficiency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</title>
+      <link>https://javayou.com/posts/building-intelligent-java-apps-ai-spring-ai/</link>
+      <pubDate>Sun, 27 Jul 2025 16:20:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/building-intelligent-java-apps-ai-spring-ai/</guid>
+      <description>&lt;h1 id=&#34;building-intelligent-java-applications-a-comprehensive-guide-to-generative-ai-with-spring-ai--llms&#34;&gt;Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp;amp; LLMs&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, forward-thinking Java developers! The world of software is undergoing a monumental shift, driven by the explosive growth of Artificial Intelligence, particularly &lt;strong&gt;Generative AI&lt;/strong&gt;. This isn&amp;rsquo;t just about buzzwords; it&amp;rsquo;s about fundamentally changing how applications are built, allowing them to understand, generate, and interact with human-like intelligence.&lt;/p&gt;&#xA;&lt;p&gt;You might be asking: &amp;ldquo;Where does Java fit into this exciting new landscape?&amp;rdquo; The answer is, at the very heart of it! Java, with its enterprise-grade stability, vast ecosystem, and proven scalability, is rapidly becoming a powerhouse for building production-ready AI applications. And the &lt;strong&gt;Spring AI&lt;/strong&gt; project is leading the charge, making it incredibly easy for Spring Boot developers to integrate Large Language Models (LLMs) and other AI capabilities into their existing architectures.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</title>
+      <link>https://javayou.com/posts/mastering-microservices-spring-boot-3/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-microservices-spring-boot-3/</guid>
+      <description>&lt;h1 id=&#34;mastering-microservices-with-spring-boot-3--beyond-a-comprehensive-guide-for-java-developers&#34;&gt;Mastering Microservices with Spring Boot 3 &amp;amp; Beyond: A Comprehensive Guide for Java Developers&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, fellow Java developers! Have you ever found yourself wrestling with a massive codebase, where a tiny change in one part of the system seems to ripple unpredictably through another? Or perhaps scaling a single component means scaling the entire monolithic application, even if only one small feature is getting all the traffic? If any of this sounds familiar, then the world of microservices is calling your name.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

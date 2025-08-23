@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vector Databases on JavaYou</title>
+    <link>https://javayou.com/tags/vector-databases/</link>
+    <description>Recent content in Vector Databases on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jul 2025 16:20:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/vector-databases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp; LLMs</title>
+      <link>https://javayou.com/posts/building-intelligent-java-apps-ai-spring-ai/</link>
+      <pubDate>Sun, 27 Jul 2025 16:20:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/building-intelligent-java-apps-ai-spring-ai/</guid>
+      <description>&lt;h1 id=&#34;building-intelligent-java-applications-a-comprehensive-guide-to-generative-ai-with-spring-ai--llms&#34;&gt;Building Intelligent Java Applications: A Comprehensive Guide to Generative AI with Spring AI &amp;amp; LLMs&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, forward-thinking Java developers! The world of software is undergoing a monumental shift, driven by the explosive growth of Artificial Intelligence, particularly &lt;strong&gt;Generative AI&lt;/strong&gt;. This isn&amp;rsquo;t just about buzzwords; it&amp;rsquo;s about fundamentally changing how applications are built, allowing them to understand, generate, and interact with human-like intelligence.&lt;/p&gt;&#xA;&lt;p&gt;You might be asking: &amp;ldquo;Where does Java fit into this exciting new landscape?&amp;rdquo; The answer is, at the very heart of it! Java, with its enterprise-grade stability, vast ecosystem, and proven scalability, is rapidly becoming a powerhouse for building production-ready AI applications. And the &lt;strong&gt;Spring AI&lt;/strong&gt; project is leading the charge, making it incredibly easy for Spring Boot developers to integrate Large Language Models (LLMs) and other AI capabilities into their existing architectures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

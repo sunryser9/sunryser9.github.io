@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenTelemetry on JavaYou</title>
+    <link>https://javayou.com/tags/opentelemetry/</link>
+    <description>Recent content in OpenTelemetry on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/opentelemetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging</title>
+      <link>https://javayou.com/posts/mastering-observability-spring-boot-microservices/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-observability-spring-boot-microservices/</guid>
+      <description>&lt;h1 id=&#34;mastering-observability-in-spring-boot-microservices-a-deep-dive-into-metrics-tracing-and-logging&#34;&gt;Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging&lt;/h1&gt;&#xA;&lt;p&gt;Welcome back, architects of scalable systems and guardians of uptime! In the complex world of microservices, where dozens or even hundreds of independent services collaborate to form a single application, simply checking if a service is &amp;ldquo;up&amp;rdquo; is no longer sufficient. When an issue arises � a spike in latency, an unexpected error rate, or a complete outage � pinpointing the root cause across a distributed system can feel like searching for a needle in a haystack.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

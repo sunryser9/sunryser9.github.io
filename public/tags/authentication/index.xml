@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authentication on </title>
-    <link>/tags/authentication/</link>
-    <description>Recent content in Authentication on </description>
+    <title>Authentication on JavaYou</title>
+    <link>https://javayou.com/tags/authentication/</link>
+    <description>Recent content in Authentication on JavaYou</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 16 Aug 2025 16:20:00 +0530</lastBuildDate>
-    <atom:link href="/tags/authentication/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 11:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/authentication/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Securing Modern Java Applications: The Ultimate Guide to Spring Security</title>
-      <link>/posts/securing-modern-java-applications/</link>
-      <pubDate>Sat, 16 Aug 2025 16:10:00 +0530</pubDate>
-      <guid>/posts/securing-modern-java-applications/</guid>
-      <description>&lt;h3 id=&#34;securing-modern-java-applications-the-ultimate-guide-to-spring-security&#34;&gt;&lt;strong&gt;Securing Modern Java Applications: The Ultimate Guide to Spring Security&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Hello, and welcome to a topic that is absolutely non-negotiable for any modern software developer: application security. In today&amp;rsquo;s digital landscape, a website or API that isn&amp;rsquo;t secure is not just a liability�it&amp;rsquo;s a ticking time bomb. For Java developers, &lt;strong&gt;Spring Security&lt;/strong&gt; is the industry standard for protecting applications. It�s powerful, highly configurable, and, let&amp;rsquo;s be honest, a bit intimidating at first glance.&lt;/p&gt;</description>
+      <title>Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications</title>
+      <link>https://javayou.com/posts/mastering-spring-security-oauth2-jwt/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-spring-security-oauth2-jwt/</guid>
+      <description>&lt;h1 id=&#34;mastering-spring-security-a-comprehensive-guide-to-authentication-authorization-oauth2-and-jwt-for-modern-java-applications&#34;&gt;Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, vigilant developers and guardians of data! In today&amp;rsquo;s interconnected world, security is not just a feature; it&amp;rsquo;s the bedrock of trust for any application. For Java developers building with Spring Boot, &lt;strong&gt;Spring Security&lt;/strong&gt; is the undisputed champion for handling authentication and authorization. But let&amp;rsquo;s be honest: while incredibly powerful, it can sometimes feel like navigating a complex maze, especially with the advent of modern paradigms like REST APIs, OAuth2, and JSON Web Tokens (JWT).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

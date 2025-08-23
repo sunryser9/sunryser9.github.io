@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributed Systems on JavaYou</title>
+    <link>https://javayou.com/tags/distributed-systems/</link>
+    <description>Recent content in Distributed Systems on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 11:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/distributed-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems</title>
+      <link>https://javayou.com/posts/microservices-communication-patterns-spring-boot/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/microservices-communication-patterns-spring-boot/</guid>
+      <description>&lt;h1 id=&#34;microservices-communication-patterns-in-spring-boot-mastering-rest-grpc-and-asynchronous-messaging-for-resilient-systems&#34;&gt;Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, distributed systems enthusiasts and microservices architects! If you&amp;rsquo;ve embraced the microservices paradigm, you&amp;rsquo;ve likely reaped the benefits of independent deployments, technology diversity, and team autonomy. But let&amp;rsquo;s be honest: a common challenge that quickly emerges is how these independent services &lt;em&gt;talk&lt;/em&gt; to each other. It&amp;rsquo;s the nervous system of your entire architecture, and getting it wrong can lead to brittle systems, cascading failures, and debugging nightmares.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</title>
+      <link>https://javayou.com/posts/building-resilient-spring-boot-microservices/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/building-resilient-spring-boot-microservices/</guid>
+      <description>&lt;h1 id=&#34;building-resilient-spring-boot-microservices-a-comprehensive-guide-to-fault-tolerance-with-resilience4j&#34;&gt;Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, microservices architects and reliability gurus! If you&amp;rsquo;re running distributed systems in production, you know the brutal truth: &lt;strong&gt;failure is inevitable.&lt;/strong&gt; Services go down, networks get flaky, databases get overloaded. The real challenge isn&amp;rsquo;t preventing failures entirely (often impossible), but designing your applications to &lt;strong&gt;gracefully handle these failures&lt;/strong&gt;, prevent cascading outages, and maintain overall system stability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging</title>
+      <link>https://javayou.com/posts/mastering-observability-spring-boot-microservices/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-observability-spring-boot-microservices/</guid>
+      <description>&lt;h1 id=&#34;mastering-observability-in-spring-boot-microservices-a-deep-dive-into-metrics-tracing-and-logging&#34;&gt;Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging&lt;/h1&gt;&#xA;&lt;p&gt;Welcome back, architects of scalable systems and guardians of uptime! In the complex world of microservices, where dozens or even hundreds of independent services collaborate to form a single application, simply checking if a service is &amp;ldquo;up&amp;rdquo; is no longer sufficient. When an issue arises � a spike in latency, an unexpected error rate, or a complete outage � pinpointing the root cause across a distributed system can feel like searching for a needle in a haystack.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

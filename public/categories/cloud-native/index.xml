@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Native on JavaYou</title>
+    <link>https://javayou.com/categories/cloud-native/</link>
+    <description>Recent content in Cloud Native on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Aug 2025 09:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/categories/cloud-native/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications</title>
+      <link>https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/</guid>
+      <description>&lt;h1 id=&#34;mastering-the-graalvm-ahead-of-time-aot-compilation-for-ultra-fast-low-memory-spring-boot-applications&#34;&gt;Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, JavaYou.com community! We&amp;rsquo;ve spent a lot of time discussing how to optimize the JVM, but what if we could bypass a large part of the JVM&amp;rsquo;s startup overhead entirely? What if your Spring Boot application could launch in milliseconds and use a fraction of the memory? This isn&amp;rsquo;t a fantasy; it&amp;rsquo;s the reality of &lt;strong&gt;Ahead-of-Time (AOT) compilation&lt;/strong&gt; with &lt;strong&gt;GraalVM&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

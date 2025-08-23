@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Boot on JavaYou</title>
+    <link>https://javayou.com/tags/spring-boot/</link>
+    <description>Recent content in Spring Boot on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Aug 2025 12:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Monolith to Microservices: A Spring Boot and Kubernetes Migration Guide</title>
+      <link>https://javayou.com/posts/monolith-to-microservices-with-spring-boot/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/monolith-to-microservices-with-spring-boot/</guid>
+      <description>&lt;p&gt;Introduction: The Evolution of Modern Applications&#xA;For years, the monolithic architecture served as the backbone of countless enterprise applications. It�s a single, cohesive unit where all components�data, business logic, and UI�are tightly coupled. While this approach is simple to develop and deploy initially, it presents significant challenges as an application scales.&lt;/p&gt;&#xA;&lt;p&gt;This comprehensive guide will walk you through the journey of migrating a monolithic Spring Boot application to a resilient, scalable microservices architecture. We�ll cover the strategic decisions, technical challenges, and the role of Kubernetes in orchestrating this modern deployment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications</title>
+      <link>https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-graalvm-for-spring-boot-aot/</guid>
+      <description>&lt;h1 id=&#34;mastering-the-graalvm-ahead-of-time-aot-compilation-for-ultra-fast-low-memory-spring-boot-applications&#34;&gt;Mastering the GraalVM: Ahead-of-Time (AOT) Compilation for Ultra-Fast, Low-Memory Spring Boot Applications&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, JavaYou.com community! We&amp;rsquo;ve spent a lot of time discussing how to optimize the JVM, but what if we could bypass a large part of the JVM&amp;rsquo;s startup overhead entirely? What if your Spring Boot application could launch in milliseconds and use a fraction of the memory? This isn&amp;rsquo;t a fantasy; it&amp;rsquo;s the reality of &lt;strong&gt;Ahead-of-Time (AOT) compilation&lt;/strong&gt; with &lt;strong&gt;GraalVM&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</title>
+      <link>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</link>
+      <pubDate>Tue, 05 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</guid>
+      <description>&lt;h1 id=&#34;optimizing-jvm-metaspace-for-dynamic-class-loading-in-spring-boot-microservices&#34;&gt;Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, advanced Java architects and site reliability engineers! In the complex landscape of modern microservices, especially those built with Spring Boot, ensuring predictable and stable performance is paramount. While heap memory is often the primary focus of optimization, the &lt;strong&gt;Metaspace&lt;/strong&gt; � where the JVM stores class metadata � frequently becomes an overlooked villain, silently leading to &lt;code&gt;OutOfMemoryError: Metaspace&lt;/code&gt; in long-running or dynamically evolving systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications</title>
+      <link>https://javayou.com/posts/mastering-spring-security-oauth2-jwt/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-spring-security-oauth2-jwt/</guid>
+      <description>&lt;h1 id=&#34;mastering-spring-security-a-comprehensive-guide-to-authentication-authorization-oauth2-and-jwt-for-modern-java-applications&#34;&gt;Mastering Spring Security: A Comprehensive Guide to Authentication, Authorization, OAuth2, and JWT for Modern Java Applications&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, vigilant developers and guardians of data! In today&amp;rsquo;s interconnected world, security is not just a feature; it&amp;rsquo;s the bedrock of trust for any application. For Java developers building with Spring Boot, &lt;strong&gt;Spring Security&lt;/strong&gt; is the undisputed champion for handling authentication and authorization. But let&amp;rsquo;s be honest: while incredibly powerful, it can sometimes feel like navigating a complex maze, especially with the advent of modern paradigms like REST APIs, OAuth2, and JSON Web Tokens (JWT).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems</title>
+      <link>https://javayou.com/posts/microservices-communication-patterns-spring-boot/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/microservices-communication-patterns-spring-boot/</guid>
+      <description>&lt;h1 id=&#34;microservices-communication-patterns-in-spring-boot-mastering-rest-grpc-and-asynchronous-messaging-for-resilient-systems&#34;&gt;Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, distributed systems enthusiasts and microservices architects! If you&amp;rsquo;ve embraced the microservices paradigm, you&amp;rsquo;ve likely reaped the benefits of independent deployments, technology diversity, and team autonomy. But let&amp;rsquo;s be honest: a common challenge that quickly emerges is how these independent services &lt;em&gt;talk&lt;/em&gt; to each other. It&amp;rsquo;s the nervous system of your entire architecture, and getting it wrong can lead to brittle systems, cascading failures, and debugging nightmares.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j</title>
+      <link>https://javayou.com/posts/building-resilient-spring-boot-microservices/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/building-resilient-spring-boot-microservices/</guid>
+      <description>&lt;h1 id=&#34;building-resilient-spring-boot-microservices-a-comprehensive-guide-to-fault-tolerance-with-resilience4j&#34;&gt;Building Resilient Spring Boot Microservices: A Comprehensive Guide to Fault Tolerance with Resilience4j&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, microservices architects and reliability gurus! If you&amp;rsquo;re running distributed systems in production, you know the brutal truth: &lt;strong&gt;failure is inevitable.&lt;/strong&gt; Services go down, networks get flaky, databases get overloaded. The real challenge isn&amp;rsquo;t preventing failures entirely (often impossible), but designing your applications to &lt;strong&gt;gracefully handle these failures&lt;/strong&gt;, prevent cascading outages, and maintain overall system stability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</title>
+      <link>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/</guid>
+      <description>&lt;h1 id=&#34;cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes&#34;&gt;Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, cloud adventurers and Java maestros! If you&amp;rsquo;re building modern applications, the terms &amp;ldquo;Cloud-Native&amp;rdquo; and &amp;ldquo;Kubernetes&amp;rdquo; are probably as common in your daily vocabulary as &amp;ldquo;Spring Boot&amp;rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap � one that promises unparalleled scalability, resilience, and operational efficiency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</title>
+      <link>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes&#34;&gt;Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, cloud adventurers and Java maestros! If you&amp;rsquo;re building modern applications, the terms &amp;ldquo;Cloud-Native&amp;rdquo; and &amp;ldquo;Kubernetes&amp;rdquo; are probably as common in your daily vocabulary as &amp;ldquo;Spring Boot&amp;rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap � one that promises unparalleled scalability, resilience, and operational efficiency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging</title>
+      <link>https://javayou.com/posts/mastering-observability-spring-boot-microservices/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-observability-spring-boot-microservices/</guid>
+      <description>&lt;h1 id=&#34;mastering-observability-in-spring-boot-microservices-a-deep-dive-into-metrics-tracing-and-logging&#34;&gt;Mastering Observability in Spring Boot Microservices: A Deep Dive into Metrics, Tracing, and Logging&lt;/h1&gt;&#xA;&lt;p&gt;Welcome back, architects of scalable systems and guardians of uptime! In the complex world of microservices, where dozens or even hundreds of independent services collaborate to form a single application, simply checking if a service is &amp;ldquo;up&amp;rdquo; is no longer sufficient. When an issue arises � a spike in latency, an unexpected error rate, or a complete outage � pinpointing the root cause across a distributed system can feel like searching for a needle in a haystack.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics</title>
+      <link>https://javayou.com/posts/spring-boot-best-practices-production/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/spring-boot-best-practices-production/</guid>
+      <description>&lt;h1 id=&#34;spring-boot-best-practices-for-production-ready-applications-beyond-the-basics&#34;&gt;Spring Boot Best Practices for Production-Ready Applications: Beyond the Basics&lt;/h1&gt;&#xA;&lt;p&gt;Alright, fellow Java developers, let&amp;rsquo;s talk real talk. Spring Boot makes building applications incredibly easy, almost deceptively so. You can spin up a functional API in minutes, and that&amp;rsquo;s fantastic. But taking that quick-start project from your local machine to a production environment � where it needs to be secure, stable, performant, and maintainable under pressure � that&amp;rsquo;s a whole different ballgame.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access</title>
+      <link>https://javayou.com/posts/mastering-spring-data-jpa-advanced-techniques/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-spring-data-jpa-advanced-techniques/</guid>
+      <description>&lt;h1 id=&#34;mastering-spring-data-jpa-advanced-techniques-and-best-practices-for-high-performance-data-access&#34;&gt;Mastering Spring Data JPA: Advanced Techniques and Best Practices for High-Performance Data Access&lt;/h1&gt;&#xA;&lt;p&gt;Alright, fellow Java engineers, let&amp;rsquo;s get down to business with data! Spring Data JPA is an absolute game-changer. It takes the pain out of data access, letting us write less boilerplate code and focus on business logic. But here�s the thing: while getting basic CRUD operations working is delightfully simple, building &lt;strong&gt;high-performance, resilient, and scalable data access layers&lt;/strong&gt; for production applications is where the real mastery comes in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</title>
+      <link>https://javayou.com/posts/mastering-microservices-spring-boot-3/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-microservices-spring-boot-3/</guid>
+      <description>&lt;h1 id=&#34;mastering-microservices-with-spring-boot-3--beyond-a-comprehensive-guide-for-java-developers&#34;&gt;Mastering Microservices with Spring Boot 3 &amp;amp; Beyond: A Comprehensive Guide for Java Developers&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, fellow Java developers! Have you ever found yourself wrestling with a massive codebase, where a tiny change in one part of the system seems to ripple unpredictably through another? Or perhaps scaling a single component means scaling the entire monolithic application, even if only one small feature is getting all the traffic? If any of this sounds familiar, then the world of microservices is calling your name.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</title>
+      <link>https://javayou.com/posts/</link>
+      <pubDate>Sat, 03 Aug 2024 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/</guid>
+      <description>&lt;h1 id=&#34;mastering-generative-ai-in-java-building-your-first-llm-application-with-langchain4j-and-spring-boot-plus-local-model-integration&#34;&gt;Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-the-ai-revolution-and-javas-enduring-role&#34;&gt;Introduction: The AI Revolution and Java&amp;rsquo;s Enduring Role&lt;/h2&gt;&#xA;&lt;p&gt;The landscape of software development is undergoing a seismic shift. Just a few short years ago, Artificial Intelligence felt like a distant, specialized discipline, often confined to academic research or the realms of data scientists. Today, Generative AI has burst into the mainstream, bringing with it capabilities that feel almost magical � from creating compelling text and realistic images to generating code and summarizing vast amounts of information in seconds.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

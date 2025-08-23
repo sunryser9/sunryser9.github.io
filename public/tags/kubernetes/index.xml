@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on JavaYou</title>
+    <link>https://javayou.com/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Aug 2025 12:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Monolith to Microservices: A Spring Boot and Kubernetes Migration Guide</title>
+      <link>https://javayou.com/posts/monolith-to-microservices-with-spring-boot/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/monolith-to-microservices-with-spring-boot/</guid>
+      <description>&lt;p&gt;Introduction: The Evolution of Modern Applications&#xA;For years, the monolithic architecture served as the backbone of countless enterprise applications. It�s a single, cohesive unit where all components�data, business logic, and UI�are tightly coupled. While this approach is simple to develop and deploy initially, it presents significant challenges as an application scales.&lt;/p&gt;&#xA;&lt;p&gt;This comprehensive guide will walk you through the journey of migrating a monolithic Spring Boot application to a resilient, scalable microservices architecture. We�ll cover the strategic decisions, technical challenges, and the role of Kubernetes in orchestrating this modern deployment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</title>
+      <link>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes-2/</guid>
+      <description>&lt;h1 id=&#34;cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes&#34;&gt;Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, cloud adventurers and Java maestros! If you&amp;rsquo;re building modern applications, the terms &amp;ldquo;Cloud-Native&amp;rdquo; and &amp;ldquo;Kubernetes&amp;rdquo; are probably as common in your daily vocabulary as &amp;ldquo;Spring Boot&amp;rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap � one that promises unparalleled scalability, resilience, and operational efficiency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes</title>
+      <link>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/cloud-native-java-spring-boot-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;cloud-native-java-with-spring-boot-a-comprehensive-guide-to-deploying-and-scaling-on-kubernetes&#34;&gt;Cloud-Native Java with Spring Boot: A Comprehensive Guide to Deploying and Scaling on Kubernetes&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, cloud adventurers and Java maestros! If you&amp;rsquo;re building modern applications, the terms &amp;ldquo;Cloud-Native&amp;rdquo; and &amp;ldquo;Kubernetes&amp;rdquo; are probably as common in your daily vocabulary as &amp;ldquo;Spring Boot&amp;rdquo; itself. Moving your beloved Spring Boot applications from a cozy local environment to a bustling production cluster on Kubernetes is a significant leap � one that promises unparalleled scalability, resilience, and operational efficiency.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

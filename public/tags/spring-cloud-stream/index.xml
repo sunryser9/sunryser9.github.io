@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Cloud Stream on JavaYou</title>
+    <link>https://javayou.com/tags/spring-cloud-stream/</link>
+    <description>Recent content in Spring Cloud Stream on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Aug 2025 11:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/spring-cloud-stream/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems</title>
+      <link>https://javayou.com/posts/microservices-communication-patterns-spring-boot/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/microservices-communication-patterns-spring-boot/</guid>
+      <description>&lt;h1 id=&#34;microservices-communication-patterns-in-spring-boot-mastering-rest-grpc-and-asynchronous-messaging-for-resilient-systems&#34;&gt;Microservices Communication Patterns in Spring Boot: Mastering REST, gRPC, and Asynchronous Messaging for Resilient Systems&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, distributed systems enthusiasts and microservices architects! If you&amp;rsquo;ve embraced the microservices paradigm, you&amp;rsquo;ve likely reaped the benefits of independent deployments, technology diversity, and team autonomy. But let&amp;rsquo;s be honest: a common challenge that quickly emerges is how these independent services &lt;em&gt;talk&lt;/em&gt; to each other. It&amp;rsquo;s the nervous system of your entire architecture, and getting it wrong can lead to brittle systems, cascading failures, and debugging nightmares.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

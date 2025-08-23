@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Productivity on JavaYou</title>
+    <link>https://javayou.com/tags/productivity/</link>
+    <description>Recent content in Productivity on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jul 2025 18:30:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Definitive Guide to IntelliJ IDEA&#39;s AI Capabilities: Supercharge Java Development in 2025</title>
+      <link>https://javayou.com/posts/intellij-idea-ai-features/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/intellij-idea-ai-features/</guid>
+      <description>&lt;h2 id=&#34;the-definitive-guide-to-intellij-ideas-ai-capabilities-supercharge-java-development-in-2025&#34;&gt;The Definitive Guide to IntelliJ IDEA&amp;rsquo;s AI Capabilities: Supercharge Java Development in 2025&lt;/h2&gt;&#xA;&lt;p&gt;As we step deeper into 2025, the landscape of Java development is rapidly transforming, driven significantly by advancements in Artificial Intelligence. At the forefront of this evolution is &lt;strong&gt;IntelliJ IDEA&lt;/strong&gt;, a long-time favorite IDE for Java developers, now supercharged with a suite of AI-powered capabilities designed to redefine productivity and code quality.&lt;/p&gt;&#xA;&lt;p&gt;This definitive guide will take you through the core AI features within IntelliJ IDEA, demonstrating how they are not just futuristic concepts but practical tools ready to be integrated into your daily workflow.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

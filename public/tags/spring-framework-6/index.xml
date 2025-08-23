@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Framework 6 on JavaYou</title>
+    <link>https://javayou.com/tags/spring-framework-6/</link>
+    <description>Recent content in Spring Framework 6 on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Jul 2025 16:45:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/spring-framework-6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Boot 3: The Ultimate Guide to Modern Java Microservices</title>
+      <link>https://javayou.com/posts/spring-boot-3-ultimate-guide/</link>
+      <pubDate>Tue, 29 Jul 2025 16:45:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/spring-boot-3-ultimate-guide/</guid>
+      <description>&lt;h1 id=&#34;spring-boot-3-the-ultimate-guide-to-modern-java-microservices&#34;&gt;Spring Boot 3: The Ultimate Guide to Modern Java Microservices&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, forward-thinking Java developers! In the ever-evolving landscape of enterprise application development, Spring Boot has consistently been at the forefront, simplifying the creation of robust, production-ready microservices. With the advent of &lt;strong&gt;Spring Boot 3&lt;/strong&gt;, the framework takes a monumental leap forward, ushering in an era of unparalleled performance, enhanced observability, and a stronger alignment with modern Java standards.&lt;/p&gt;&#xA;&lt;p&gt;This guide will deep dive into the most groundbreaking features of Spring Boot 3, demonstrating why it&amp;rsquo;s the definitive choice for building scalable, efficient, and future-proof Java microservices.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

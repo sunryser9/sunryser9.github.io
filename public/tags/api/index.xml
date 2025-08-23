@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on JavaYou</title>
+    <link>https://javayou.com/tags/api/</link>
+    <description>Recent content in API on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jul 2025 15:40:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Microservices with Spring Boot 3 &amp; Beyond: A Comprehensive Guide for Java Developers</title>
+      <link>https://javayou.com/posts/mastering-microservices-spring-boot-3/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/mastering-microservices-spring-boot-3/</guid>
+      <description>&lt;h1 id=&#34;mastering-microservices-with-spring-boot-3--beyond-a-comprehensive-guide-for-java-developers&#34;&gt;Mastering Microservices with Spring Boot 3 &amp;amp; Beyond: A Comprehensive Guide for Java Developers&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, fellow Java developers! Have you ever found yourself wrestling with a massive codebase, where a tiny change in one part of the system seems to ripple unpredictably through another? Or perhaps scaling a single component means scaling the entire monolithic application, even if only one small feature is getting all the traffic? If any of this sounds familiar, then the world of microservices is calling your name.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

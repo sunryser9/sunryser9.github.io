@@ -6,6 +6,910 @@
     <description>Recent content in Tags on JavaYou</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 15 Aug 2025 12:00:00 +0530</lastBuildDate>
     <atom:link href="https://javayou.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud</title>
+      <link>https://javayou.com/tags/cloud/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://javayou.com/tags/java/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://javayou.com/tags/kubernetes/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Microservices</title>
+      <link>https://javayou.com/tags/microservices/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/microservices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monolith</title>
+      <link>https://javayou.com/tags/monolith/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/monolith/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>https://javayou.com/tags/spring-boot/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AOT</title>
+      <link>https://javayou.com/tags/aot/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/aot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud-Native</title>
+      <link>https://javayou.com/tags/cloud-native/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/cloud-native/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GraalVM</title>
+      <link>https://javayou.com/tags/graalvm/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/graalvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JVM</title>
+      <link>https://javayou.com/tags/jvm/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Native Image</title>
+      <link>https://javayou.com/tags/native-image/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/native-image/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance Tuning</title>
+      <link>https://javayou.com/tags/performance-tuning/</link>
+      <pubDate>Mon, 11 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/performance-tuning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://javayou.com/tags/ai/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Autonomous AI</title>
+      <link>https://javayou.com/tags/autonomous-ai/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/autonomous-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Function Calling</title>
+      <link>https://javayou.com/tags/function-calling/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/function-calling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Generative AI</title>
+      <link>https://javayou.com/tags/generative-ai/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/generative-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM Agents</title>
+      <link>https://javayou.com/tags/llm-agents/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/llm-agents/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prompt Engineering</title>
+      <link>https://javayou.com/tags/prompt-engineering/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/prompt-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring AI</title>
+      <link>https://javayou.com/tags/spring-ai/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tool Use</title>
+      <link>https://javayou.com/tags/tool-use/</link>
+      <pubDate>Tue, 05 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/tool-use/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ClassLoading</title>
+      <link>https://javayou.com/tags/classloading/</link>
+      <pubDate>Tue, 05 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/classloading/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Memory Management</title>
+      <link>https://javayou.com/tags/memory-management/</link>
+      <pubDate>Tue, 05 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/memory-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metaspace</title>
+      <link>https://javayou.com/tags/metaspace/</link>
+      <pubDate>Tue, 05 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/metaspace/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Garbage Collection</title>
+      <link>https://javayou.com/tags/garbage-collection/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/garbage-collection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JConsole</title>
+      <link>https://javayou.com/tags/jconsole/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jconsole/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JFR</title>
+      <link>https://javayou.com/tags/jfr/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jfr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoring</title>
+      <link>https://javayou.com/tags/monitoring/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>https://javayou.com/tags/optimization/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Production Applications</title>
+      <link>https://javayou.com/tags/production-applications/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/production-applications/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VisualVM</title>
+      <link>https://javayou.com/tags/visualvm/</link>
+      <pubDate>Sat, 02 Aug 2025 14:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/visualvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API Security</title>
+      <link>https://javayou.com/tags/api-security/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/api-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asynchronous</title>
+      <link>https://javayou.com/tags/asynchronous/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/asynchronous/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Authentication</title>
+      <link>https://javayou.com/tags/authentication/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Authorization</title>
+      <link>https://javayou.com/tags/authorization/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/authorization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Communication Patterns</title>
+      <link>https://javayou.com/tags/communication-patterns/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/communication-patterns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distributed Systems</title>
+      <link>https://javayou.com/tags/distributed-systems/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GRPC</title>
+      <link>https://javayou.com/tags/grpc/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/grpc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inter-Service Communication</title>
+      <link>https://javayou.com/tags/inter-service-communication/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/inter-service-communication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JSON Web Tokens</title>
+      <link>https://javayou.com/tags/json-web-tokens/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/json-web-tokens/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JWT</title>
+      <link>https://javayou.com/tags/jwt/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jwt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kafka</title>
+      <link>https://javayou.com/tags/kafka/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/kafka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Messaging</title>
+      <link>https://javayou.com/tags/messaging/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/messaging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OAuth2</title>
+      <link>https://javayou.com/tags/oauth2/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/oauth2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OIDC</title>
+      <link>https://javayou.com/tags/oidc/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/oidc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protobuf</title>
+      <link>https://javayou.com/tags/protobuf/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/protobuf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://javayou.com/tags/rabbitmq/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/rabbitmq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Resilience</title>
+      <link>https://javayou.com/tags/resilience/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/resilience/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>REST</title>
+      <link>https://javayou.com/tags/rest/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/rest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://javayou.com/tags/security/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Cloud Stream</title>
+      <link>https://javayou.com/tags/spring-cloud-stream/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-cloud-stream/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Security</title>
+      <link>https://javayou.com/tags/spring-security/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Synchronous</title>
+      <link>https://javayou.com/tags/synchronous/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/synchronous/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Security</title>
+      <link>https://javayou.com/tags/web-security/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/web-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebClient</title>
+      <link>https://javayou.com/tags/webclient/</link>
+      <pubDate>Sat, 02 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/webclient/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bulkhead</title>
+      <link>https://javayou.com/tags/bulkhead/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/bulkhead/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chaos Engineering</title>
+      <link>https://javayou.com/tags/chaos-engineering/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/chaos-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Circuit Breaker</title>
+      <link>https://javayou.com/tags/circuit-breaker/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/circuit-breaker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containerization</title>
+      <link>https://javayou.com/tags/containerization/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/containerization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>https://javayou.com/tags/deployment/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/deployment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://javayou.com/tags/devops/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://javayou.com/tags/docker/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ELK Stack</title>
+      <link>https://javayou.com/tags/elk-stack/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/elk-stack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fault Tolerance</title>
+      <link>https://javayou.com/tags/fault-tolerance/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/fault-tolerance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grafana</title>
+      <link>https://javayou.com/tags/grafana/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/grafana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jaeger</title>
+      <link>https://javayou.com/tags/jaeger/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jaeger/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java Monitoring</title>
+      <link>https://javayou.com/tags/java-monitoring/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/java-monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>K8s</title>
+      <link>https://javayou.com/tags/k8s/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/k8s/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logging</title>
+      <link>https://javayou.com/tags/logging/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/logging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Loki</title>
+      <link>https://javayou.com/tags/loki/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/loki/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metrics</title>
+      <link>https://javayou.com/tags/metrics/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/metrics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Observability</title>
+      <link>https://javayou.com/tags/observability/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/observability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenTelemetry</title>
+      <link>https://javayou.com/tags/opentelemetry/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/opentelemetry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prometheus</title>
+      <link>https://javayou.com/tags/prometheus/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/prometheus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rate Limiter</title>
+      <link>https://javayou.com/tags/rate-limiter/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/rate-limiter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reliability</title>
+      <link>https://javayou.com/tags/reliability/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/reliability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Resilience4j</title>
+      <link>https://javayou.com/tags/resilience4j/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/resilience4j/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Retry</title>
+      <link>https://javayou.com/tags/retry/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/retry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scaling</title>
+      <link>https://javayou.com/tags/scaling/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/scaling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Time Limiter</title>
+      <link>https://javayou.com/tags/time-limiter/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/time-limiter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tracing</title>
+      <link>https://javayou.com/tags/tracing/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/tracing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>YAML</title>
+      <link>https://javayou.com/tags/yaml/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/yaml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zipkin</title>
+      <link>https://javayou.com/tags/zipkin/</link>
+      <pubDate>Sat, 02 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/zipkin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Best Practices</title>
+      <link>https://javayou.com/tags/best-practices/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>https://javayou.com/tags/configuration/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Error Handling</title>
+      <link>https://javayou.com/tags/error-handling/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/error-handling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance</title>
+      <link>https://javayou.com/tags/performance/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/performance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Production Ready</title>
+      <link>https://javayou.com/tags/production-ready/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/production-ready/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>https://javayou.com/tags/testing/</link>
+      <pubDate>Sat, 02 Aug 2025 09:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Caching</title>
+      <link>https://javayou.com/tags/caching/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/caching/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Access</title>
+      <link>https://javayou.com/tags/data-access/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/data-access/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Database</title>
+      <link>https://javayou.com/tags/database/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hibernate</title>
+      <link>https://javayou.com/tags/hibernate/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/hibernate/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JPA</title>
+      <link>https://javayou.com/tags/jpa/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jpa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>N&#43;1 Problem</title>
+      <link>https://javayou.com/tags/n&#43;1-problem/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/n&#43;1-problem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Projections</title>
+      <link>https://javayou.com/tags/projections/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/projections/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Querydsl</title>
+      <link>https://javayou.com/tags/querydsl/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/querydsl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Specifications</title>
+      <link>https://javayou.com/tags/specifications/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/specifications/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Data JPA</title>
+      <link>https://javayou.com/tags/spring-data-jpa/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-data-jpa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transactions</title>
+      <link>https://javayou.com/tags/transactions/</link>
+      <pubDate>Sat, 02 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/transactions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concurrency</title>
+      <link>https://javayou.com/tags/concurrency/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>High Performance</title>
+      <link>https://javayou.com/tags/high-performance/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/high-performance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Non-Blocking</title>
+      <link>https://javayou.com/tags/non-blocking/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/non-blocking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R2DBC</title>
+      <link>https://javayou.com/tags/r2dbc/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/r2dbc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reactive Programming</title>
+      <link>https://javayou.com/tags/reactive-programming/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/reactive-programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring WebFlux</title>
+      <link>https://javayou.com/tags/spring-webflux/</link>
+      <pubDate>Tue, 29 Jul 2025 23:02:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-webflux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jakarta EE 10</title>
+      <link>https://javayou.com/tags/jakarta-ee-10/</link>
+      <pubDate>Tue, 29 Jul 2025 16:45:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/jakarta-ee-10/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Native Images</title>
+      <link>https://javayou.com/tags/native-images/</link>
+      <pubDate>Tue, 29 Jul 2025 16:45:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/native-images/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Boot 3</title>
+      <link>https://javayou.com/tags/spring-boot-3/</link>
+      <pubDate>Tue, 29 Jul 2025 16:45:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-boot-3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Framework 6</title>
+      <link>https://javayou.com/tags/spring-framework-6/</link>
+      <pubDate>Tue, 29 Jul 2025 16:45:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-framework-6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://javayou.com/tags/llm/</link>
+      <pubDate>Sun, 27 Jul 2025 16:20:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>https://javayou.com/tags/machine-learning/</link>
+      <pubDate>Sun, 27 Jul 2025 16:20:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>https://javayou.com/tags/rag/</link>
+      <pubDate>Sun, 27 Jul 2025 16:20:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vector Databases</title>
+      <link>https://javayou.com/tags/vector-databases/</link>
+      <pubDate>Sun, 27 Jul 2025 16:20:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/vector-databases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API</title>
+      <link>https://javayou.com/tags/api/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>https://javayou.com/tags/architecture/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>https://javayou.com/tags/development/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Cloud</title>
+      <link>https://javayou.com/tags/spring-cloud/</link>
+      <pubDate>Sun, 27 Jul 2025 15:40:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/spring-cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2025</title>
+      <link>https://javayou.com/tags/2025/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/2025/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Assistant</title>
+      <link>https://javayou.com/tags/ai-assistant/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/ai-assistant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI in Development</title>
+      <link>https://javayou.com/tags/ai-in-development/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/ai-in-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Code Generation</title>
+      <link>https://javayou.com/tags/code-generation/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/code-generation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IDE</title>
+      <link>https://javayou.com/tags/ide/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/ide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IntelliJ IDEA</title>
+      <link>https://javayou.com/tags/intellij-idea/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/intellij-idea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java Tools</title>
+      <link>https://javayou.com/tags/java-tools/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/java-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>https://javayou.com/tags/productivity/</link>
+      <pubDate>Thu, 24 Jul 2025 18:30:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Developer Tools</title>
+      <link>https://javayou.com/tags/developer-tools/</link>
+      <pubDate>Sat, 03 Aug 2024 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/developer-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LangChain4j</title>
+      <link>https://javayou.com/tags/langchain4j/</link>
+      <pubDate>Sat, 03 Aug 2024 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/langchain4j/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>https://javayou.com/tags/ollama/</link>
+      <pubDate>Sat, 03 Aug 2024 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/ollama/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech Guide</title>
+      <link>https://javayou.com/tags/tech-guide/</link>
+      <pubDate>Sat, 03 Aug 2024 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/tags/tech-guide/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metaspace on JavaYou</title>
+    <link>https://javayou.com/tags/metaspace/</link>
+    <description>Recent content in Metaspace on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Aug 2025 09:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/tags/metaspace/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices</title>
+      <link>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</link>
+      <pubDate>Tue, 05 Aug 2025 09:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/optimizing-jvm-metaspace-dynamic-class-loading/</guid>
+      <description>&lt;h1 id=&#34;optimizing-jvm-metaspace-for-dynamic-class-loading-in-spring-boot-microservices&#34;&gt;Optimizing JVM Metaspace for Dynamic Class Loading in Spring Boot Microservices&lt;/h1&gt;&#xA;&lt;p&gt;Welcome, advanced Java architects and site reliability engineers! In the complex landscape of modern microservices, especially those built with Spring Boot, ensuring predictable and stable performance is paramount. While heap memory is often the primary focus of optimization, the &lt;strong&gt;Metaspace&lt;/strong&gt; � where the JVM stores class metadata � frequently becomes an overlooked villain, silently leading to &lt;code&gt;OutOfMemoryError: Metaspace&lt;/code&gt; in long-running or dynamically evolving systems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

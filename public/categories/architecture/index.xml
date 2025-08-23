@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on JavaYou</title>
+    <link>https://javayou.com/categories/architecture/</link>
+    <description>Recent content in Architecture on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Aug 2025 12:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Monolith to Microservices: A Spring Boot and Kubernetes Migration Guide</title>
+      <link>https://javayou.com/posts/monolith-to-microservices-with-spring-boot/</link>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/monolith-to-microservices-with-spring-boot/</guid>
+      <description>&lt;p&gt;Introduction: The Evolution of Modern Applications&#xA;For years, the monolithic architecture served as the backbone of countless enterprise applications. It�s a single, cohesive unit where all components�data, business logic, and UI�are tightly coupled. While this approach is simple to develop and deploy initially, it presents significant challenges as an application scales.&lt;/p&gt;&#xA;&lt;p&gt;This comprehensive guide will walk you through the journey of migrating a monolithic Spring Boot application to a resilient, scalable microservices architecture. We�ll cover the strategic decisions, technical challenges, and the role of Kubernetes in orchestrating this modern deployment.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

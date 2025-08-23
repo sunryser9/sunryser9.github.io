@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Frameworks on JavaYou</title>
+    <link>https://javayou.com/categories/java-frameworks/</link>
+    <description>Recent content in Java Frameworks on JavaYou</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://javayou.com/categories/java-frameworks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)</title>
+      <link>https://javayou.com/posts/</link>
+      <pubDate>Sat, 03 Aug 2024 10:00:00 +0530</pubDate>
+      <guid>https://javayou.com/posts/</guid>
+      <description>&lt;h1 id=&#34;mastering-generative-ai-in-java-building-your-first-llm-application-with-langchain4j-and-spring-boot-plus-local-model-integration&#34;&gt;Mastering Generative AI in Java: Building Your First LLM Application with LangChain4j and Spring Boot (Plus Local Model Integration)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-the-ai-revolution-and-javas-enduring-role&#34;&gt;Introduction: The AI Revolution and Java&amp;rsquo;s Enduring Role&lt;/h2&gt;&#xA;&lt;p&gt;The landscape of software development is undergoing a seismic shift. Just a few short years ago, Artificial Intelligence felt like a distant, specialized discipline, often confined to academic research or the realms of data scientists. Today, Generative AI has burst into the mainstream, bringing with it capabilities that feel almost magical � from creating compelling text and realistic images to generating code and summarizing vast amounts of information in seconds.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
