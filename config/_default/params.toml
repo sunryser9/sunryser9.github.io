@@ -1,0 +1,9 @@
+[ananke]
+show_recent_posts = false
+
+# Show all posts on homepage
+homePostsLimit = 0
+
+[pagination]
+pagesize = 20
+path = "page"

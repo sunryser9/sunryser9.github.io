@@ -3,22 +3,6 @@ languageCode = "en-us"
 title = "JavaYou"
 theme = "ananke"
 publishDir = "public"
-disableKinds = []
-
-# Pagination settings - OVERRIDE THEME DEFAULTS
-paginate = 20
-paginatePath = "page"
-
-[params]
-  description = "Learn Java, Spring Boot, and web development step by step"
-  showMenu = true
-  showBurger = true
-  showPostSummary = true
-  showReadingTime = true
-  
-  # OVERRIDE ANANKE THEME SETTINGS
-  show_recent_posts = false  # Disable "recent posts only" feature
-  homePostsLimit = 20        # Show more posts on homepage
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
